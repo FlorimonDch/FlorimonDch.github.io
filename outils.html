@@ -15,7 +15,7 @@
 
 	<!-- Header -->
 	<header id="header" class="alt">
-		<div class="logo"><a href="index.html">Outils<span>by TEMPLATED</span></a></div>
+		<div class="logo"><a href="index.html">Outils <span>by Florimon Dch</span></a></div>
 		<a href="#menu"><span>Menu</span></a>
 	</header>
 
@@ -23,8 +23,10 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="index.html">Home</a></li>
-			<li><a href="generic.html">Generic</a></li>
-			<li><a href="elements.html">Elements</a></li>
+			<li><a href="java.html">Java</a></li>
+			<li><a href="db.html">Bases de données</a></li>
+			<li><a href="web.html">Web</a></li>
+			<li><a href="jpa.html">JPA Hibernate</a></li>
 		</ul>
 	</nav>
 
@@ -34,7 +36,7 @@
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-		<section id="post" class="wrapper bg-img" data-bg="land2.jpg">
+		<section id="post" class="wrapper bg-img" data-bg="land6.jpg">
 			<div class="inner">
 				<article class="box">
 					<header>
@@ -42,25 +44,133 @@
 						<p>01.01.2017</p>
 					</header>
 					<div class="content">
-						<p>"Comprendre l interret/connaitre le principe d un ORM - Mapping
-							Objet / Relationnel"
-							Introduction JPA et Hibernate et les différents niveaux d’API de persistance
-							Savoir realiser un Mapping par annotations
-							"Maitriser les objets :Persistence
-							Unit ,EntityManagerFactory ,EntityManager et PersistenceContext"
-							Manipuler/configurer le fichier « persistence.xml »
-							Savoir implementer les differents types de liens OneT-One,OneToMany ManyToMany et heritage
-							Savoir realiser un CRUD avec JPA
-							Implementer  les requêtes JPQL, SQL et Criteria API
-						.</p>
+						<p>Maven et Git<br>
 
-						<p>Aliquet a consectetur semper suscipit ridiculus mattis augue volutpat hendrerit proin hac vel tristique quis amet parturient sem. Adipiscing laoreet blandit vestibulum laoreet fermentum sed sociis lorem class ipsum scelerisque porttitor viverra vestibulum nascetur. Ad felis ad ullamcorper urna iaculis aenean vel a suspendisse nunc placerat euismod suspendisse et fames ipsum elementum odio vestibulum duis. Fringilla condimentum donec tincidunt enim volutpat nam velit quisque laoreet adipiscing nam in suspendisse mattis ad libero parturient scelerisque. Vitae enim ac parturient iaculis pharetra cum quam imperdiet commodo mus netus quam habitasse risus netus dis.</p>
+							Introduction Maven
+							Mise en place de Maven
+							Détails et sections du fichier pom.xml de Maven 
+							Repository Maven 
+							Gestion de dépendances
+							Dépendance transitive dans Maven 
 
-						<p>Arcu est vestibulum condimentum conubia tempus a porttitor quam urna adipiscing a adipiscing condimentum tortor cubilia parturient per senectus interdum felis suspendisse penatibus auctor pretium ac. Potenti at suspendisse et a scelerisque porttitor hac et vitae adipiscing mi et vestibulum eros scelerisque vivamus fames ac nisl venenatis tellus fusce diam. Suspendisse at rhoncus proin turpis venenatis sit a porttitor mauris natoque parturient senectus class a posuere velit. Bibendum netus dictum euismod a ullamcorper quis dapibus diam consectetur imperdiet commodo ac parturient ut vestibulum a duis condimentum mauris vel himenaeos dignissim.</p>
+							Présentation Git
+							Gestionnaires Centralisés vs Décentralisés
+							Initialisation d'un dépôt
+							Configuration de Git
+							Commandes de base (status, add, commit, log, rm, mv, diff, reset, checkout, clean)
+							Fichier .gitignore
+							Notion de Branche (branch, checkout, merge, fetch)
+							Notion d'étiquette
+							Dépôt Distant (remote, pull, push)
+							Gestion des conflits
+							Outils graphiques et plugins
 
-						<p>A adipiscing a ac aliquet elit a senectus feugiat litora condimentum dignissim ullamcorper conubia venenatis torquent consectetur dui aptent dignissim condimentum suspendisse. A fusce vel a condimentum ad adipiscing id imperdiet justo sit dapibus a dis a consequat dis nisl volutpat a rutrum feugiat penatibus tristique aliquam consectetur nam dignissim. Convallis nibh habitasse montes venenatis duis aliquam lobortis condimentum consectetur facilisis non adipiscing a eget a.</p>
+							Savoir utiliser le plug in Maven de Jenkins
+							Savoir gérer un pipeline d'intégration en contenu sous Maven
+							Savoir gérer un pipeline d'intégration en contenu sous Groovy
+							Savoir gérer les tests Maven à travers Jenkins
+							Savoir gérer un dépôt Git à travers Jenkins
+						</p>
+						<p><span class="image left"><img  style="width: 180px" src="images/maven.png" alt="" /></span>Apache Maven (couramment appelé Maven) est un outil de gestion et d'automatisation de production des projets logiciels Java en général et Java EE en particulier.
+							<br>
+							Il est utilisé pour automatiser l'intégration continue lors d'un développement de logiciel. Maven est géré par l'organisation Apache Software Foundation. L'outil était précédemment une branche de l'organisation Jakarta Project.
+							<br>
+							<br>
 
-						<p>Penatibus vestibulum ullamcorper diam commodo volutpat at a sodales dis id ut condimentum a arcu at nostra pretium urna suspendisse. Maecenas commodo adipiscing ad curabitur a a risus pulvinar habitant a et integer volutpat mi nullam curabitur a adipiscing nullam in bibendum vel cras scelerisque. Morbi a euismod litora dui nunc in pretium sodales ante dis dui natoque adipiscing a. Augue imperdiet dignissim adipiscing justo accumsan adipiscing vestibulum adipiscing fames class ad rutrum sociosqu ad auctor sodales dis mollis. Ac euismod enim ad viverra dui auctor at integer inceptos parturient mi convallis aliquet iaculis ad diam.</p>
+							Utilité de Maven :
+
+							<ul>
+
+								<li>Généricité des projets, il fixe un standard "projet maven" (projet compatible avec différents IDE)</li>
+								<li>Chargement dynamique des Jar --> https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.3</li>
+								<li>Créer des composants et donnent un numéro de version</li>
+							</ul>
+
+							<br>
+
+							<br>
+
+							<br>
+							POM.XML
+							<br>
+							avant d'importer le projet, il faut modifier le POM.XML, modifier le ArtifactId pour qu'il corresponde au nom du projet si on a copier le dossier depuis le template projet
+							<br>
+							Attention de ne jamais avoir de doublon sur le binome <groupId, ArtifactId>
+
+
+							<br>
+
+
+						</p>
+						<p>
+
+							Installation des variables d'environnement :
+
+							<ul>
+
+								<li><b>JAVA_HOME</b> : C:\Program Files\Java\jdk1.7</li>
+
+								<li><b>M2_HOME</b> : C:\apache-maven-3.6</li>
+
+								<li><b>MAVEN_HOME</b> : C:\apache-maven-3.6</li>
+
+							</ul>
+
+							<br>
+
+							clickdroit sur le projet> maven> update project pour mettre a jour le POM.XML
+						</p>
+
+
+
+
+						<div style="text-align: center">
+							<a href="Download/projmaven.rar" download>
+								<button style="text-align: center"class="button special" href="Download/projmaven.rar" download>Download mvn template</button>
+							</div>
+						</a></p>
+
+						<p><span class="image right"><img style="width: 100px" src="images/git.png" alt="" /></span><b>Git</b>
+							<br>
+						Commandes utiles
+<br>
+<code>
+	git  log --graph
+</code>
+affiche les commits
+<br>
+<code>
+	git  rm--cached
+</code>
+<br>
+<code>
+	git  diff
+</code>
+<br>
+
+<code>
+	git  log --graph
+</code>
+
+<br>
+<code>
+	git  log --graph
+</code>
+<br>
+
+<code>
+	git  branch -d
+</code>
+.gitIgnore
+
+
+
+
+
+
+
+					</p>
+						
 					</div>
 					<footer>
 						<ul class="actions">
@@ -72,43 +182,6 @@
 			</div>
 		</section>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-
-				<h2>Contact Me</h2>
-
-				<form action="#" method="post">
-
-					<div class="field half first">
-						<label for="name">Name</label>
-						<input name="name" id="name" type="text" placeholder="Name">
-					</div>
-					<div class="field half">
-						<label for="email">Email</label>
-						<input name="email" id="email" type="email" placeholder="Email">
-					</div>
-					<div class="field">
-						<label for="message">Message</label>
-						<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-					</div>
-					<ul class="actions">
-						<li><input value="Send Message" class="button alt" type="submit"></li>
-					</ul>
-				</form>
-
-				<ul class="icons">
-					<li><a href="#" class="icon round fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
-				</ul>
-
-				<div class="copyright">
-					&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
-				</div>
-
-			</div>
-		</footer>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
