@@ -27,6 +27,7 @@
 			<li><a href="web.html">Web</a></li>
 			<li><a href="jpa.html">JPA Hibernate</a></li>
 			<li><a href="outils.html">Outils</a></li>
+			<li><a href="spring.html">Spring</a></li>
 		</ul>
 	</nav>
 
@@ -41,29 +42,106 @@
 				<article class="box">
 					<header>
 						<h2>Bases de données</h2>
-						<p>01.01.2017</p>
+						<p>31.01.2020</p>
 					</header>
 					<div class="content">
-						<p>"Comprendre l interret/connaitre le principe d un ORM - Mapping
-							Objet / Relationnel"
-							Introduction JPA et Hibernate et les différents niveaux d’API de persistance
-							Savoir realiser un Mapping par annotations
-							"Maitriser les objets :Persistence
-							Unit ,EntityManagerFactory ,EntityManager et PersistenceContext"
-							Manipuler/configurer le fichier « persistence.xml »
-							Savoir implementer les differents types de liens OneT-One,OneToMany ManyToMany et heritage
-							Savoir realiser un CRUD avec JPA
-							Implementer  les requêtes JPQL, SQL et Criteria API
-						.</p>
+
+
+
+
+	<p><h3>Installation</h3></p>
+
+Il faut installer <a href="https://dev.mysql.com/downloads/workbench/">Mysql Workbench</a>.
+<br><br>
+Développé par Oracle, <b>MySQL Workbench</b> est un logiciel gratuit qui permet de gérer et d'administrer des bases de données MySQL via une interface graphique.
+
+
+<p><h3>Les requetes principales</h3></p>
+<code>
+SELECT * FROM nomTable WHERE attr1="salut" 
+							</code>
+							<br>
+							
+							<code>
+INSERT INTO nomTable VALUES (attr1, attr2) 
+							</code>
+							<br>
+<code>
+UPDATE nomTable set attr = monAttr WHERE attr = "value" 
+							</code>
+							<br>
+							<code>
+DELETE FROM nomTable WHERE attr = "value" 
+							</code>
+
+
+
+<p><h3>les fonctions de groupe</h3></p>
+<ul>
+	<li>AVG</li>
+<li>COUNT</li>
+<li>MAX</li>
+<li>MIN</li>
+<li>SUM</li>
+</ul>
+
+<p><h3>Autres fonctionnalités</h3></p>
+<ul>
+	<li>LIKE</li>
+	<li>IS NULL</li>
+	<li>AND, OR, NOT</li>
+
+</ul>
+
+<p><h3>les clauses</h3></p>
+
+<ul>
+	<li>ORDER BY</li>
+	<li>HAVING</li>
+
+</ul>
+
+<p><h3>les jointures</h3></p>
+
+<ul>
+	
+	<li><h5>Natural Join</h5>
+	Permet d'associer 2 tables qui ont une colonnes identique (ex : num_dpt dans Employé et num_dpt dans Departement)
+
+</li>
+	<li><h5>Inner Join (ou Join)</h5>
+		Permet de dire sur quels champs les tables sont associées (ON table.attr = table2.attr).
+
+	</li>
+	<li><h5>Auto Jointure</h5>
+		Il s'agit d'une association reflexive, la table est associée à elle même. La clé étrangère est sur la même table (ex : manager_id).
+	</li>
+	<li><h5>Jointure multiple</h5>
+		Il s'agit d'une requete avec plusieurs jointures, il faut respecter l'ordre de liaison suivant le diagramme UML (ex job JOIN employe ON ... JOIN Departement ON ...)
+	</li>
+	<li><h5>Non-equi jointure</h5>
+	C'est une jointure sur une inégalité avec un BETWEEN.</li>
+	<li><h5>Jointure externe (outer join/left outer join</h5>
+
+	Il s'agit du fait d'avoir des lignes qui n'ont pas forcement de correspondance avec les lignes de l'autre table.</li>
+</ul>
+
+
+<h5>Les alias</h5>
+<code>FROM table A inner join table2 B</code>
+
+<p><h5>Les sous-requetes</h5></p>
+<pre>
+<code>SELECT * FROM nomTable WHERE attr > (SELECT * from nomTable WHERE attr2>0)</code>
+						</pre>
+
+<p><h5>Les sous-requetes multiple</h5></p>
+
+IN, ANY, ALL
 
 						
 					</div>
-					<footer>
-						<ul class="actions">
-							<li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li>
-							<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li>
-						</ul>
-					</footer>
+				
 				</article>
 			</div>
 		</section>
