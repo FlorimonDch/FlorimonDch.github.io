@@ -5,12 +5,14 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+
 <head>
-	<title>DB</title>
+	<title>Bases de données</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
+
 <body class="subpage">
 
 	<!-- Header -->
@@ -32,128 +34,166 @@
 	</nav>
 
 	<!-- Content -->
-		<!--
+	<!--
 			Note: To show a background image, set the "data-bg" attribute below
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-		<section id="post" class="wrapper bg-img" data-bg="land4.jpg">
-			<div class="inner">
-				<article class="box">
-					<header>
-						<h2>Bases de données</h2>
-						<p>31.01.2020</p>
-					</header>
-					<div class="content">
+	<section id="post" class="wrapper bg-img" data-bg="land4.jpg">
+		<div class="inner">
+			<article class="box">
+				<header>
+					<h2>Bases de données</h2>
+					<p>31.01.2020</p>
+				</header>
+				<div class="content">
 
 
 
 
-	<p><h3>Installation</h3></p>
+					<p>
+						<h3>Installation</h3>
+					</p>
 
-Il faut installer <a href="https://dev.mysql.com/downloads/workbench/">Mysql Workbench</a>.
-<br><br>
-Développé par Oracle, <b>MySQL Workbench</b> est un logiciel gratuit qui permet de gérer et d'administrer des bases de données MySQL via une interface graphique.
+					Il faut installer <a href="https://dev.mysql.com/downloads/workbench/">Mysql Workbench</a>.
+					<br><br>
+					<b>MySQL Workbench</b> est un logiciel gratuit développé par Oracle, qui permet de gérer et
+					d'administrer des bases de données MySQL via une interface graphique.
 
 
-<p><h3>Les requetes principales</h3></p>
-<code>
-SELECT * FROM nomTable WHERE attr1="salut" 
+					<p>
+						<h3>Les requetes principales</h3>
+					</p>
+					<code>
+SELECT * FROM nomTable WHERE attr1="value1" 
 							</code>
-							<br>
-							
-							<code>
+					<br>
+					<br>
+
+					<code>
 INSERT INTO nomTable VALUES (attr1, attr2) 
 							</code>
-							<br>
-<code>
+					<br>
+					<br>
+					<code>
 UPDATE nomTable set attr = monAttr WHERE attr = "value" 
 							</code>
-							<br>
-							<code>
+					<br>
+					<br>
+					<code>
 DELETE FROM nomTable WHERE attr = "value" 
 							</code>
 
 
 
-<p><h3>les fonctions de groupe</h3></p>
-<ul>
-	<li>AVG</li>
-<li>COUNT</li>
-<li>MAX</li>
-<li>MIN</li>
-<li>SUM</li>
-</ul>
+					<p>
+						<h3>les fonctions de groupe</h3>
+					</p>
+					<ul>
+						<li><b>AVG</b> : moyenne</li> 
+						<li><b>COUNT</b> : nombre d'enregistrement dans une table</li>
+						<li><b>MAX</b></li>
+						<li><b>MIN</b></li>
+						<li><b>SUM</b> : somme</li>
+					</ul>
 
-<p><h3>Autres fonctionnalités</h3></p>
-<ul>
-	<li>LIKE</li>
-	<li>IS NULL</li>
-	<li>AND, OR, NOT</li>
+					<p>
+						<h3>Autres fonctionnalités</h3>
+					</p>
+					<ul>
+						<li><b>LIKE</b> (% = tous les caractères n fois et _ = un seul caractère)</li>
+						<li><b>IS NULL</b></li>
+						<li><b>AND, OR, NOT</b></li>
 
-</ul>
+					</ul>
 
-<p><h3>les clauses</h3></p>
+					<p>
+						<h3>les clauses</h3>
+					</p>
 
-<ul>
-	<li>ORDER BY</li>
-	<li>HAVING</li>
+					<ul>
+						<li><b>ORDER BY</b> (ASC = ordre croissant / DESC = ordre decroissant)</li>
+						<li><b>HAVING</b> (comme le where sauf que l'on peut filtrer en utilisant des fonctions comme SUM(), COUNT() ou encore AVG()) </li>
 
-</ul>
+					</ul>
 
-<p><h3>les jointures</h3></p>
+					<p>
+						<h3>les jointures</h3>
+					</p>
 
-<ul>
-	
-	<li><h5>Natural Join</h5>
-	Permet d'associer 2 tables qui ont une colonnes identique (ex : num_dpt dans Employé et num_dpt dans Departement)
+					<ul>
 
-</li>
-	<li><h5>Inner Join (ou Join)</h5>
-		Permet de dire sur quels champs les tables sont associées (ON table.attr = table2.attr).
+						<li>
+							<h5>Natural Join</h5>
+							Permet d'associer 2 tables qui ont une colonnes identique (ex : num_dpt dans Employé et
+							num_dpt dans Departement)
 
-	</li>
-	<li><h5>Auto Jointure</h5>
-		Il s'agit d'une association reflexive, la table est associée à elle même. La clé étrangère est sur la même table (ex : manager_id).
-	</li>
-	<li><h5>Jointure multiple</h5>
-		Il s'agit d'une requete avec plusieurs jointures, il faut respecter l'ordre de liaison suivant le diagramme UML (ex job JOIN employe ON ... JOIN Departement ON ...)
-	</li>
-	<li><h5>Non-equi jointure</h5>
-	C'est une jointure sur une inégalité avec un BETWEEN.</li>
-	<li><h5>Jointure externe (outer join/left outer join</h5>
+						</li>
+						<br>
+						<li>
+							<h5>Inner Join (ou Join)</h5>
+							Permet de dire sur quels champs les tables sont associées (ON table.attr = table2.attr).
 
-	Il s'agit du fait d'avoir des lignes qui n'ont pas forcement de correspondance avec les lignes de l'autre table.</li>
-</ul>
+						</li>
+						<br>
+						<li>
+							<h5>Auto Jointure</h5>
+							Il s'agit d'une association reflexive, la table est associée à elle même. La clé étrangère
+							est sur la même table (ex : manager_id).
+						</li>
+						<br>
+						<li>
+							<h5>Jointure multiple</h5>
+							Il s'agit d'une requete avec plusieurs jointures, il faut respecter l'ordre de liaison
+							suivant le diagramme UML (ex job JOIN employe ON ... JOIN Departement ON ...)
+						</li>
+						<br>
+						<li>
+							<h5>Non-equi jointure</h5>
+							C'est une jointure sur une inégalité avec un BETWEEN.
+						</li>
+						<br>
+						<li>
+							<h5>Jointure externe (outer join/left outer join)</h5>
+
+							Il s'agit du fait d'avoir des lignes qui n'ont pas forcement de correspondance avec les
+							lignes de l'autre table.
+						</li>
+					</ul>
 
 
-<h5>Les alias</h5>
-<code>FROM table A inner join table2 B</code>
+					<h5>Les alias</h5>
+					<code>FROM table A inner join table2 B</code>
 
-<p><h5>Les sous-requetes</h5></p>
-<pre>
+					<p>
+						<h5>Les sous-requetes</h5>
+					</p>
+					<pre>
 <code>SELECT * FROM nomTable WHERE attr > (SELECT * from nomTable WHERE attr2>0)</code>
 						</pre>
 
-<p><h5>Les sous-requetes multiple</h5></p>
+					<p>
+						<h5>Les sous-requetes multiple</h5>
+					</p>
 
-IN, ANY, ALL
+					IN, ANY, ALL
 
-						
-					</div>
-				
-				</article>
-			</div>
-		</section>
 
-		
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+				</div>
 
-	</body>
-	</html>
+			</article>
+		</div>
+	</section>
+
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

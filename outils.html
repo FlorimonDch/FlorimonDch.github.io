@@ -45,33 +45,7 @@
 						<p>01.01.2017</p>
 					</header>
 					<div class="content">
-						<p>Maven et Git<br>
-
-							Introduction Maven
-							Mise en place de Maven
-							Détails et sections du fichier pom.xml de Maven 
-							Repository Maven 
-							Gestion de dépendances
-							Dépendance transitive dans Maven 
-
-							Présentation Git
-							Gestionnaires Centralisés vs Décentralisés
-							Initialisation d'un dépôt
-							Configuration de Git
-							Commandes de base (status, add, commit, log, rm, mv, diff, reset, checkout, clean)
-							Fichier .gitignore
-							Notion de Branche (branch, checkout, merge, fetch)
-							Notion d'étiquette
-							Dépôt Distant (remote, pull, push)
-							Gestion des conflits
-							Outils graphiques et plugins
-
-							Savoir utiliser le plug in Maven de Jenkins
-							Savoir gérer un pipeline d'intégration en contenu sous Maven
-							Savoir gérer un pipeline d'intégration en contenu sous Groovy
-							Savoir gérer les tests Maven à travers Jenkins
-							Savoir gérer un dépôt Git à travers Jenkins
-						</p>
+						
 						<p><span class="image left"><img  style="width: 180px" src="images/maven.png" alt="" /></span>Apache Maven (couramment appelé Maven) est un outil de gestion et d'automatisation de production des projets logiciels Java en général et Java EE en particulier.
 							<br>
 							Il est utilisé pour automatiser l'intégration continue lors d'un développement de logiciel. Maven est géré par l'organisation Apache Software Foundation. L'outil était précédemment une branche de l'organisation Jakarta Project.
@@ -140,6 +114,58 @@
 </code>
 affiche les commits
 <br>
+<br>
+
+
+<code>
+	git status
+</code>
+permet de voir l'état de la branche où l'on se trouve
+<br>
+<br>
+<code>
+	git checkout nom_branche
+</code>
+permet de voir l'état de la branche où l'on se trouve
+<br>
+<br>
+<code>
+	git pull
+</code>
+permet de mettre à jour le repo local avec le repo distant (git pull origin master pour mettre une branche à jour)
+<br>
+<br>
+<code>
+	git add 
+</code>
+permet de voir l'état de la branche où l'on se trouve
+<br>
+<br>
+<code>
+	git commit -m "description du commit"
+</code>
+permet de voir l'état de la branche où l'on se trouve
+<br>
+<br>
+<code>
+	git push
+</code>
+permet de voir l'état de la branche où l'on se trouve
+<br>
+<br>
+<code>
+	git merge nom_branche
+</code>
+permet de push les modifications de nom_branche sur master (il faut être positionné sur la branche master)
+<br>
+<br>
+<code>
+	git status
+</code>
+
+<br>
+
+
 <code>
 	git  rm--cached
 </code>
