@@ -51,10 +51,54 @@
                     <p>18.02.2020</p>
                 </header>
                 <div class="content">
+
+                    <h4>Installation</h4>
+                    <p>Pour créer une application Java web, il faut installer un serveur d'application Apache <b><a href="https://tomcat.apache.org/download-90.cgi" target="_blank">Tomcat</a></b>.
+                    <br>
+                        <ul>
+                            <li>Très léger</li>
+                            <li>Par défaut, le port utilisé par Apache Tomcat est <b>8080</b></li>
+                            <li>Le serveur web sera accessible à l'adresse <b>http://localhost:8080</b></li>
+                            <li>Chaque projet seront accessibles aux adresses http://localhost:8080/<b>nom-projet</b>/</li>
+                        </ul>
+                </p>
+
+                   
                     <h4>L'API Servlet</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores quasi nobis fugit maiores
-                        velit, quis ad ducimus ullam in, est id magnam enim, aliquid ipsam fugiat nihil minus? Incidunt,
-                        ex.
+                    <p>Un <b>Servlet</b> est un point d'accès, il est accessible grâce à une requête HTTP (GET, POST, PUT, DELETE) sur une URL spécifiée <br>(ex : http://localhost/projet/home).
+                        On appelle cela le <b>"Mapping"</b>.
+                        <br>
+                        <br>C'est elle qui génère la vue et la retourne au navigateur.
+
+                        <table style="text-align: center;">
+                            <tr>
+                                <td>doGet</td>
+                                <td>Requête HTTP GET</td>
+                            </tr>
+                            <tr>
+                                <td>doPost</td>
+                                <td>Requête HTTP POST</td>
+                            </tr>
+                            <tr>
+                                <td>doPut</td>
+                                <td>Requête HTTP PUT</td>
+                            </tr>
+                            <tr>
+                                <td>doDelete</td>
+                                <td>Requête HTTP DELETE</td>
+                            </tr>
+                        </table>
+
+                        Chaque Servlet doit être mappée sur une URL.
+
+                        <pre><code>
+                            <servlet></servlet>
+                        </code></pre>
+
+
+                        <br><br>Un <b>Listener</b> est un Ecouteur qui déclenche une action lorsqu'un évènement se déclenche.
+
+                        <br><br>Un <b>Filter</b> permet de filtrer des requêtes.
                     </p>
                     <h4>Les JSP</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores quasi nobis fugit maiores
