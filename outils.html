@@ -5,12 +5,14 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+
 <head>
 	<title>Outils</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
+
 <body class="subpage">
 
 	<!-- Header -->
@@ -19,180 +21,186 @@
 		<a href="#menu"><span>Menu</span></a>
 	</header>
 
-<!-- Nav -->
-<nav id="menu">
-	<ul class="links">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="java.html">Java</a></li>
-		<li><a href="db.html">Bases de données</a></li>
-		<li><a href="web.html">Web</a></li>
-		<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
-		<li><a href="service.html">Service Web avec Java SE</a></li>
-		<li><a href="jpa.html">JPA Hibernate</a></li>
-		<li><a href="outils.html">Outils</a></li>
-		<li><a href="spring.html">Spring</a></li>
-		<li><a href="angular.html">Angular</a></li>		
-	</ul>
-</nav>
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="java.html">Java</a></li>
+			<li><a href="db.html">Bases de données</a></li>
+			<li><a href="web.html">Web</a></li>
+			<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
+			<li><a href="service.html">Service Web avec Java SE</a></li>
+			<li><a href="jpa.html">JPA Hibernate</a></li>
+			<li><a href="outils.html">Outils</a></li>
+			<li><a href="spring.html">Spring</a></li>
+			<li><a href="angular.html">Angular</a></li>
+		</ul>
+	</nav>
 
 	<!-- Content -->
-		<!--
+	<!--
 			Note: To show a background image, set the "data-bg" attribute below
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-		<section id="post" class="wrapper bg-img" data-bg="land6.jpg">
-			<div class="inner">
-				<article class="box">
-					<header>
-						<h2>Outils</h2>
-						<p>26.20.2020</p>
-					</header>
-					<div class="content">
-						
-						<p><span class="image left"><img  style="width: 180px" src="images/maven.png" alt="" /></span>Apache Maven (couramment appelé Maven) est un outil de gestion et d'automatisation de production des projets logiciels Java en général et Java EE en particulier.
-							<br>
-							Il est utilisé pour automatiser l'intégration continue lors d'un développement de logiciel. Maven est géré par l'organisation Apache Software Foundation. L'outil était précédemment une branche de l'organisation Jakarta Project.
-							<br>
-							<br>
+	<section id="post" class="wrapper bg-img" data-bg="land6.jpg">
+		<div class="inner">
+			<article class="box">
+				<header>
+					<h2>Outils</h2>
+					<p>26.20.2020</p>
+				</header>
+				<div class="content">
 
-							Utilité de Maven :
+					<p><span class="image left"><img style="width: 180px" src="images/maven.png" alt="" /></span>Apache
+						Maven (couramment appelé Maven) est un outil de gestion et d'automatisation de production des
+						projets logiciels Java en général et Java EE en particulier.
+						<br>
+						Il est utilisé pour automatiser l'intégration continue lors d'un développement de logiciel.
+						Maven est géré par l'organisation Apache Software Foundation. L'outil était précédemment une
+						branche de l'organisation Jakarta Project.
+						<br>
+						<br>
 
-							<ul>
+						Utilité de Maven :
 
-								<li>Généricité des projets, il fixe un standard "projet maven" (projet compatible avec différents IDE)</li>
-								<li>Chargement dynamique des Jar --> https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.3</li>
-								<li>Créer des composants et donnent un numéro de version</li>
-							</ul>
+						<ul>
 
-							<br>
+							<li>Généricité des projets, il fixe un standard "projet maven" (projet compatible avec
+								différents IDE)</li>
+							<li>Chargement dynamique des Jar -->
+								https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.3</li>
+							<li>Créer des composants et donnent un numéro de version</li>
+						</ul>
 
-							<br>
+						<br>
 
-							<br>
-							POM.XML
-							<br>
-							avant d'importer le projet, il faut modifier le POM.XML, modifier le ArtifactId pour qu'il corresponde au nom du projet si on a copier le dossier depuis le template projet
-							<br>
-							Attention de ne jamais avoir de doublon sur le binome <groupId, ArtifactId>
+						<br>
 
+						<br>
+						POM.XML
+						<br>
+						avant d'importer le projet, il faut modifier le POM.XML, modifier le ArtifactId pour qu'il
+						corresponde au nom du projet si on a copier le dossier depuis le template projet
+						<br>
+						Attention de ne jamais avoir de doublon sur le binome <groupId, ArtifactId>
 
-							<br>
-
-
-						</p>
-						<p>
-
-							Installation des variables d'environnement :
-
-							<ul>
-
-								<li><b>JAVA_HOME</b> : C:\Program Files\Java\jdk1.7</li>
-
-								<li><b>M2_HOME</b> : C:\apache-maven-3.6</li>
-
-								<li><b>MAVEN_HOME</b> : C:\apache-maven-3.6</li>
-
-							</ul>
 
 							<br>
 
-							clickdroit sur le projet> maven> update project pour mettre a jour le POM.XML
-						</p>
+
+					</p>
+					<p>
+
+						Installation des variables d'environnement :
+
+						<ul>
+
+							<li><b>JAVA_HOME</b> : C:\Program Files\Java\jdk1.7</li>
+
+							<li><b>M2_HOME</b> : C:\apache-maven-3.6</li>
+
+							<li><b>MAVEN_HOME</b> : C:\apache-maven-3.6</li>
+
+						</ul>
+
+						<br>
+
+						clickdroit sur le projet> maven> update project pour mettre a jour le POM.XML
+					</p>
 
 
 
 
-						<div style="text-align: center">
-							<a href="Download/projmaven.rar" download>
-								<button style="text-align: center"class="button special" href="Download/projmaven.rar" download>Download mvn template</button>
-							</div>
-						</a></p>
+					<div style="text-align: center">
+						<a href="Download/projmaven.rar" download>
+							<button style="text-align: center" class="button special" href="Download/projmaven.rar"
+								download>Download mvn template</button>
+					</div>
+					</a></p>
 
-						<p><span class="image right"><img style="width: 100px" src="images/git.png" alt="" /></span><b>Git</b>
-							<br>
+					<p><span class="image right"><img style="width: 100px" src="images/git.png"
+								alt="" /></span><b>Git</b>
+						<br>
 						Commandes utiles
-<br>
-<code>
+						<br>
+						<code>
 	git  log --graph
 </code>
-affiche les commits
-<br>
-<br>
+						affiche les commits
+						<br>
+						<br>
 
 
-<code>
+						<code>
 	git status
 </code>
-permet de voir l'état de la branche où l'on se trouve
-<br>
-<br>
-<code>
+						permet de voir l'état de la branche où l'on se trouve
+						<br>
+						<br>
+						<code>
 	git checkout nom_branche
 </code>
-permet de voir l'état de la branche où l'on se trouve
-<br>
-<br>
-<code>
+						permet de voir l'état de la branche où l'on se trouve
+						<br>
+						<br>
+						<code>
 	git pull
 </code>
-permet de mettre à jour le repo local avec le repo distant (git pull origin master pour mettre une branche à jour)
-<br>
-<br>
-<code>
+						permet de mettre à jour le repo local avec le repo distant (git pull origin master pour mettre
+						une branche à jour)
+						<br>
+						<br>
+						<code>
 	git add 
 </code>
-permet de voir l'état de la branche où l'on se trouve
-<br>
-<br>
-<code>
+						permet de voir l'état de la branche où l'on se trouve
+						<br>
+						<br>
+						<code>
 	git commit -m "description du commit"
 </code>
-permet de voir l'état de la branche où l'on se trouve
-<br>
-<br>
-<code>
+						permet de voir l'état de la branche où l'on se trouve
+						<br>
+						<br>
+						<code>
 	git push
 </code>
-permet de voir l'état de la branche où l'on se trouve
-<br>
-<br>
-<code>
+						permet de voir l'état de la branche où l'on se trouve
+						<br>
+						<br>
+						<code>
 	git merge nom_branche
 </code>
-permet de push les modifications de nom_branche sur master (il faut être positionné sur la branche master)
-<br>
-<br>
-<code>
-	git status
-</code>
+						permet de push les modifications de nom_branche sur master (il faut être positionné sur la
+						branche master)
+						<br>
 
-<br>
+						<br>
 
-
-<code>
+						<code>
 	git  rm--cached
 </code>
-<br>
-<code>
+						<br>
+						<code>
 	git  diff
 </code>
-<br>
+						<br>
 
-<code>
+						<code>
 	git  log --graph
 </code>
 
-<br>
-<code>
+						<br>
+						<code>
 	git  log --graph
 </code>
-<br>
+						<br>
 
-<code>
+						<code>
 	git  branch -d
 </code>
-.gitIgnore
+						.gitIgnore
 
 
 
@@ -201,26 +209,22 @@ permet de push les modifications de nom_branche sur master (il faut être positi
 
 
 					</p>
-						
-					</div>
-					<footer>
-						<ul class="actions">
-							<li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li>
-							<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li>
-						</ul>
-					</footer>
-				</article>
-			</div>
-		</section>
+
+				</div>
+
+			</article>
+		</div>
+	</section>
 
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-	</body>
-	</html>
+</body>
+
+</html>

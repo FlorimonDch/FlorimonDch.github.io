@@ -53,19 +53,22 @@
                 <div class="content">
 
                     <h4>Installation</h4>
-                    <p>Pour créer une application Java web, il faut installer un serveur d'application Apache <b><a href="https://tomcat.apache.org/download-90.cgi" target="_blank">Tomcat</a></b>.
-                    <br>
+                    <p>Pour créer une application Java web, il faut installer un serveur d'application Apache <b><a
+                                href="https://tomcat.apache.org/download-90.cgi" target="_blank">Tomcat</a></b>.
+                        <br>
                         <ul>
                             <li>Très léger</li>
                             <li>Par défaut, le port utilisé par Apache Tomcat est <b>8080</b></li>
                             <li>Le serveur web sera accessible à l'adresse <b>http://localhost:8080</b></li>
-                            <li>Chaque projet seront accessibles aux adresses http://localhost:8080/<b>nom-projet</b>/</li>
+                            <li>Chaque projet seront accessibles aux adresses http://localhost:8080/<b>nom-projet</b>/
+                            </li>
                         </ul>
-                </p>
+                    </p>
 
-                   
+
                     <h4>L'API Servlet</h4>
-                    <p>Un <b>Servlet</b> est un point d'accès, il est accessible grâce à une requête HTTP (GET, POST, PUT, DELETE) sur une URL spécifiée <br>(ex : http://localhost/projet/home).
+                    <p>Un <b>Servlet</b> est un point d'accès, il est accessible grâce à une requête HTTP (GET, POST,
+                        PUT, DELETE) sur une URL spécifiée <br>(ex : http://localhost/projet/home).
                         On appelle cela le <b>"Mapping"</b>.
                         <br>
                         <br>C'est elle qui génère la vue et la retourne au navigateur.
@@ -90,21 +93,151 @@
                         </table>
 
                         Chaque Servlet doit être mappée sur une URL.
-
-                        <pre><code>
-                            <servlet></servlet>
-                        </code></pre>
+                        <br><br>
+                        <h5>Configuration "web.xml"</h5>
 
 
-                        <br><br>Un <b>Listener</b> est un Ecouteur qui déclenche une action lorsqu'un évènement se déclenche.
+
+                        <pre><code>                            < servlet>
+                                < servlet-name > Home < /servlet-name>   
+                                < servlet-class > fr.projet.servlet.HomeServlet < /servlet-class>   
+                                < load-on-startup> 1 < /load-on-startup>    
+                            < /servlet>
+
+                            < servlet-mapping>
+                                < servlet-name> Home< /servlet-name>
+                                < url-pattern> /home< /url-pattern>
+                            < /servlet-mapping></code></pre>
+
+                        <h5>Annotation</h5>
+                        <pre><code>@WebServlet("/home")
+public class HomeServlet extends HttpServlet{}</code></pre>
+
+                        <h4>Les Servlets</h4>
+                        <ul>
+                            <li><b>HttpServletRequest</b> contient des informations de la la requête HTTP
+                                (paramètre de la requête, attributs, session utilisateur ou toute autre information
+                                envoyée du client vers le serveur).
+                                <br><br>
+                                <ul>
+                                    <li><b>Récupérer</b> un <b>paramètre</b> de requête
+                                        <br><br>
+                                        ex : http://localhost:8080/mon-projet/home?username=toto
+                                        <br>
+                                        <br>
+                                        <pre><code>String myUserName = req.getParameter("username");</code></pre>
+                                    </li>
+                                    <li><b>Ajouter</b> un <b>attribut</b> de requête
+                                        <br>
+                                        <br>
+                                        <pre><code>Object myVariable = req.getAttribute("nomVariable","valeur");</code></pre>
+                                    </li>
+                                    <li><b>Récupérer</b> la <b>session</b> de l'utilisateur
+                                        <br>
+                                        <br>
+                                        <pre><code>Object myVariable = req.getSession();</code></pre>
+                                    </li>
+                                    <li><b>Récupérer</b> un <b>attribut</b> de la session de l'utilisateur
+                                        <br>
+                                        <br>
+                                        <pre><code>Object myVariable = req.getAttribute("variableDeSession");</code></pre>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+
+
+                            <br>
+                            <li><b>HttpServletResponse</b> contient les éléments de la réponse HTTP qui sera envoyée
+                                (permet d'écrire du contenu HTML ou demander une redirection par exemple).
+                                <br><br>
+                                <ul>
+                                    <li><b>Spécifier</b> le <b>type</b> de contenu (contenu HTML dans l'exemple)
+                                        <br>
+                                        <br>
+                                        <pre><code>resp.setContentType("text/html");</code></pre>
+                                    </li>
+                                    <li><b>Ajouter</b> du <b>contenu</b>
+                                        <br>
+                                        <br>
+                                        <pre><code>resp.getWriter().println("hello world");</code></pre>
+                                    </li>
+
+                                    <li><b>Rediriger</b> vers une autre <b>Servlet</b>
+                                        <br>
+                                        <br>
+                                        <pre><code>resp.sendRedirect("autreServlet");</code></pre>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+
+                        Chaque <b>Servlet</b> peur initialier des <b>paramètres</b> par annotation.
+                        <br><br>
+                        <pre><code>@WebServlet(
+    urlPatterns = "/home",
+    initParams = {
+        @WebInitParam(name="param", value="Valeur"),
+        @WebInitParam(name="param2", value="Valeur2"),
+    }
+)</code></pre>
+
+                        Il est possible de <b>récupérer</b> les paramètres dans une <b>méthode</b> de la Servlet.
+                        <br>
+                        <br>
+                        <pre><code>ServletConfig myServletConfig = this.getServletConfig();
+resp.getWriter().println("< p>" + myServletConfig.getInitParameter("Param")+ "< /p>");
+for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements();){
+    String myParameterName = (String)e.nextElement();
+    resp.getWriter().println("< p>" + myParameterName + " = " + 
+    myServletConfig.getInitParameter(myParameterName))
+}</code></pre>
+
+
+                        <!--        <br>Un <b>Listener</b> est un Ecouteur qui déclenche une action lorsqu'un évènement se
+                        déclenche.
 
                         <br><br>Un <b>Filter</b> permet de filtrer des requêtes.
-                    </p>
-                    <h4>Les JSP</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores quasi nobis fugit maiores
-                        velit, quis ad ducimus ullam in, est id magnam enim, aliquid ipsam fugiat nihil minus? Incidunt,
-                        ex.
-                    </p>
+                    </p>-->
+                        <h4>Les JSP</h4>
+                        Il peut être pénible d'écrire une vue HTML dans un fichier Java.
+
+                        <br><br>On peut utiliser une <b>JSP</b> (JavaServer Pages) qui est une Servlet compilée et
+                        auto-indéxée. <br>Il est possible de comparer cela à une page HTML dans laquelle on peut ajouter du code provenant d'un autre langage.
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Déployée par le conteneur de Servlet</li>
+                            <li>Les variables request et response sont accessibles</li>
+                        </ul>
+
+                        Dans une JSP, on peut inclure du <b>Java</b>, ou des instructions pour <b>fabriquer / compiler</b>.
+                        <br><br>
+                        <ul>
+                            <li><b>Directive</b>
+                                <br>
+                                <br>
+                            <pre><code><%@ directive option %></code></pre></li>
+                            <li><b>Code Java (Scriptlet)</b>
+                                <br>
+                                <br>
+                            <pre><code><% ... %></code></pre></li>
+                            <li><b>Expression (Impression de la valeur d'une variable)</b>
+                                <br>
+                                <br>
+                            <pre><code><%= ... %></code></pre></li>
+                            <li><b>Commentaire Java</b>
+                                <br>
+                                <br>
+                            <pre><code><%-- ... --%></code></pre></li>
+                            <li><b>Déclaration</b>
+                                <br>
+                                <br>
+                            <pre><code><%! ... %></code></pre></li>
+                        </ul>
+                        page42
 
 
 
@@ -112,7 +245,7 @@
 
 
                 </div>
-               
+
             </article>
         </div>
     </section>
