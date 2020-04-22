@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Road Trip by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 
 <head>
@@ -11,6 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="icon" href="./images/favicon.png"/>
 </head>
 
 <body class="subpage">
@@ -33,7 +29,7 @@
 			<li><a href="jpa.html">JPA Hibernate</a></li>
 			<li><a href="outils.html">Outils</a></li>
 			<li><a href="spring.html">Spring</a></li>
-			<li><a href="angular.html">Angular</a></li>		
+			<li><a href="angular.html">Angular</a></li>
 		</ul>
 	</nav>
 
@@ -140,9 +136,10 @@ long b;
 b=a;
 //casting explicite 
 int c = (int)b;</code></pre>
-<li><b>Sous-casting</b> (ou sous-typage) : vers un type plus <b>particulier</b>.</li>
-			Il ne peut se faire qu'explicitement, cependant on peut également utiliser les classes wrappers pour effectuer des conversions.<br><br>
-			<pre><code>long a = 10;
+						<li><b>Sous-casting</b> (ou sous-typage) : vers un type plus <b>particulier</b>.</li>
+						Il ne peut se faire qu'explicitement, cependant on peut également utiliser les classes wrappers
+						pour effectuer des conversions.<br><br>
+						<pre><code>long a = 10;
 int b = (int)a;
 			
 //wrappers
@@ -150,7 +147,7 @@ int a = Integer.parseInt("2");
 double b = Double.parseDouble("2.5");
 </code>
 </pre>
-				</ul>
+					</ul>
 					<h4>Les enveloppeurs (wrappers)</h4>
 					<table style="text-align: center;">
 						<tr style="font-weight: bold;">
@@ -193,7 +190,7 @@ double b = Double.parseDouble("2.5");
 
 					<h4>Les opérateurs</h4>
 
-					<b>Arithmétiques</b> : 
+					<b>Arithmétiques</b> :
 					<ul>
 						<li> <b>+</b> : addition</li>
 						<li> <b>-</b> : soustraction</li>
@@ -205,31 +202,33 @@ double b = Double.parseDouble("2.5");
 					Relationnels :
 					<ul>
 						<li><b>==</b> : équivalent</li>
-						<li><b><</b> : plus petit que</li>
+						<li><b>
+								< </b> : plus petit que</li>
 						<li><b>></b> : plus grand que</li>
-						<li><b><=</b> : plus petit ou égal</li>
+						<li><b>
+								<= </b> : plus petit ou égal</li>
 						<li><b>>=</b> : plus grand ou égal</li>
 						<li><b>!=</b> : non équivalent</li>
-						
+
 					</ul>
 
 					<h4>La condition</h4>
-				
+
 					<ul>
-<li>l'instruction if</li>
-<br>
-<pre><code>if(expression){
+						<li>l'instruction if</li>
+						<br>
+						<pre><code>if(expression){
 	instruction1;
 }else{
 	instruction2;
 }</code>
 </pre>
-<li>l'opérateur ternaire</li>
-<br>
-<pre><code>x = (y<5)?4*y:2*y; </code></pre>
-<li>le switch case</li>
-<br>
-<pre><code>switch(nb){
+						<li>l'opérateur ternaire</li>
+						<br>
+						<pre><code>x = (y<5)?4*y:2*y; </code></pre>
+						<li>le switch case</li>
+						<br>
+						<pre><code>switch(nb){
 	case 1 : instruction1;
 	break;
 	case 1 : instruction2;
@@ -241,7 +240,7 @@ double b = Double.parseDouble("2.5");
 </code></pre>
 					</ul>
 
-					
+
 					<h4>Récupérer des données en mode console</h4>
 					<pre><code>Scanner scInt = new Scanner(System.in);
 								
@@ -264,14 +263,21 @@ String str = scInt.nextLine();
 						<h3>Expression reguliere</h3>
 					</p>
 
-					
-<p>
-Les expressions régulières (dites aussi « expressions rationnelles ») sont issues des recherches en mathématiques dans le domaine des automates. Les abréviations reconnues sont « regexp » et « regex ».
-<br>
-Une regex s'apparente à une expression mathématique, car on y trouve des opérateurs, des valeurs et des variables. Les regex permettent de se lancer à la recherche de motifs décrits par la combinaison d'opérateurs et de valeurs.
-<br>
-Une utilisation récurrente des regex consiste en la recherche de mots-clés dans des fichiers ou dans une base de données ou encore en la vérification des données saisies par l'utilisateur afin de s'assurer qu'elles respectent un format prédéfini, ou même d'opérer des conversions de format.
-</p>
+
+					<p>
+						Les expressions régulières (dites aussi « expressions rationnelles ») sont issues des recherches
+						en mathématiques dans le domaine des automates. Les abréviations reconnues sont « regexp » et «
+						regex ».
+						<br>
+						Une regex s'apparente à une expression mathématique, car on y trouve des opérateurs, des valeurs
+						et des variables. Les regex permettent de se lancer à la recherche de motifs décrits par la
+						combinaison d'opérateurs et de valeurs.
+						<br>
+						Une utilisation récurrente des regex consiste en la recherche de mots-clés dans des fichiers ou
+						dans une base de données ou encore en la vérification des données saisies par l'utilisateur afin
+						de s'assurer qu'elles respectent un format prédéfini, ou même d'opérer des conversions de
+						format.
+					</p>
 
 					<table style="text-align: center;">
 						<tr style="font-weight: bold;">
@@ -322,7 +328,7 @@ Une utilisation récurrente des regex consiste en la recherche de mots-clés dan
 							<td>+</td>
 							<td>Numérateur</td>
 						</tr>
-						
+
 					</table>
 
 					<p>
@@ -341,7 +347,7 @@ Une utilisation récurrente des regex consiste en la recherche de mots-clés dan
 					Pour vérifier qu'il n'y a qu'une connexion, il faut mettre en place un singleton (design pattern)
 					qui vérifie si une connexion est instanciée, si elle n'existe pas, il la créer.
 					<br>
-					
+
 					</p>
 				</div>
 

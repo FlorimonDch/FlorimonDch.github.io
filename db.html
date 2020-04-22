@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Road Trip by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 
 <head>
@@ -11,6 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="icon" href="./images/favicon.png"/>
 </head>
 
 <body class="subpage">
@@ -33,7 +29,7 @@
 			<li><a href="jpa.html">JPA Hibernate</a></li>
 			<li><a href="outils.html">Outils</a></li>
 			<li><a href="spring.html">Spring</a></li>
-			<li><a href="angular.html">Angular</a></li>		
+			<li><a href="angular.html">Angular</a></li>
 		</ul>
 	</nav>
 
@@ -94,7 +90,7 @@ DELETE FROM nomTable WHERE attr = "value"
 						<h3>les fonctions de groupe</h3>
 					</p>
 					<ul>
-						<li><b>AVG</b> : moyenne</li> 
+						<li><b>AVG</b> : moyenne</li>
 						<li><b>COUNT</b> : nombre d'enregistrement dans une table</li>
 						<li><b>MAX</b></li>
 						<li><b>MIN</b></li>
@@ -117,7 +113,8 @@ DELETE FROM nomTable WHERE attr = "value"
 
 					<ul>
 						<li><b>ORDER BY</b> (ASC = ordre croissant / DESC = ordre decroissant)</li>
-						<li><b>HAVING</b> (comme le where sauf que l'on peut filtrer en utilisant des fonctions comme SUM(), COUNT() ou encore AVG()) </li>
+						<li><b>HAVING</b> (comme le where sauf que l'on peut filtrer en utilisant des fonctions comme
+							SUM(), COUNT() ou encore AVG()) </li>
 
 					</ul>
 
@@ -172,10 +169,7 @@ DELETE FROM nomTable WHERE attr = "value"
 					<p>
 						<h5>Les sous-requetes</h5>
 					</p>
-					<pre>
-<code>SELECT * FROM nomTable WHERE attr > (SELECT * from nomTable WHERE attr2>0)</code>
-						</pre>
-
+					<pre><code>SELECT * FROM nomTable WHERE attr > (SELECT * from nomTable WHERE attr2>0)</code></pre>
 					<p>
 						<h5>Les sous-requetes multiple</h5>
 					</p>

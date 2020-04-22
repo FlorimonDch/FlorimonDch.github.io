@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Road Trip by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 
 <head>
@@ -11,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="./images/favicon.png"/>
 </head>
 
 <body class="subpage">
@@ -205,7 +201,8 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                         Il peut être pénible d'écrire une vue HTML dans un fichier Java.
 
                         <br><br>On peut utiliser une <b>JSP</b> (JavaServer Pages) qui est une Servlet compilée et
-                        auto-indéxée. <br>Il est possible de comparer cela à une page HTML dans laquelle on peut ajouter du code provenant d'un autre langage.
+                        auto-indéxée. <br>Il est possible de comparer cela à une page HTML dans laquelle on peut ajouter
+                        du code provenant d'un autre langage.
                         <br>
                         <br>
                         <ul>
@@ -213,31 +210,144 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                             <li>Les variables request et response sont accessibles</li>
                         </ul>
 
-                        Dans une JSP, on peut inclure du <b>Java</b>, ou des instructions pour <b>fabriquer / compiler</b>.
+                        Dans une JSP, on peut inclure du <b>Java</b>, ou des instructions pour <b>fabriquer /
+                            compiler</b>.
                         <br><br>
                         <ul>
                             <li><b>Directive</b>
                                 <br>
                                 <br>
-                            <pre><code><%@ directive option %></code></pre></li>
+                                <pre><code><%@ directive option %></code></pre>
+                            </li>
                             <li><b>Code Java (Scriptlet)</b>
                                 <br>
                                 <br>
-                            <pre><code><% ... %></code></pre></li>
+                                <pre><code><% ... %></code></pre>
+                            </li>
                             <li><b>Expression (Impression de la valeur d'une variable)</b>
                                 <br>
                                 <br>
-                            <pre><code><%= ... %></code></pre></li>
+                                <pre><code><%= ... %></code></pre>
+                            </li>
                             <li><b>Commentaire Java</b>
                                 <br>
                                 <br>
-                            <pre><code><%-- ... --%></code></pre></li>
+                                <pre><code><%-- ... --%></code></pre>
+                            </li>
                             <li><b>Déclaration</b>
                                 <br>
                                 <br>
-                            <pre><code><%! ... %></code></pre></li>
+                                <pre><code><%! ... %></code></pre>
+                            </li>
+                            <li><b>Importer une classe</b>
+                                <br>
+                                <br>
+                                <pre><code><%@ page import="package.class" %></code></pre>
+                            </li>
+                            <li><b>Préciser l'encodage</b>
+                                <br>
+                                <br>
+                                <pre><code><%@ page pageEncoding="UTF-8" %></code></pre>
+                            </li>
+                            <li><b>Ajouter une taglib</b>
+                                <br>
+                                <br>
+                                <pre><code><%@ taglib uri="http://lurl-de-la-lib" prefix="leprefix" %></code></pre>
+                            </li>
                         </ul>
-                        page42
+
+                        Il est possible d'utiliser les <b>Expressions languages (EL)</b> en JSP en utilisant la syntaxe
+                        suivante :
+
+                        <ul>
+                            <li>${ variable} ou ${5 + 5}</li>
+                            <li>EL permet de lire une variable qui se trouve, en tant qu'attribut, dans un des scopes
+                                existants</li>
+                            <li>Pour lire un paramètre de requête on peut utiliser l'attribut <b>"param"</b> :
+                                ${param.nomParametre}</li>
+                        </ul>
+
+                        Il est possible d'étendre le vocabulaire JSP avec <b>JSTL</b>.
+                        <br>Pour cela il faut ajouter la dépendance JSTL de javax.servlet (version 1.2) en préambule de
+                        toutes les JSP
+                        <br><br>
+                        <pre><code><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %></code></pre>
+
+                        <table style>
+                            <tr style="font-weight: bold; text-align: center;">
+                                <td>fonction</td>
+                                <td>syntaxe</td>
+                                <td>utilisation</td>
+                            </tr>
+                            <tr>
+                                <td>Afficher</td>
+                                <td>
+                                    <pre><code>< c:out value="${variable}">Valeur par défaut< /c:out></code></pre>
+                                </td>
+                                <td>Permet d'afficher une variable.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Test</td>
+                                <td>
+                                    <pre><code>< c:if test="${ 50 > 10}" var="variable">
+    Valeur par défaut
+< /c:if></code></pre>
+                                </td>
+                                <td>Si le test est correct affiche "valeur par défaut" ("else" n'existe pas).</td>
+                            </tr>
+
+                            <tr>
+                                <td>Test multiple</td>
+                                <td>
+                                    <pre><code>< c:choose>
+    < c:when test="${ variable }"> texte 1< /c:when>
+    < c:when test="${ autreVariable}"> texte 2< /c:when>
+    < c:otherwise>< /c:otherwise> 
+< /c:choose></code></pre>
+                                </td>
+                                <td>Les conditions sont exécutées dans l'ordre. Si aucune ne convient, c'est otherwise
+                                    qui sera exécuté.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Boucle simple</td>
+                                <td>
+                                    <pre><code>< c:forEach var="i" begin="0" end="10" step="2">
+    Un message n°< c:out value="${ i }" /> !
+< /c:forEach></code></pre>
+                                </td>
+                                <td>Une boucle qui s'exécute un certain nombre de fois en JSTL. </td>
+                            </tr>
+
+                            <tr>
+                                <td>Boucle sur un tableau</td>
+                                <td>
+                                    <pre><code>< c:forEach items="${ titres }" var="titre" varStatus="status">
+    N°< c:out value="${ status.count }" /> : <c:out value="${ titre }" /> 
+< /c:forEach></code></pre>
+                                </td>
+                                <td>Une boucle qui s'exécute sur chaque élément d'un tableau. </td>
+                            </tr>
+
+                            <tr>
+                                <td>Boucle sur une chaine de caractère
+                                </td>
+                                <td>
+                                    <pre><code>< c:forTokens var="morceau" items="élém1/élém2/élém3 delims="/">
+   ${ morceau }
+< /c:forTokens></code></pre>
+                                </td>
+                                <td>Une boucle qui s'exécute sur chaque élément du string séparé par "/".</td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+
 
 
 
