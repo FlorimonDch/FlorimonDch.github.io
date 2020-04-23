@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="./images/favicon.png"/>
+    <link rel="icon" href="./images/favicon.png" />
 </head>
 
 <body class="subpage">
@@ -342,15 +342,42 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                             </tr>
 
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>Boucle ForEach
+                                </td>
+                                <td>
+                                    <pre><code>< c:forEach var="i" begin="0" end="7" step="1">
+   ${ i }
+< /c:forEach></code></pre>
+                                </td>
+                                <td>Une boucle qui s'exécute un nombre d'entier entre "begin" et "end" avec une
+                                    incrémentation de "step".</td>
                             </tr>
+
+
                         </table>
 
+                        Pour utiliser des attributs de la Servlet dans une JSP :
+                        <br><br>
 
+                        Il faut d'abord déclarer les attributs dans la Servlet :
+                        <br><br>
+                        <pre><code>List< String> MesUtilisateurs = new ArrayList< String>();
 
+mesUtilisateurs.add("utilisateur1");
+mesUtilisateurs.add("utilisateur2");
+mesUtilisateurs.add("utilisateur3");
 
+req.setAttribute("listUtilisateur", mesUtilisateurs);</String></code></pre>
+                        <br>
+                        Puis les récupérer dans la JSP
+
+                        <pre><code >< table>
+    < c:forEach items="${listUtilisateur}" var="utilisateur">
+        < tr>
+            < td>${utilisateur}< /td>
+        < /tr>
+    < /c:forEach>
+< /table></code></pre>
 
 
 
