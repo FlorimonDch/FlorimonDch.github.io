@@ -1,12 +1,14 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
 	<title>JPA Hibernate</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="./images/favicon.png"/>
+	<link rel="icon" href="./images/favicon.png" />
 </head>
+
 <body class="subpage">
 
 	<!-- Header -->
@@ -15,88 +17,164 @@
 		<a href="#menu"><span>Menu</span></a>
 	</header>
 
-<!-- Nav -->
-<nav id="menu">
-	<ul class="links">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="java.html">Java</a></li>
-		<li><a href="db.html">Bases de données</a></li>
-		<li><a href="web.html">Web</a></li>
-		<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
-		<li><a href="service.html">Service Web avec Java SE</a></li>
-		<li><a href="jpa.html">JPA Hibernate</a></li>
-		<li><a href="outils.html">Outils</a></li>
-		<li><a href="spring.html">Spring</a></li>
-		<li><a href="angular.html">Angular</a></li>		
-	</ul>
-</nav>
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="java.html">Java</a></li>
+			<li><a href="db.html">Bases de données</a></li>
+			<li><a href="web.html">Web</a></li>
+			<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
+			<li><a href="service.html">Service Web avec Java SE</a></li>
+			<li><a href="jpa.html">JPA Hibernate</a></li>
+			<li><a href="outils.html">Outils</a></li>
+			<li><a href="spring.html">Spring</a></li>
+			<li><a href="angular.html">Angular</a></li>
+		</ul>
+	</nav>
 
 	<!-- Content -->
-		<!--
+	<!--
 			Note: To show a background image, set the "data-bg" attribute below
 			to the full filename of your image. This is used in each section to set
 			the background image.
 		-->
-		<section id="post" class="wrapper bg-img" data-bg="land5.jpg">
-			<div class="inner">
-				<article class="box">
-					<header>
-						<h2>JPA Hibernate</h2>
-						<p>25.02.2020</p>
-					</header>
-					<div class="content">
-						<p>"Comprendre l interret/connaitre le principe d un ORM - Mapping
-							Objet / Relationnel"
-							Introduction JPA et Hibernate et les différents niveaux d’API de persistance
-							Savoir realiser un Mapping par annotations
-							"Maitriser les objets :Persistence
-							Unit ,EntityManagerFactory ,EntityManager et PersistenceContext"
-							Manipuler/configurer le fichier « persistence.xml »
-							Savoir implementer les differents types de liens OneT-One,OneToMany ManyToMany et heritage
-							Savoir realiser un CRUD avec JPA
-							Implementer  les requêtes JPQL, SQL et Criteria API
+	<section id="post" class="wrapper bg-img" data-bg="land5.jpg">
+		<div class="inner">
+			<article class="box">
+				<header>
+					<h2>JPA Hibernate</h2>
+					<p>25.02.2020</p>
+				</header>
+				<div class="content">
+
+					<h3>JPA</h3>
+
+					<p>"Comprendre l interret/connaitre le principe d un ORM - Mapping
+						Objet / Relationnel"
+						Introduction JPA et Hibernate et les différents niveaux d’API de persistance
+						Savoir realiser un Mapping par annotations
+						"Maitriser les objets :Persistence
+						Unit ,EntityManagerFactory ,EntityManager et PersistenceContext"
+						Manipuler/configurer le fichier « persistence.xml »
+						Savoir implementer les differents types de liens OneT-One,OneToMany ManyToMany et heritage
+						Savoir realiser un CRUD avec JPA
+						Implementer les requêtes JPQL, SQL et Criteria API
 						.</p>
 
-						<p>
+					<h3>Hibernate</h3>
+
+					<h3>La persistence</h3>
+
+					<h3>Le mapping O/R</h3>
+
+					<ul>
+						<li><b>One To One</b></li>
+						<li><b>One To Many</b> (Inverse Side)</li>
+						<li><b>Many To One</b> (Owning Side)</li>
+						<li><b>Many To Many</b></li>
+
+					</ul>
 
 
-JPA --> haut niveau pour gérer les requetes
-<br>
-Créer une table en fonction d'une classe et inverse
-<br>
- à un PersistenceUnit Correspond une base de données
- (plusieurs persistenceUnit si type de base différente (ex db1 --> mysql/ db2 --> oracle))
------> a indiqué sur le persistance.XML
-<br>
-EntityManagerFactory
-EntityManager --> permet de gerer PersistanceContext
-<br>
-PersistanceContext
-<br>
-value--> create puis update
+					<ul>
+						<li><b>Eager Loading</b></li>
+						<li><b>Lazy Loading</b></li>
+					</ul>
 
 
-TimeZone
+					<h3>Entity Manager</h3>
+					<ul>
+						<li><b>persist(entity)</b> : ajout d'une nouvelle entité</li>
+						<li><b>merge(entity)</b> : mise à jour d’une entité (ajoute si inexistante)</li>
+						<li><b>remove(entity)</b> : suppression d’une entité</li>
+						<li><b>find(type, key)</b> : recherche d’une entité par son id</li>
+						<li><b>getTransaction(entity)</b> : récupère la transaction courante</li>
+					</ul>
 
-jdbc:mysql://localhost:3306/db1?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC
+					Avec JPA la notion de CRUD est différente
 
-<br>
-vérifier la version de mysql dans le POM.XML
-<br>
-@Version --> s'incrémente a chaque modif de l'objet dans la table
-<br>
+					<h3>Les transactions</h3>
 
-Create --> persist
-Read (findAll et findById) --> em.find(NomObjet.class, id)
-Update
-Delete
+					<p>Une transaction est un regroupement d’instructions
+						SQL effectuant un traitement fonctionnel atomique
+						Exemple : opération débit/crédit</p>
+
+					<p>Elle doit être <b>Atomique</b>, <b>Cohérente</b>, <b>Isolée</b> et <b>Durable</b> (<b>ACID</b>)
+					</p>
+
+					<ul>
+						<li><b>Atomique</b> : indivisible, tout ou rien</li>
+						<li><b>Cohérente</b> : le contenu final de la base de données doit
+							être cohérent</li>
+						<li><b>Isolée</b> : quand 2 transactions sont exécutées
+							simultanément elles ne doivent pas interférer</li>
+						<li><b>Durable</b> : le résultat final d’une transaction validé (état
+							cohérent) est conservé définitivement, même en cas
+							d’incident.</li>
+					</ul>
+
+					Dans JPA la gestion des transactions se fait via
+					l’interface « <b>EntityTransaction</b> »
+					<br>
+					Une instance de transaction est récupérée
+					à partir de l’ EntityManager :
+					<br><br>
+					<pre><code>EntityTransaction transaction = em.getTransaction();</code></pre>
 
 
-merge --> si pas d'entité -->persist
-sinon remet l'objet dans le contexte s'il l'a perdu
-<br>
-<br>
-	<textarea style="height: 550px" disabled="">
+
+					<b>Début</b> d'une transaction
+					<br><br>
+					<pre><code>em.getTransaction().begin();</code></pre>
+
+					<b>Fin</b> d'une transaction
+					<br><br>
+					<pre><code>em.getTransaction().commit();
+//ou
+em.getTransaction().rollback();</code></pre>
+
+
+					<p>
+
+
+						JPA --> haut niveau pour gérer les requetes
+						<br>
+						Créer une table en fonction d'une classe et inverse
+						<br>
+						à un PersistenceUnit Correspond une base de données
+						(plusieurs persistenceUnit si type de base différente (ex db1 --> mysql/ db2 --> oracle))
+						-----> a indiqué sur le persistance.XML
+						<br>
+						EntityManagerFactory
+						EntityManager --> permet de gerer PersistanceContext
+						<br>
+						PersistanceContext
+						<br>
+						value--> create puis update
+
+
+						TimeZone
+
+						jdbc:mysql://localhost:3306/db1?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC
+
+						<br>
+						vérifier la version de mysql dans le POM.XML
+						<br>
+						@Version --> s'incrémente a chaque modif de l'objet dans la table
+						<br>
+
+						Create --> persist
+						Read (findAll et findById) --> em.find(NomObjet.class, id)
+						Update
+						Delete
+
+
+						merge --> si pas d'entité -->persist
+						sinon remet l'objet dans le contexte s'il l'a perdu
+						<br>
+						<br>
+						<textarea style="height: 550px" disabled="">
 	<dependencies>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -117,38 +195,40 @@ sinon remet l'objet dans le contexte s'il l'a perdu
 </textarea>
 
 
-@Entity 
+						@Entity
 
-<br>
+						<br>
 
-@Id sur l'identifiant (soit avant la déclaration, soit avant le getter)
-
-
-Persistence.xml
-
-<div style="text-align: center">
-<a href="Download/projetjpa.rar" download>
-<button style="text-align: center"class="button special" href="Download/projmaven.rar" download>Download JPA template</button>
-</div>
-
-						</p>
+						@Id sur l'identifiant (soit avant la déclaration, soit avant le getter)
 
 
-					</div>
-					
-				</article>
-			</div>
-		</section>
+						Persistence.xml
 
-	
+						<div style="text-align: center">
+							<a href="Download/projetjpa.rar" download>
+								<button style="text-align: center" class="button special" href="Download/projmaven.rar"
+									download>Download JPA template</button>
+						</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+					</p>
 
-	</body>
-	</html>
+
+				</div>
+
+			</article>
+		</div>
+	</section>
+
+
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
