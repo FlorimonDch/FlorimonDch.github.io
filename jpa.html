@@ -50,17 +50,42 @@
 
 					<h3>JPA</h3>
 
-					<p>"Comprendre l interret/connaitre le principe d un ORM - Mapping
-						Objet / Relationnel"
-						Introduction JPA et Hibernate et les différents niveaux d’API de persistance
-						Savoir realiser un Mapping par annotations
-						"Maitriser les objets :Persistence
-						Unit ,EntityManagerFactory ,EntityManager et PersistenceContext"
-						Manipuler/configurer le fichier « persistence.xml »
-						Savoir implementer les differents types de liens OneT-One,OneToMany ManyToMany et heritage
-						Savoir realiser un CRUD avec JPA
-						Implementer les requêtes JPQL, SQL et Criteria API
-						.</p>
+					<p>Sous l’influence des frameworks de type « ORM »(Object Relational Mapping) et pour répondre aux
+						nombreuses critiques concernant les EJB, une
+						nouvelle spécification est proposée et adoptée :
+						<b>JPA</b> ( Java Persistence API ).
+						<br>
+						Elle est une alternative à JDBC.
+
+						<br>
+
+						<br>
+
+						Exemple ORM (JPA) :
+
+						<ul>
+							<li>
+								Liste d'employés :
+
+								<br><br>
+								<pre><code>static String displayAllQuery = "Select emp from Employee emp" ;
+TypedQuery e = em.createQuery(displayAllQuery, Employee.class);
+List < Employee> employees=e.getResultList();
+for ( Employee emp : employees ) {
+	// ...
+}</code></pre>
+							</li>
+							<li>
+								Un employé :
+								<br><br>
+								<pre><code>Employee e = (Employee) em.find(Employee.class, id);</code></pre>
+							</li>
+						</ul>
+
+						Il y a <b>moins</b> de code, les connexions sont <b>masquées</b> et le mapping sur la classe Employee est <b>automatique</b>.
+
+
+					</p>
 
 					<h3>Hibernate</h3>
 
@@ -203,6 +228,18 @@ em.getTransaction().rollback();</code></pre>
 
 
 						Persistence.xml
+						<br>
+						"Comprendre l interret/connaitre le principe d un ORM - Mapping
+						Objet / Relationnel"
+						Introduction JPA et Hibernate et les différents niveaux d’API de persistance
+						Savoir realiser un Mapping par annotations
+						"Maitriser les objets :Persistence
+						Unit ,EntityManagerFactory ,EntityManager et PersistenceContext"
+						Manipuler/configurer le fichier « persistence.xml »
+						Savoir implementer les differents types de liens OneT-One,OneToMany ManyToMany et heritage
+						Savoir realiser un CRUD avec JPA
+						Implementer les requêtes JPQL, SQL et Criteria API
+						.
 
 						<div style="text-align: center">
 							<a href="Download/projetjpa.rar" download>
