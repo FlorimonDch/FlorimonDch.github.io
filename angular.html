@@ -47,7 +47,7 @@
 					<p>19.03.2020</p>
 				</header>
 				<div class="content">
-					
+
 					<p>
 						<h4>Installation</h4>
 
@@ -110,9 +110,33 @@
 						<br>
 
 						<h4>TypeScript et ES6</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repudiandae, illum alias sunt
-							iste at earum nesciunt facilis nemo corrupti natus. Nisi maiores expedita soluta incidunt id
-							repellat velit aut!</p>
+						<p><b>TypeScript</b> est un langage "surcouche" de ES6 qui est utilisé pour Angular.
+							<b>ES6</b> est un standard de langage de programmation, il définit la syntaxe, les types de
+							variable, ...
+
+
+							<h5>Installation </h5>
+
+							Pour installer TypeScript, il faut utiliser <b>npm</b>, un gestionnaire de paquet de Node.js
+							qui permet de télécharger facilement des paquest (bibliothèques ou programmes).
+							<br>
+							<br>
+							<code>npm install -g typescript</code> <b>-g</b> indique que l'installation est global à
+							tous les projets.
+							<br>
+							<br>
+							<code>tsc --init --target es5 --sourceMap --experimentalDecorators --emitDecoratorMetadata</code>Permet
+							de mettre un fichier de configuration pour TypeScript.
+							<br>
+							<br>
+							<code>tsc --watch</code>Indique au transpileur de transformer les fichiers .ts en .js à
+							chaque modification de
+							ceux-ci.
+							<br><br>
+							TypeScript n'est pas compris par les navigateur, c'est pour cela qu'il est transpilé en
+							JavaScript (généralement ES5).
+
+						</p>
 						<h4>Formulaires</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repudiandae, illum alias sunt
 							iste at earum nesciunt facilis nemo corrupti natus. Nisi maiores expedita soluta incidunt id
