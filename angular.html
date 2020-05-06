@@ -241,7 +241,7 @@ export class UserFormComponent {
 	}
 }</code></pre>
 
-<pre><code>< input
+								<pre><code>< input
 	type="text"
 	[formControl]="userForm.controls.title">
 < textarea [formControl]="userForm.controls.description">< /textarea>
@@ -249,27 +249,32 @@ export class UserFormComponent {
 	type="submit"
 	(click)="submitUser()">SUBMIT< /button></code></pre>
 
-	L'objet <b>this.userForm.value</b> présente l'ensemble des valeurs des controls via un "plain objet" : <b>{title: 'TITLE', description: null}</b>
+								L'objet <b>this.userForm.value</b> présente l'ensemble des valeurs des controls via un
+								"plain objet" : <b>{title: 'TITLE', description: null}</b>
 
-	<br><br>
-	Il est également possibnle de faire une arborescence de <b>FormGroups</b> afin de regrouper
-	différentes parties d'un formulaire de taille importante ou dont des parties sont réutilisables dans d'autres contextes.
+								<br><br>
+								Il est également possibnle de faire une arborescence de <b>FormGroups</b> afin de
+								regrouper
+								différentes parties d'un formulaire de taille importante ou dont des parties sont
+								réutilisables dans d'autres contextes.
 
-<br><br>
+								<br><br>
 
-<pre><code>new FormGroup({
+								<pre><code>new FormGroup({
 	address : new FormGroup({
 		street : new FormControl()
 	})
 });
 </code></pre>
 
-<h5>Validator</h5>
-Les constructeurs des "controls" (FormControl, FormGroup et FormArray) acceptent en <b>second paramètre</b> une liste de fonctions de validation
-appelées <b>"validators"</b>.<br>
-Les "validators" natifs d'Angular sont regroupés sous forme de méthodes statiques das la classe Validators.
-<br><br>
-<pre><code>import { FormGroup, FormControl, Validators } from "@angular/forms";
+								<h5>Validator</h5>
+								Les constructeurs des "controls" (FormControl, FormGroup et FormArray) acceptent en
+								<b>second paramètre</b> une liste de fonctions de validation
+								appelées <b>"validators"</b>.<br>
+								Les "validators" natifs d'Angular sont regroupés sous forme de méthodes statiques das la
+								classe Validators.
+								<br><br>
+								<pre><code>import { FormGroup, FormControl, Validators } from "@angular/forms";
 export class UserFormComponent {
 	userForm = new FormGroup({
 		title: new FormControl(null, [
@@ -283,22 +288,116 @@ export class UserFormComponent {
 }
 </code></pre>
 
-L'ajout du "validator" ne change pas le comportement du composant : la méthode <b>submit</b> continue à être
-appelée bien que la contrainte de validation ne soit pas respectée.<br>
-C'est au composant de décider de l'action à mener en fonction de l'état des « controls".
-<br><br>
-Les <b>"controls"</b> disposent d'une série de propriétés et de méthodes permettant d'en vérifier l'état :
-<br><br>
-<ul>
-	<li><b>valid</b> : Valeur booléenne indiquant si le "control" est valide. Dans le cas d'un <b>FormGroup</b> ou <b>FormArray</b> , le "control" est valide si les
-		"controls" qui le composent sont tous valides.</li>
-	<li><b>errors</b> : "plain object" combinant les erreurs de tous les validateurs. Vaut <b>null</b> si le "control" est valide.</li>
-	<li><b>touched </b>: Valeur booléenne positionnée à true dès le déclenchement de l'événement blur (i.e. l'utilisateur change de « focus").</li>
-	<li><b>pristine</b> : Valeur booléenne indiquant si le "control" a été modifié.</li>
-</ul>
+								L'ajout du "validator" ne change pas le comportement du composant : la méthode
+								<b>submit</b> continue à être
+								appelée bien que la contrainte de validation ne soit pas respectée.<br>
+								C'est au composant de décider de l'action à mener en fonction de l'état des « controls".
+								<br><br>
+								Les <b>"controls"</b> disposent d'une série de propriétés et de méthodes permettant d'en
+								vérifier l'état :
+								<br><br>
+								<ul>
+									<li><b>valid</b> : Valeur booléenne indiquant si le "control" est valide. Dans le
+										cas d'un <b>FormGroup</b> ou <b>FormArray</b> , le "control" est valide si les
+										"controls" qui le composent sont tous valides.</li>
+									<li><b>errors</b> : "plain object" combinant les erreurs de tous les validateurs.
+										Vaut <b>null</b> si le "control" est valide.</li>
+									<li><b>touched </b>: Valeur booléenne positionnée à true dès le déclenchement de
+										l'événement blur (i.e. l'utilisateur change de « focus").</li>
+									<li><b>pristine</b> : Valeur booléenne indiquant si le "control" a été modifié.</li>
+								</ul>
 
-<pre><code>< button [disabled]="!userForm.valid" type="submit" class="btn btn-success">SUBMIT< /button></code></pre>
+								<pre><code>< button [disabled]="!userForm.valid" type="submit" class="btn btn-success">SUBMIT< /button></code></pre>
 						</p>
+
+						<h4>Route Guards</h4>
+						<p>Les <b>"Guards"</b> permettent de contrôler l'accès à une "route" (e.g. <b>autorisation</b>)
+							ou le départ depuis une "route" (e.g.
+							enregistrement ou publication obligatoire avant départ).
+							<br><br>
+							<b>Attention</b> : Les "Guards" ne doivent en aucun cas être considérés comme un mécanisme
+							de
+							sécurité.
+							La gestion de permission des accès aux ressources doit se faire au niveau des APIs HTTP.
+							<br><br>
+
+							Les "Guards" servent à améliorer la "User eXperience" en évitant par exemple l'accès à des
+							"routes" qui ne fonctionneraient
+							pas car l'accès aux données serait rejeté par l’API.
+
+							<br><br>
+							Ils sont ajoutés au niveau de la configuration du "Routing"
+
+							<br><br>
+
+							Création d'un guard :
+							<code>ng g guard nom_guard</code>
+
+							<h5>Configuration</h5>
+
+							Les "Guards" sont ajoutés au niveau de la configuration du "Routing" :
+							<br><br>
+							<pre><code>export const appRouteList = [
+{
+	path: 'cart',
+	loadChildren: './views/cart/cart-routing.module#CartRoutingModule',
+	canActivate: [
+		IsSignedInGuard
+	]
+	},
+	{
+		path: 'signin',
+		component: SigninViewComponent,
+		canActivate: [
+			IsNotSignedInGuard
+		]
+	},
+	{
+		path: 'profile',
+		component: ProfileViewComponent,
+		canDeactivate: [
+			IsNotDirtyGuard
+		]
+	}
+]</code></pre>
+
+							<h5>CanActivate</h5>
+
+							Une "Guard" d'activation est un service qui implémente l'<b>interface</b>
+							CanActivate.<br><br>
+							Ce service doit donc implémenter la méthode <b>canActivate</b>.<br><br>
+							Cette méthode est appelée à chaque demande d'accès à la "route" ; elle doit alors retourner
+							une valeur de type boolean ou Promise< boolean> ou Observable< boolean>
+									indiquant si l'accès à la "route" est autorisé ou non.
+									Il est donc possible d'attendre le résultat d'un traitement asynchrone pour décider
+									d'autoriser l'accès ou non.
+
+							<br><br>
+							Il est donc possible d'attendre le résultat d'un traitement asynchrone pour décider
+							d'autoriser l'accès ou non.
+
+<pre><code>
+	@Injectable({
+		providedIn: 'root'
+	})
+	export class IsSignedInGuard implements CanActivate {
+	
+		constructor(private _session: Session) {
+		}
+	
+		canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+			return this._session.isSignedIn();
+		}
+	
+	}
+
+</code></pre>
+
+https://guide-angular.wishtack.io/angular/routing/route-guards
+
+						</p>
+
+
 						<h4>Composants et services</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repudiandae, illum alias sunt
 							iste at earum nesciunt facilis nemo corrupti natus. Nisi maiores expedita soluta incidunt id
