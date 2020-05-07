@@ -94,16 +94,16 @@
 
 
 
-                        <pre><code>                            < servlet>
-                                < servlet-name > Home < /servlet-name>   
-                                < servlet-class > fr.projet.servlet.HomeServlet < /servlet-class>   
-                                < load-on-startup> 1 < /load-on-startup>    
-                            < /servlet>
+                        <pre><code>                            &lt;servlet>
+                                &lt;servlet-name > Home &lt;/servlet-name>   
+                                &lt;servlet-class > fr.projet.servlet.HomeServlet &lt;/servlet-class>   
+                                &lt;load-on-startup> 1 &lt;/load-on-startup>    
+                            &lt;/servlet>
 
-                            < servlet-mapping>
-                                < servlet-name> Home< /servlet-name>
-                                < url-pattern> /home< /url-pattern>
-                            < /servlet-mapping></code></pre>
+                            &lt;servlet-mapping>
+                                &lt;servlet-name> Home&lt;/servlet-name>
+                                &lt;url-pattern> /home&lt;/url-pattern>
+                            &lt;/servlet-mapping></code></pre>
 
                         <h5>Annotation</h5>
                         <pre><code>@WebServlet("/home")
@@ -184,10 +184,10 @@ public class HomeServlet extends HttpServlet{}</code></pre>
                         <br>
                         <br>
                         <pre><code>ServletConfig myServletConfig = this.getServletConfig();
-resp.getWriter().println("< p>" + myServletConfig.getInitParameter("Param")+ "< /p>");
+resp.getWriter().println("&lt;p>" + myServletConfig.getInitParameter("Param")+ "&lt;/p>");
 for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements();){
     String myParameterName = (String)e.nextElement();
-    resp.getWriter().println("< p>" + myParameterName + " = " + 
+    resp.getWriter().println("&lt;p>" + myParameterName + " = " + 
     myServletConfig.getInitParameter(myParameterName))
 }</code></pre>
 
@@ -282,7 +282,7 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                             <tr>
                                 <td>Afficher</td>
                                 <td>
-                                    <pre><code>< c:out value="${variable}">Valeur par défaut< /c:out></code></pre>
+                                    <pre><code>&lt;c:out value="${variable}">Valeur par défaut&lt;/c:out></code></pre>
                                 </td>
                                 <td>Permet d'afficher une variable.</td>
                             </tr>
@@ -290,9 +290,9 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                             <tr>
                                 <td>Test</td>
                                 <td>
-                                    <pre><code>< c:if test="${ 50 > 10}" var="variable">
+                                    <pre><code>&lt;c:if test="${ 50 > 10}" var="variable">
     Valeur par défaut
-< /c:if></code></pre>
+&lt;/c:if></code></pre>
                                 </td>
                                 <td>Si le test est correct affiche "valeur par défaut" ("else" n'existe pas).</td>
                             </tr>
@@ -300,11 +300,11 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                             <tr>
                                 <td>Test multiple</td>
                                 <td>
-                                    <pre><code>< c:choose>
-    < c:when test="${ variable }"> texte 1< /c:when>
-    < c:when test="${ autreVariable}"> texte 2< /c:when>
-    < c:otherwise>< /c:otherwise> 
-< /c:choose></code></pre>
+                                    <pre><code>&lt;c:choose>
+    &lt;c:when test="${ variable }"> texte 1&lt;/c:when>
+    &lt;c:when test="${ autreVariable}"> texte 2&lt;/c:when>
+    &lt;c:otherwise>&lt;/c:otherwise> 
+&lt;/c:choose></code></pre>
                                 </td>
                                 <td>Les conditions sont exécutées dans l'ordre. Si aucune ne convient, c'est otherwise
                                     qui sera exécuté.</td>
@@ -313,9 +313,9 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                             <tr>
                                 <td>Boucle simple</td>
                                 <td>
-                                    <pre><code>< c:forEach var="i" begin="0" end="10" step="2">
-    Un message n°< c:out value="${ i }" /> !
-< /c:forEach></code></pre>
+                                    <pre><code>&lt;c:forEach var="i" begin="0" end="10" step="2">
+    Un message n°&lt;c:out value="${ i }" /> !
+&lt;/c:forEach></code></pre>
                                 </td>
                                 <td>Une boucle qui s'exécute un certain nombre de fois en JSTL. </td>
                             </tr>
@@ -323,9 +323,9 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                             <tr>
                                 <td>Boucle sur un tableau</td>
                                 <td>
-                                    <pre><code>< c:forEach items="${ titres }" var="titre" varStatus="status">
-    N°< c:out value="${ status.count }" /> : <c:out value="${ titre }" /> 
-< /c:forEach></code></pre>
+                                    <pre><code>&lt;c:forEach items="${ titres }" var="titre" varStatus="status">
+    N°&lt;c:out value="${ status.count }" /> : <c:out value="${ titre }" /> 
+&lt;/c:forEach></code></pre>
                                 </td>
                                 <td>Une boucle qui s'exécute sur chaque élément d'un tableau. </td>
                             </tr>
@@ -334,9 +334,9 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                                 <td>Boucle sur une chaine de caractère
                                 </td>
                                 <td>
-                                    <pre><code>< c:forTokens var="morceau" items="élém1/élém2/élém3 delims="/">
+                                    <pre><code>&lt;c:forTokens var="morceau" items="élém1/élém2/élém3 delims="/">
    ${ morceau }
-< /c:forTokens></code></pre>
+&lt;/c:forTokens></code></pre>
                                 </td>
                                 <td>Une boucle qui s'exécute sur chaque élément du string séparé par "/".</td>
                             </tr>
@@ -345,9 +345,9 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
                                 <td>Boucle ForEach
                                 </td>
                                 <td>
-                                    <pre><code>< c:forEach var="i" begin="0" end="7" step="1">
+                                    <pre><code>&lt;c:forEach var="i" begin="0" end="7" step="1">
    ${ i }
-< /c:forEach></code></pre>
+&lt;/c:forEach></code></pre>
                                 </td>
                                 <td>Une boucle qui s'exécute un nombre d'entier entre "begin" et "end" avec une
                                     incrémentation de "step".</td>
@@ -361,7 +361,7 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
 
                         Il faut d'abord déclarer les attributs dans la Servlet :
                         <br><br>
-                        <pre><code>List< String> MesUtilisateurs = new ArrayList< String>();
+                        <pre><code>List&lt;String> MesUtilisateurs = new ArrayList&lt;String>();
 
 mesUtilisateurs.add("utilisateur1");
 mesUtilisateurs.add("utilisateur2");
@@ -372,13 +372,13 @@ req.setAttribute("listUtilisateur", mesUtilisateurs);</String></code></pre>
                         Puis les récupérer dans la JSP
                         <br><br>
 
-                        <pre><code >< table>
-    < c:forEach items="${listUtilisateur}" var="utilisateur">
-        < tr>
-            < td>${utilisateur}< /td>
-        < /tr>
-    < /c:forEach>
-< /table></code></pre>
+                        <pre><code >&lt;table>
+    &lt;c:forEach items="${listUtilisateur}" var="utilisateur">
+        &lt;tr>
+            &lt;td>${utilisateur}&lt;/td>
+        &lt;/tr>
+    &lt;/c:forEach>
+&lt;/table></code></pre>
 
                 </div>
 

@@ -172,7 +172,7 @@
 							<h5>FormControl</h5>
 
 							La classe FormControl permet de contrôler et d'accéder à l'état des "controls" de la vue
-							(e.g. < input>).
+							(e.g. &lt;input>).
 								<br><br>
 
 								<pre><code>import { FormControl } from "@angular/forms";
@@ -188,13 +188,13 @@ export class UserFormComponent {
 	}
 }</code></pre>
 
-								<pre><code>< input
+								<pre><code>&lt;input
 	type="text"
 	[formControl]="userTitleControl">
-< textarea [formControl]="userDescriptionControl">< /textarea>
-< button
+&lt;textarea [formControl]="userDescriptionControl">&lt;/textarea>
+&lt;button
 	type="submit"
-	(click)="submitUser()">SUBMIT< /button></code></pre>
+	(click)="submitUser()">SUBMIT&lt;/button></code></pre>
 
 								Si nous testons tel quel, il va y avoir une erreur. Il nous faut importer le module <b>«
 									ReactiveFormsModule »</b> dans le <b>appmodule.ts</b>.
@@ -241,13 +241,13 @@ export class UserFormComponent {
 	}
 }</code></pre>
 
-								<pre><code>< input
+								<pre><code>&lt;input
 	type="text"
 	[formControl]="userForm.controls.title">
-< textarea [formControl]="userForm.controls.description">< /textarea>
-< button
+&lt;textarea [formControl]="userForm.controls.description">&lt;/textarea>
+&lt;button
 	type="submit"
-	(click)="submitUser()">SUBMIT< /button></code></pre>
+	(click)="submitUser()">SUBMIT&lt;/button></code></pre>
 
 								L'objet <b>this.userForm.value</b> présente l'ensemble des valeurs des controls via un
 								"plain objet" : <b>{title: 'TITLE', description: null}</b>
@@ -307,7 +307,7 @@ export class UserFormComponent {
 									<li><b>pristine</b> : Valeur booléenne indiquant si le "control" a été modifié.</li>
 								</ul>
 
-								<pre><code>< button [disabled]="!userForm.valid" type="submit" class="btn btn-success">SUBMIT< /button></code></pre>
+								<pre><code>&lt;button [disabled]="!userForm.valid" type="submit" class="btn btn-success">SUBMIT&lt;/button></code></pre>
 						</p>
 
 						<h4>Route Guards</h4>
@@ -367,7 +367,7 @@ export class UserFormComponent {
 							CanActivate.<br><br>
 							Ce service doit donc implémenter la méthode <b>canActivate</b>.<br><br>
 							Cette méthode est appelée à chaque demande d'accès à la "route" ; elle doit alors retourner
-							une valeur de type boolean ou Promise< boolean> ou Observable< boolean>
+							une valeur de type boolean ou Promise&lt;boolean> ou Observable&lt;boolean>
 									indiquant si l'accès à la "route" est autorisé ou non.
 									Il est donc possible d'attendre le résultat d'un traitement asynchrone pour décider
 									d'autoriser l'accès ou non.

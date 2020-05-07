@@ -33,12 +33,8 @@
 		</ul>
 	</nav>
 
-	<!-- Content -->
-	<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
+
+
 	<section id="post" class="wrapper bg-img" data-bg="land5.jpg">
 		<div class="inner">
 			<article class="box">
@@ -49,7 +45,7 @@
 				<div class="content">
 
 					<h3>JPA</h3>
-
+				
 					<p>Sous l’influence des frameworks de type « ORM »(Object Relational Mapping) et pour répondre aux
 						nombreuses critiques concernant les EJB, une
 						nouvelle spécification est proposée et adoptée :
@@ -70,7 +66,7 @@
 								<br><br>
 								<pre><code>static String displayAllQuery = "Select emp from Employee emp" ;
 TypedQuery e = em.createQuery(displayAllQuery, Employee.class);
-List < Employee> employees=e.getResultList();
+List &lt;Employee> employees=e.getResultList();
 for ( Employee emp : employees ) {
 	// ...
 }</code></pre>
@@ -82,7 +78,8 @@ for ( Employee emp : employees ) {
 							</li>
 						</ul>
 
-						Il y a <b>moins</b> de code, les connexions sont <b>masquées</b> et le mapping sur la classe Employee est <b>automatique</b>.
+						Il y a <b>moins</b> de code, les connexions sont <b>masquées</b> et le mapping sur la classe
+						Employee est <b>automatique</b>.
 
 
 					</p>
@@ -91,8 +88,141 @@ for ( Employee emp : employees ) {
 
 					<h3>La persistence</h3>
 
-					<h3>Le mapping O/R</h3>
+					<b>« EntityManager »</b> fournit des méthodes de gestion
+d’objets stockés dans des caches, ce sont des
+mécanismes internes qui gèrent les requêtes SQL.
+<br><br>
 
+Le fichier <b>« persistence.xml »</b> est situé dans <b>« META-INF »</b>
+<br><br>
+<pre><code type="html"> &lt;persistence version="2.0" xmlns=".. ..">
+	&lt;persistence-unit name="jpa-tests"   //NOM
+	transaction-type="RESOURCE_LOCAL">
+	&lt;provider>org.eclipse.persistence.jpa.PersistenceProvider&lt;/provider>    //IMPLEMENTATION JPA
+
+	&lt;class>org.demo.entities.Badge&lt;/class> //CLASSES DES ENTITES GEREES
+	&lt;class>org.demo.entities.Author&lt;/class>
+
+	&lt;properties>
+		&lt;property name="javax.persistence.jdbc.driver"
+			value="org.apache.derby.jdbc.ClientDriver"/>
+	&lt;property name="javax.persistence.jdbc.url«
+			value="jdbc:derby://localhost:1527/bookstore"/>        //CONFIG CONNEXION JDBC
+	&lt;property name="javax.persistence.jdbc.user" value="root"/> 
+	&lt;property name="javax.persistence.jdbc.password" value="admin"/>
+   &lt;/properties>
+ &lt;/persistence-unit>
+&lt;/persistence></code></pre>
+
+
+Début et fin en Java SE :
+<br><br>
+<pre><code>public static void main(String[] args)
+{
+	EntityManagerFactory emf =
+		Persistence.createEntityManagerFactory("jpa-tests");  //NOM = persistence.xml
+	
+		// Récupération d’une instance de "EntityManager"
+	EntityManager em = emf.createEntityManager();
+	
+	// Utilisation de l’ "EntityManager" ...
+	
+	// Fermeture de l’ "EntityManager"
+	em.close();
+	
+	emf.close();
+}</code></pre>
+
+
+
+
+					<h3>Le mapping O/R</h3>
+					<ul>
+						<li>Mapping de l’<b>entité</b> (classe Java), association Classe/Table
+							<br><br>
+							<pre><code>@Entity
+@Table(name="EMP", schema="HR")
+public class Employee { ... }</code></pre>
+						</li>
+
+						<li>Mapping des <b>champs</b> (attributs Java).<br> Les annotations peuvent
+							être placées au niveau des champs ou au niveau des accesseurs.
+							<br><br>
+							<pre><code>@Entity
+public class Employee {
+	@Id
+	@Column(name="EMP_ID")
+	private int id;
+	@Column(name="NAME")
+	private String name;
+	@Column(name="SAL")
+	private long salary;
+	...</code></pre>
+
+						</li>
+						<li>ID ( Clé Primaire ) : <b>@Id</b>
+							<br><br>
+							<pre><code>@Id
+@Column(name="EMP_ID")
+private int id;</code></pre>
+						</li>
+
+						<li>Types BLOB/CLOB : <b>@Lob</b>
+							<br><br>
+							<pre><code>@Basic(fetch=FetchType.LAZY)
+@Lob
+@Column(name="PIC")
+private byte[] picture;</code></pre>
+						</li>
+						<li>Les types de dates <b>@Temporal</b>
+							<br><br>
+							<pre><code>@Temporal(TemporalType.DATE) //.DATE .TIME ou .TIMESTAMP
+@Column(name="START_DATE")
+private Date startDate;</code></pre>
+						</li>
+						<li>Génération d’id
+							<br><br>
+							<ul>
+								<li><b>AUTO</b> : c’est le provider JPA qui décide
+									<br><br>
+									<pre><code>@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private int id;</code></pre>
+								</li>
+								<li><b>TABLE</b> : id stocké dans une table
+									<br><br>
+									<pre><code>@Id
+@TableGenerator(name="EmpGen", table="x",
+		pkColumnName="x" , valueColumnName="x" )
+@GeneratedValue( generator = "EmpGen" )
+private int id;</code></pre>
+								</li>
+								<li><b>SEQUENCE</b> : id géré par une séquence
+									<br><br>
+									<pre><code>@Id
+@SequenceGenerator(name="EmpGen", sequenceName="SEQ1")
+@GeneratedValue( generator = "EmpGen" )
+private int id;</code></pre>
+								</li>
+								<li><b>IDENTITY</b> : id généré par une colonne auto-incrémentée
+									<br><br>
+									<pre><code>@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private int id;</code></pre>
+								</li>
+
+							</ul>
+
+						</li>
+
+					</ul>
+
+					<h4>Links</h4>
+					Une relation entre 2 entités repose sur 2 <b>liens</b>
+					( un lien pour chaque sens )
+					<br><br>
+					Chaque lien à un <b>sens</b> et une <b>cardinalité</b> :
+					<br><br>
 					<ul>
 						<li><b>One To One</b></li>
 						<li><b>One To Many</b> (Inverse Side)</li>
@@ -101,11 +231,36 @@ for ( Employee emp : employees ) {
 
 					</ul>
 
+					<b>Owning Side :</b>
 
 					<ul>
-						<li><b>Eager Loading</b></li>
-						<li><b>Lazy Loading</b></li>
+						<li>Le côté « propriétaire » du lien</li>
+						<li>Celui qui possède la Foreign Key</li>
 					</ul>
+					<b>Inverse Side :</b>
+
+					<ul>
+						<li>Le côté « référencé » par le « propriétaire »</li>
+					</ul>
+
+					<h4>Loading</h4>
+					Lorsqu’une entité est chargée dans le « PersistenceContext », ses liens peuvent être
+					<br><br>
+					<ul>
+						<li>immédiatement chargés : <b>Eager Loading</b></li>
+						<li>chargés plus tard, uniquement quand
+							l’application va les utiliser :<b>Lazy Loading</b></li>
+					</ul>
+
+					<pre><code>@Entity
+public class Employee {
+	@Id
+	private int id;
+
+	@OneToOne(fetch=FetchType.LAZY)
+	private ParkingSpace parkingSpace;
+	// ...
+}</code></pre>
 
 
 					<h3>Entity Manager</h3>
@@ -118,12 +273,12 @@ for ( Employee emp : employees ) {
 					</ul>
 
 					Avec JPA la notion de CRUD est différente
-
+					<br><br>
 					<h3>Les transactions</h3>
 
 					<p>Une transaction est un regroupement d’instructions
 						SQL effectuant un traitement fonctionnel atomique
-						Exemple : opération débit/crédit</p>
+						Exemple : opération débit/crédit.</p>
 
 					<p>Elle doit être <b>Atomique</b>, <b>Cohérente</b>, <b>Isolée</b> et <b>Durable</b> (<b>ACID</b>)
 					</p>
@@ -199,7 +354,7 @@ em.getTransaction().rollback();</code></pre>
 						sinon remet l'objet dans le contexte s'il l'a perdu
 						<br>
 						<br>
-						<textarea style="height: 550px" disabled="">
+						<textarea style="height: 460px" disabled="">
 	<dependencies>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -220,14 +375,7 @@ em.getTransaction().rollback();</code></pre>
 </textarea>
 
 
-						@Entity
-
-						<br>
-
-						@Id sur l'identifiant (soit avant la déclaration, soit avant le getter)
-
-
-						Persistence.xml
+						
 						<br>
 						"Comprendre l interret/connaitre le principe d un ORM - Mapping
 						Objet / Relationnel"
@@ -236,7 +384,7 @@ em.getTransaction().rollback();</code></pre>
 						"Maitriser les objets :Persistence
 						Unit ,EntityManagerFactory ,EntityManager et PersistenceContext"
 						Manipuler/configurer le fichier « persistence.xml »
-						Savoir implementer les differents types de liens OneT-One,OneToMany ManyToMany et heritage
+				
 						Savoir realiser un CRUD avec JPA
 						Implementer les requêtes JPQL, SQL et Criteria API
 						.
