@@ -33,12 +33,7 @@
 		</ul>
 	</nav>
 
-	<!-- Content -->
-	<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
+	
 	<section id="post" class="wrapper bg-img" data-bg="land7.jpg">
 		<div class="inner">
 			<article class="box">
@@ -47,6 +42,12 @@
 					<p>19.03.2020</p>
 				</header>
 				<div class="content">
+
+<p>
+
+	AngularJS est un framework JavaScript libre et open source développé par Google.<br><br> Il permet de développer des pages web en suivant le patron d'architecture MVC (modèle-vue-contrôleur). 
+	<br><br>Toutes la documentation est disponible sur le  <a href="https://angular.io/docs" target="_blank"> site officiel d'Angular</a>
+</p>
 
 					<p>
 						<h4>Installation</h4>
@@ -173,9 +174,9 @@
 
 							La classe FormControl permet de contrôler et d'accéder à l'état des "controls" de la vue
 							(e.g. &lt;input>).
-								<br><br>
+							<br><br>
 
-								<pre><code>import { FormControl } from "@angular/forms";
+							<pre><code>import { FormControl } from "@angular/forms";
 
 export class UserFormComponent {
 
@@ -188,7 +189,7 @@ export class UserFormComponent {
 	}
 }</code></pre>
 
-								<pre><code>&lt;input
+							<pre><code>&lt;input
 	type="text"
 	[formControl]="userTitleControl">
 &lt;textarea [formControl]="userDescriptionControl">&lt;/textarea>
@@ -196,41 +197,41 @@ export class UserFormComponent {
 	type="submit"
 	(click)="submitUser()">SUBMIT&lt;/button></code></pre>
 
-								Si nous testons tel quel, il va y avoir une erreur. Il nous faut importer le module <b>«
-									ReactiveFormsModule »</b> dans le <b>appmodule.ts</b>.
-								<br><br>
+							Si nous testons tel quel, il va y avoir une erreur. Il nous faut importer le module <b>«
+								ReactiveFormsModule »</b> dans le <b>appmodule.ts</b>.
+							<br><br>
 
-								FormControl fournit différentes propriétés et méthodes permettant de piloter le
-								"control" :
-								<br><br>
-								<ul>
-									<li>
-										<b>value</b> : permet d'accéder à la valeur actuellement contenu dans le «
-										control ».
-									</li>
+							FormControl fournit différentes propriétés et méthodes permettant de piloter le
+							"control" :
+							<br><br>
+							<ul>
+								<li>
+									<b>value</b> : permet d'accéder à la valeur actuellement contenu dans le «
+									control ».
+								</li>
 
-									<li>
-										<b>valueChanges </b>: est un Observable permettant d'observer les changements de
-										valeur du « control".
-									</li>
+								<li>
+									<b>valueChanges </b>: est un Observable permettant d'observer les changements de
+									valeur du « control".
+								</li>
 
-									<li>
-										<b>reset, setValue</b> et <b>patchValue</b> permettent de modifier l'état et la
-										valeur du « control".
-									</li>
-								</ul>
+								<li>
+									<b>reset, setValue</b> et <b>patchValue</b> permettent de modifier l'état et la
+									valeur du « control".
+								</li>
+							</ul>
 
-								<h5>FormGroup</h5>
+							<h5>FormGroup</h5>
 
-								<b>FormGroup</b> permet de regrouper des "controls" afin de faciliter l'implémentation,
-								récupérer la valeur groupée des "controls" ou encore appliquer
-								des validateurs au groupe.
-								<br><br>
-								Le FormGroup est construit avec un <b>"plain object"</b> associant chaque propriété à un
-								<b>FormControl</b>.<br>
-								Il est alors possible d'accéder aux valeurs et aux "controls" via la propriété associée.
-								<br><br>
-								<pre><code>import { FormGroup, FormControl } from "@angular/forms";
+							<b>FormGroup</b> permet de regrouper des "controls" afin de faciliter l'implémentation,
+							récupérer la valeur groupée des "controls" ou encore appliquer
+							des validateurs au groupe.
+							<br><br>
+							Le FormGroup est construit avec un <b>"plain object"</b> associant chaque propriété à un
+							<b>FormControl</b>.<br>
+							Il est alors possible d'accéder aux valeurs et aux "controls" via la propriété associée.
+							<br><br>
+							<pre><code>import { FormGroup, FormControl } from "@angular/forms";
 export class UserFormComponent {
 	userForm = new FormGroup({
 		title: new FormControl(),
@@ -241,7 +242,7 @@ export class UserFormComponent {
 	}
 }</code></pre>
 
-								<pre><code>&lt;input
+							<pre><code>&lt;input
 	type="text"
 	[formControl]="userForm.controls.title">
 &lt;textarea [formControl]="userForm.controls.description">&lt;/textarea>
@@ -249,32 +250,32 @@ export class UserFormComponent {
 	type="submit"
 	(click)="submitUser()">SUBMIT&lt;/button></code></pre>
 
-								L'objet <b>this.userForm.value</b> présente l'ensemble des valeurs des controls via un
-								"plain objet" : <b>{title: 'TITLE', description: null}</b>
+							L'objet <b>this.userForm.value</b> présente l'ensemble des valeurs des controls via un
+							"plain objet" : <b>{title: 'TITLE', description: null}</b>
 
-								<br><br>
-								Il est également possibnle de faire une arborescence de <b>FormGroups</b> afin de
-								regrouper
-								différentes parties d'un formulaire de taille importante ou dont des parties sont
-								réutilisables dans d'autres contextes.
+							<br><br>
+							Il est également possibnle de faire une arborescence de <b>FormGroups</b> afin de
+							regrouper
+							différentes parties d'un formulaire de taille importante ou dont des parties sont
+							réutilisables dans d'autres contextes.
 
-								<br><br>
+							<br><br>
 
-								<pre><code>new FormGroup({
+							<pre><code>new FormGroup({
 	address : new FormGroup({
 		street : new FormControl()
 	})
 });
 </code></pre>
 
-								<h5>Validator</h5>
-								Les constructeurs des "controls" (FormControl, FormGroup et FormArray) acceptent en
-								<b>second paramètre</b> une liste de fonctions de validation
-								appelées <b>"validators"</b>.<br>
-								Les "validators" natifs d'Angular sont regroupés sous forme de méthodes statiques das la
-								classe Validators.
-								<br><br>
-								<pre><code>import { FormGroup, FormControl, Validators } from "@angular/forms";
+							<h5>Validator</h5>
+							Les constructeurs des "controls" (FormControl, FormGroup et FormArray) acceptent en
+							<b>second paramètre</b> une liste de fonctions de validation
+							appelées <b>"validators"</b>.<br>
+							Les "validators" natifs d'Angular sont regroupés sous forme de méthodes statiques das la
+							classe Validators.
+							<br><br>
+							<pre><code>import { FormGroup, FormControl, Validators } from "@angular/forms";
 export class UserFormComponent {
 	userForm = new FormGroup({
 		title: new FormControl(null, [
@@ -288,26 +289,26 @@ export class UserFormComponent {
 }
 </code></pre>
 
-								L'ajout du "validator" ne change pas le comportement du composant : la méthode
-								<b>submit</b> continue à être
-								appelée bien que la contrainte de validation ne soit pas respectée.<br>
-								C'est au composant de décider de l'action à mener en fonction de l'état des « controls".
-								<br><br>
-								Les <b>"controls"</b> disposent d'une série de propriétés et de méthodes permettant d'en
-								vérifier l'état :
-								<br><br>
-								<ul>
-									<li><b>valid</b> : Valeur booléenne indiquant si le "control" est valide. Dans le
-										cas d'un <b>FormGroup</b> ou <b>FormArray</b> , le "control" est valide si les
-										"controls" qui le composent sont tous valides.</li>
-									<li><b>errors</b> : "plain object" combinant les erreurs de tous les validateurs.
-										Vaut <b>null</b> si le "control" est valide.</li>
-									<li><b>touched </b>: Valeur booléenne positionnée à true dès le déclenchement de
-										l'événement blur (i.e. l'utilisateur change de « focus").</li>
-									<li><b>pristine</b> : Valeur booléenne indiquant si le "control" a été modifié.</li>
-								</ul>
+							L'ajout du "validator" ne change pas le comportement du composant : la méthode
+							<b>submit</b> continue à être
+							appelée bien que la contrainte de validation ne soit pas respectée.<br>
+							C'est au composant de décider de l'action à mener en fonction de l'état des « controls".
+							<br><br>
+							Les <b>"controls"</b> disposent d'une série de propriétés et de méthodes permettant d'en
+							vérifier l'état :
+							<br><br>
+							<ul>
+								<li><b>valid</b> : Valeur booléenne indiquant si le "control" est valide. Dans le
+									cas d'un <b>FormGroup</b> ou <b>FormArray</b> , le "control" est valide si les
+									"controls" qui le composent sont tous valides.</li>
+								<li><b>errors</b> : "plain object" combinant les erreurs de tous les validateurs.
+									Vaut <b>null</b> si le "control" est valide.</li>
+								<li><b>touched </b>: Valeur booléenne positionnée à true dès le déclenchement de
+									l'événement blur (i.e. l'utilisateur change de « focus").</li>
+								<li><b>pristine</b> : Valeur booléenne indiquant si le "control" a été modifié.</li>
+							</ul>
 
-								<pre><code>&lt;button [disabled]="!userForm.valid" type="submit" class="btn btn-success">SUBMIT&lt;/button></code></pre>
+							<pre><code>&lt;button [disabled]="!userForm.valid" type="submit" class="btn btn-success">SUBMIT&lt;/button></code></pre>
 						</p>
 
 						<h4>Route Guards</h4>
@@ -368,32 +369,117 @@ export class UserFormComponent {
 							Ce service doit donc implémenter la méthode <b>canActivate</b>.<br><br>
 							Cette méthode est appelée à chaque demande d'accès à la "route" ; elle doit alors retourner
 							une valeur de type boolean ou Promise&lt;boolean> ou Observable&lt;boolean>
-									indiquant si l'accès à la "route" est autorisé ou non.
-									Il est donc possible d'attendre le résultat d'un traitement asynchrone pour décider
-									d'autoriser l'accès ou non.
+							indiquant si l'accès à la "route" est autorisé ou non.
+							Il est donc possible d'attendre le résultat d'un traitement asynchrone pour décider
+							d'autoriser l'accès ou non.
 
 							<br><br>
 							Il est donc possible d'attendre le résultat d'un traitement asynchrone pour décider
 							d'autoriser l'accès ou non.
+							<br><br>
 
-<pre><code>
-	@Injectable({
-		providedIn: 'root'
-	})
-	export class IsSignedInGuard implements CanActivate {
+							<pre><code>@Injectable({
+	providedIn: 'root'
+})
+export class IsSignedInGuard implements CanActivate {
 	
-		constructor(private _session: Session) {
-		}
+	constructor(private _session: Session) {
+	}
 	
-		canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-			return this._session.isSignedIn();
-		}
+	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+		return this._session.isSignedIn();
+	}
 	
+}</code></pre>
+
+							En cas de refus d'accès, il est possible de rediriger l'utilisateur vers une autre "route"
+							"manuellement" en injectant le service "Router" par exemple :
+
+							<pre><code>constructor(private _router: Router, private _session: Session) {
+}
+
+canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+
+	const isSignedIn = this._session.isSignedIn();
+
+	if (isSignedIn !== true) {
+		this._router.navigate([...]);
 	}
 
-</code></pre>
+	return isSignedIn;
 
-https://guide-angular.wishtack.io/angular/routing/route-guards
+}</code></pre>
+
+							<h5>CanDeactivate</h5>
+
+							Les "Guards" de désactivation sont <b>couplées aux composants</b> car elles doivent
+							<b>communiquer avec le composant</b> pour établir leur décision d'accès.<br><br>
+							Une "Guard" de désactivation est un service qui implémente <b>l'interface
+								CanDeactivate</b>.<br><br>
+							Ce service doit donc implémenter <b>la méthode canDeactivate</b>.<br><br>
+							Cette méthode est <b>appelée à chaque fois que l'utilisateur souhaite quitter la route</b>
+							(clic sur un lien ou déclenchement automatique) ;
+							elle doit alors <b>retourner une valeur de type boolean ou Promise&lt;boolean> ou
+								Observable&lt;boolean></b> indiquant si l'accès à la "route" est autorisé ou
+							non.<br><br>
+							Contrairement au "Guards" d'activation, cette "Guard" prend en <b>premier paramètre
+								l'instance du composant</b>. C'est pour cette raison que l'interface CanDeactivate est
+							générique.
+
+							<br><br>
+
+							La "Guard" appelle la méthode <b>isDirty</b> du composant <b>ProfileViewComponent</b> pour
+							décider d'autoriser ou non l'utilisateur à quitter la route.
+							Malheureusement, la "Guard" est fortement couplée avec le composant
+							<b>ProfileViewComponent</b>.
+							<br><br>
+							<pre><code>@Injectable({
+    providedIn: 'root'
+})
+export class IsNotDirtyGuard implements CanDeactivate<ProfileViewComponent> {
+
+    canDeactivate(component: ProfileViewComponent,
+                  currentRoute: ActivatedRouteSnapshot,
+                  currentState: RouterStateSnapshot,
+                  nextState?: RouterStateSnapshot): Observable&lt;boolean> | Promise&lt;boolean> | boolean {
+        return component.isDirty();
+    }
+
+}</code></pre>
+
+							<pre><code>export class ProfileViewComponent {
+
+    isDirty() {
+        return false;
+    }
+}</code></pre>
+
+							Pensez à associer la "Guard" à une <b>interface</b> plutôt qu'au composant directement.
+							<br><br>
+
+							<pre><code>export interface IsDirty {
+    isDirty(): boolean | Observable<boolean>;
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class IsNotDirtyGuard implements CanDeactivate<IsDirty> {
+
+    canDeactivate(component: IsDirty,
+                  currentRoute: ActivatedRouteSnapshot,
+                  currentState: RouterStateSnapshot,
+                  nextState?: RouterStateSnapshot): Observable&lt;boolean> | Promise&lt;boolean> | boolean {
+        return component.isDirty();
+    }
+
+}</code></pre>
+
+							<pre><code>export class ProfileViewComponent implements IsDirty {
+    isDirty() {
+        return false;
+    }
+}</code></pre>
 
 						</p>
 
@@ -407,14 +493,250 @@ https://guide-angular.wishtack.io/angular/routing/route-guards
 							iste at earum nesciunt facilis nemo corrupti natus. Nisi maiores expedita soluta incidunt id
 							repellat velit aut!</p>
 						<h4>Routing</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repudiandae, illum alias sunt
-							iste at earum nesciunt facilis nemo corrupti natus. Nisi maiores expedita soluta incidunt id
-							repellat velit aut!</p>
+						<p>
+
+							Afin de <b>permettre aux utilisateurs de garder leurs habitudes de navigation</b> en
+							visitant une
+							Single Page Application ou une Progressive Web Application, il est nécessaire d'utiliser un
+							système de "Routing".<br><br>
+							Grâce au système de "Routing", les utilisateurs peuvent :<br>
+							<ul>
+								<li>utiliser l'historique de leur navigateur (e.g. les boutons back et next),</li>
+								<li>partager des liens,</li>
+								<li>ajouter une vue à leurs favoris,</li>
+								<li>ouvrir une vue dans une nouvelle fenêtre via le menu contextuel,</li>
+							</ul>
+
+							Angular fournit <b>nativement un module de "Routing"</b> pour répondre à ce besoin.
+							<br><br>
+
+							<h5>Tag base</h5>
+
+							Avant toute chose, il est nécessaire d'ajoute le tag <b>base</b> au head du fichier
+							index.html de l'application :
+							<br><br>
+
+							<pre><code>&lt;!doctype html>
+&lt;html>
+	&lt;head>
+		&lt;base href="/">
+		...
+	&lt;/head>
+	&lt;body>
+		...
+	&lt;/body>
+&lt;/html></code></pre>
+
+							Ce tag indique <b>la base du path à partir de laquelle le "Routing" Angular rentre en
+								jeu</b>.<br><br>
+							Cette valeur est généralement personnalisé dans le cas où plusieurs applications Angular
+							sont hébergées sur un <b>même nom de domaine mais avec des paths différents</b>.
+
+							<br><br>
+							<h5>Configuration du "Routing"</h5>
+
+
+
+							La configuration du "Routing" est transmise au module RouterModule lors de son import par le
+							"root module" <b>AppModule</b>.
+							<br><br>
+
+							Par bonne pratique, il est recommandé de placer cette configuration dans un module dédié
+							<b>AppRoutingModule</b> importé par le <b>"root module" AppModule</b>.
+
+							<br><br>
+
+							<pre><code>import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+								
+export const appRouteList: Routes = [
+	{
+		path: 'landing',
+		component: LandingViewComponent
+	},
+	{
+		path: 'search',
+		component: BookSearchViewComponent
+	},
+	{
+		path: '**',
+		redirectTo: 'landing'
+	}
+];
+								
+@NgModule({
+	exports: [
+		RouterModule
+	],
+	imports: [
+		RouterModule.forRoot(appRouteList)
+	]
+})
+export class AppRoutingModule {
+}</code></pre>
+							<b>``</b> est une <b>"wildcard"**</b> qui "match" toutes les urls (sauf celles qui ont
+							"match" les routes précédentes).<br>
+							Il faut donc faire attention à <b>l'ordre des "routes"</b>.
+							<br><br>
+							<h5>Configuration d'une "Route" avec Paramètres</h5>
+
+							Le <b>path</b> d'une "route" peut définir des paramètres obligatoires grâce au préfixe
+							<b>":"</b>.
+							<br><br>
+
+							<pre><code>export const appRouteList: Routes = [
+	...,
+	{
+		path: 'books/:bookId',
+		component: BookDetailViewComponent
+	},
+	...
+];</code></pre>
+
+							<h5>Configuration de l'Hébergement</h5>
+
+							<blockquote>Pour le bon fonctionnement du "Routing", <b>il est important d'implémenter une
+									règle de "rewrite" sur votre plateforme d'hébergement</b> afin que toutes
+								les "routes" renvoient le même fichier index.html produit dans le dossier dist lors du
+								"build" (yarn build).<br><br>
+								Autrement, en accédant directement à une "route" de l'application, l'utilisateur
+								obtiendrait une erreur 404.</blockquote>
+						</p>
+
+						<h5>&lt;router-outlet></h5>
+
+						La configuration du "Routing" permet de définir quel composant afficher en fonction de la route
+						mais cela n'indique pas à Angular <b>où injecter le composant</b> dans la page.
+						<br><br>
+						Pour <b>indiquer l'emplacement d'insertion du composant</b>, il faut utiliser la <b>directive
+							&lt;router-outlet></b> directement dans le "root component" AppComponent (ou dans un "child
+						component" dédié, e.g. HomeLayoutComponent).
+
+						<pre><code>//app.component.html
+
+&lt;header>
+...
+&lt;/header>
+&lt;router-outlet>&lt;/router-outlet>
+&lt;footer>
+...
+&lt;/footer></code></pre>
+
+						En fonction de la "route" visitée, le <b>composant associé sera alors injecté en dessous du tag
+							router-outlet</b> (et non à l'intérieur ou à la place du tag contrairement à ce que l'on
+						pourrait
+						supposer).
+						<br><br>
+						<h5>Création de liens</h5>
+
+						En utilisant des liens natifs &lt;a href="/search">, le "browser" va produire une requête HTTP
+						GET
+						vers le serveur et recharger toute l'application.
+						Pour éviter ce problème, <b>le module de "Routing" Angular fournit la directive routerLink</b>
+						qui
+						permet d'<b>intercepter l'événement click</b> sur les liens et de <b>changer de "route" sans
+							recharger
+							toute l'application</b>.
+						<br><br>
+						<pre><code>&lt;a routerLink="/search">Search&lt;/a></code></pre>
+
+						<blockquote>La directive routerLink <b>génère tout de même l'attribut href</b> pour <b>faciliter
+								la compréhension de la page</b> par les "browsers" ou "moteurs de recherche".<br> Cela
+							permet par
+							exemple, d'<b>ouvrir un lien dans une nouvelle fenêtre</b> grâce au menu contextuel ou
+							encore
+							<b>copier le lien</b> d'une "route".</blockquote>
+
+						<h5>Construction Dynamique</h5>
+
+						La "route" peut être construite dynamiquement et passée à l'Input <b>routerLink</b>.
+
+						<br><br>
+						<pre><code>this.route = '/search';
+this.routeName = 'Search';</code></pre>
+
+						<pre><code>&lt;a [routerLink]="route">{{ routeName }}&lt;/a></code></pre>
+
+						<h5>Construction avec Paramètres</h5>
+
+						La "route" /books/123 peut être construite avec des paramètres :
+						<br><br>
+						<pre><code>&lt;a [routerLink]="['/books', book.id]">{{ routeName }}&lt;/a></code></pre>
+
+						où book.id = '123'.<br><br>
+						Il est également possible de <b>passer des paramètres optionnels par "query string"</b> via
+						l'Input <b>queryParams</b>.
+						<br><br>
+						<pre><code>&lt;a
+routerLink="'/search"
+[queryParams]="{keywords: 'eXtreme Programming'}">eXtreme Programming Books&lt;/a></code></pre>
+
+						<h5>Accès aux Paramètres</h5>
+
+						Le service <b>ActivatedRoute décrit l'état actuel</b> du "router".<br>
+						Il permet au composant associé à la "route" de <b>récupérer les paramètres via les propriétés
+							paramMap et queryParamMap</b>.<br><br>
+
+						<blockquote>Les propriétés <b>paramMap et queryParamMap sont des Observables</b> car par
+							optimisation,
+							en <b>naviguant vers la même route mais avec des paramètres différents</b> (e.g. /books/123
+							=>
+							/books/456), Angular <b>ne recharge pas le composant</b> mais propage les nouveaux
+							paramètres via
+							ces Observables.</blockquote>
+
+						<br><br>
+
+						<pre><code>//book-detail-view.component.ts
+								
+export class BookDetailViewComponent {
+
+	book$: Observable<Book>;
+							
+	constructor(private _activatedRoute: ActivatedRoute,
+				private _bookRepository: BookRepository) {
+							
+		this.book$ = this._activatedRoute.paramMap
+			.pipe(
+				map(paramMap => paramMap.get('bookId')),
+				switchMap(bookId => this._bookRepository.getBook(bookId))
+			);
+							
+	}
+							
+}</code></pre>
+
+						Pour simplifier la récupération des paramètres, <b>il est également possible d'utiliser la
+							propriété snapshot</b> qui contient l'état actuel de la route (e.g. :
+						snapshot.paramMap.get('bookId')). <br><br><b>Le risque dans ce cas est de ne pas mettre à jour
+							la vue</b> en
+						cas de navigation vers la même route avec des paramètres différents.
+						<br><br>
+
+						<h5>Router Service</h5>
+
+						Le Router est le service principal du "Routing". Il permet de :
+							<br><br>
+						<ul>
+							<li>déclencher la navigation via la méthode navigate, <br><br><pre><code>this._router.navigate(['/books', bookId], {queryParams: {}})</code></pre></li>
+							<li>suivre les événements de navigation via l'Observable router.events,</li>
+							<li>construire et parser les urls de "Routing",</li>
+							<li>vérifier si une "Route" est actuellement visitée,</li>
+						</ul>
+
 						<h4>HTTP</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repudiandae, illum alias sunt
-							iste at earum nesciunt facilis nemo corrupti natus. Nisi maiores expedita soluta incidunt id
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repudiandae, illum alias
+							sunt
+							iste at earum nesciunt facilis nemo corrupti natus. Nisi maiores expedita soluta
+							incidunt id
 							repellat velit aut!</p>
 
+				</div>
+
+				<div style="text-align: center">
+					<a href="Download/projangular.rar" download>
+						<button style="text-align: center" class="class=button special icon fa-download"
+							href="Download/projangular.rar" download>Download Angular template</button>
 				</div>
 
 			</article>
