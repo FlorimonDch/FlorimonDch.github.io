@@ -6,7 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="./images/favicon.png"/>
+	<link rel="icon" href="./images/favicon.png" />
 </head>
 
 <body class="subpage">
@@ -48,56 +48,121 @@
 				</header>
 				<div class="content">
 					<p>
-						<h4>HTML</h4>
+					<h4>HTML</h4>
 
-						Le HyperText Markup Language, généralement abrégé HTML ou dans sa dernière version HTML5, est le
-						langage de balisage conçu pour représenter les pages web.<br><br>Il s'agit du squelette du site
-						web.
+					Le HyperText Markup Language, généralement abrégé HTML ou dans sa dernière version HTML5, est le
+					langage de balisage conçu pour représenter les pages web.<br><br>
+					Il s'agit du <b>squelette</b> du site web.
+					<br><br>
+
+					<pre><code>&lt;!DOCTYPE html>
+&lt;html lang="fr">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+	&lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+	&lt;!-- Commentaire HTML-->	
+				
+&lt;/body>
+</html></code></pre>
 					</p>
 
 					<p>
-						<h4>CSS</h4>
-						Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets,
-						forment un langage informatique qui décrit la présentation des documents HTML et XML.
-						<br><br>Il permet la mise en forme (couleur, taille des images, position, ...) des composants
-						HTML.
+					<h4>CSS</h4>
+					Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets,
+					forment un langage informatique qui décrit la présentation des documents HTML et XML.
+					<br><br>Il permet la <b>mise en forme</b> (couleur, taille des images, position, ...) des composants
+					HTML.
 
-						<br><br>
-						<a href="https://www.w3schools.com/css/default.asp" target="_blank">Site W3Schools</a>
+					<br><br>
+					Toutes les balises : <a href="https://www.w3schools.com/css/default.asp" target="_blank">Site
+						W3Schools</a>
+
+					Il est possible de modifier les propriétés d'un composant directement sur la page HTML.
+					<br><br>
+					<pre><code>&lt;button style="background-color: blue;">Texte du bouton&lt;/button></code></pre>
+
+					Cependant il est recommandé de centraliser toutes les modifications dans un fichier à par au format
+					<b>CSS</b>.
+
+					<br><br>
+
+					Pour lier une feuille de style CSS à une page HTML, il faut utiliser la balise &lt;link> que l'on
+					place dans la partie &lt;head> de la page HTML.
+					<br><br>
+
+					<pre><code>&lt;link rel="stylesheet" type="text/css" href="feuille.css"></code></pre>
 
 
 
 					</p>
 					<p>
-						<h4>JavaScript</h4>
+					<h4>JavaScript</h4>
 
-						JavaScript est un langage de programmation de scripts principalement employé dans les pages web
-						interactives mais aussi pour les serveurs2 avec
-						l'utilisation (par exemple) de Node.js. <br>C'est un langage orienté objet à prototype,
-						c'est-à-dire que les bases du langage et ses principales interfaces sont fournies par des objets
-						qui ne sont pas des instances de classes,
-						mais qui sont chacun équipés de constructeurs permettant de créer leurs propriétés, et notamment
-						une propriété de prototypage qui permet d'en
-						créer des objets héritiers personnalisés.
-						<br><br>
-						Il permet d'ajouter des fonctions aux composants (action de cliquer sur un bouton, envoyer un
-						formulaire, ... ).
+					JavaScript est un langage de programmation de scripts principalement employé dans les pages web
+					interactives mais aussi pour les serveurs avec
+					l'utilisation (par exemple) de Node.js. <br><br>
+					C'est un langage orienté objet à prototype,
+					c'est-à-dire que les bases du langage et ses principales interfaces sont fournies par des objets
+					qui ne sont pas des instances de classes,
+					mais qui sont chacun équipés de constructeurs permettant de créer leurs propriétés, et notamment
+					une propriété de prototypage qui permet d'en
+					créer des objets héritiers personnalisés.
+					<br><br>
+					Il permet d'<b>ajouter des fonctions</b> aux composants (action de cliquer sur un bouton, envoyer un
+					formulaire, ... ).
+
+					<br><br>
+
+					Il possible de créer des fonctions directement sur la page HTML, on place généralement le javascript
+					a la fin du fichier html.
+					<br><br>
+					<pre><code>&lt;script>
+function maFonction(){
+	alert('ceci est une alerte');
+}	
+&lt;/script></code></pre>
+
+					Mais il est recommandé, comme le css, de placer les fonctions JS dans un fichier dédié.
+					<br><br>
+					Pour lier un fichier javascript à une page HTML :
+					<br><br>
+					<pre><code>&lt;script src="myscripts.js">&lt;/script> </code></pre>
+
 					</p>
 
 
 
 					<p>
-						<h4>Bootstrap</h4>
-						Bootstrap est une collection d'outils utiles à la création du design (graphisme, animation et
-						interactions avec la page dans le navigateur, etc.) de sites et d'applications web.<br> C'est un
-						ensemble qui contient des codes HTML et CSS, des formulaires, boutons, outils de navigation et
-						autres éléments interactifs, ainsi que des extensions JavaScript en option.
-						<br>
-						<br>
-						<a href="https://getbootstrap.com/" target="_blank">Site de Bootstrap</a>
-						<br>
-						<br>
-						<a href="https://bootsnipp.com/" target="_blank">Site de Bootsnipp</a>
+					<h4>Bootstrap</h4>
+					Bootstrap est une collection d'outils utiles à la création du design (graphisme, animation et
+					interactions avec la page dans le navigateur, etc.) de sites et d'applications web.<br><br> C'est un
+					ensemble qui contient des codes HTML et CSS, des formulaires, boutons, outils de navigation et
+					autres éléments interactifs, ainsi que des extensions JavaScript en option.
+					<br>
+					<br>
+					Pour pouvoir utiliser les classes de bootstrap, il faut le lier à la page HTML comme s'il s'agissait
+					d'un fichier de style.
+
+					<br><br>
+					<pre><code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+crossorigin="anonymous"></code></pre>
+
+					Ensuite il suffit d'ajouter une classe qui existe sur bootstrap afin de récuperer les propriété du
+					composant.
+					<br><br>
+					<pre><code>&lt;button type="button" class="btn btn-outline-dark">Dark&lt;/button></code></pre>
+
+					Tous les composants Bootstrap : </Table><a
+						href="https://getbootstrap.com/docs/4.4/components/alerts/" target="_blank">Site de
+						Bootstrap</a>
+					<br>
+					<br>
+					Site utile pour mettre en forme des pages HTML : <a href="https://bootsnipp.com/"
+						target="_blank">Site de Bootsnipp</a>
 					</p>
 
 
