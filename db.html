@@ -6,7 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="./images/favicon.png"/>
+	<link rel="icon" href="./images/favicon.png" />
 </head>
 
 <body class="subpage">
@@ -52,17 +52,18 @@
 
 
 					<p>
-						<h3>Installation</h3>
+					<h3>Installation</h3>
 					</p>
 
-					Il faut installer <a href="https://dev.mysql.com/downloads/workbench/" target="_blank">Mysql Workbench</a>.
+					Il faut installer <a href="https://dev.mysql.com/downloads/workbench/" target="_blank">Mysql
+						Workbench</a>.
 					<br><br>
 					<b>MySQL Workbench</b> est un logiciel gratuit développé par Oracle, qui permet de gérer et
 					d'administrer des bases de données MySQL via une interface graphique.
 
 
 					<p>
-						<h3>Les requetes principales</h3>
+					<h3>Les requêtes principales</h3>
 					</p>
 					<code>
 SELECT * FROM nomTable WHERE attr1="value1" 
@@ -87,18 +88,18 @@ DELETE FROM nomTable WHERE attr = "value"
 
 
 					<p>
-						<h3>les fonctions de groupe</h3>
+					<h3>les fonctions de groupe</h3>
 					</p>
 					<ul>
 						<li><b>AVG</b> : moyenne</li>
-						<li><b>COUNT</b> : nombre d'enregistrement dans une table</li>
+						<li><b>COUNT</b> : nombre d'enregistrements dans une table</li>
 						<li><b>MAX</b></li>
 						<li><b>MIN</b></li>
 						<li><b>SUM</b> : somme</li>
 					</ul>
 
 					<p>
-						<h3>Autres fonctionnalités</h3>
+					<h3>Autres fonctionnalités</h3>
 					</p>
 					<ul>
 						<li><b>LIKE</b> (% = tous les caractères n fois et _ = un seul caractère)</li>
@@ -108,7 +109,7 @@ DELETE FROM nomTable WHERE attr = "value"
 					</ul>
 
 					<p>
-						<h3>les clauses</h3>
+					<h3>les clauses</h3>
 					</p>
 
 					<ul>
@@ -119,14 +120,14 @@ DELETE FROM nomTable WHERE attr = "value"
 					</ul>
 
 					<p>
-						<h3>les jointures</h3>
+					<h3>les jointures</h3>
 					</p>
 
 					<ul>
 
 						<li>
 							<h5>Natural Join</h5>
-							Permet d'associer 2 tables qui ont une colonnes identique (ex : num_dpt dans Employé et
+							Permet d'associer 2 tables qui ont une colonne identique (ex : num_dpt dans Employé et
 							num_dpt dans Departement)
 
 						</li>
@@ -139,7 +140,7 @@ DELETE FROM nomTable WHERE attr = "value"
 						<br>
 						<li>
 							<h5>Auto Jointure</h5>
-							Il s'agit d'une association reflexive, la table est associée à elle même. La clé étrangère
+							Il s'agit d'une association réflexive, la table est associée à elle-même. La clé étrangère
 							est sur la même table (ex : manager_id).
 						</li>
 						<br>
@@ -157,7 +158,7 @@ DELETE FROM nomTable WHERE attr = "value"
 						<li>
 							<h5>Jointure externe (outer join/left outer join)</h5>
 
-							Il s'agit du fait d'avoir des lignes qui n'ont pas forcement de correspondance avec les
+							Il s'agit du fait d'avoir des lignes qui n'ont pas forcément de correspondance avec les
 							lignes de l'autre table.
 						</li>
 					</ul>
@@ -167,11 +168,11 @@ DELETE FROM nomTable WHERE attr = "value"
 					<code>FROM table A inner join table2 B</code>
 
 					<p>
-						<h5>Les sous-requetes</h5>
+					<h5>Les sous-requêtes</h5>
 					</p>
 					<pre><code>SELECT * FROM nomTable WHERE attr > (SELECT * from nomTable WHERE attr2>0)</code></pre>
 					<p>
-						<h5>Les sous-requetes multiple</h5>
+					<h5>Les sous-requêtes multiple</h5>
 					</p>
 
 					IN, ANY, ALL

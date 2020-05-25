@@ -52,13 +52,13 @@
                     <p>Pour créer une application Java web, il faut installer un serveur d'application Apache <b><a
                                 href="https://tomcat.apache.org/download-90.cgi" target="_blank">Tomcat</a></b>.
                         <br>
-                        <ul>
-                            <li>Très léger</li>
-                            <li>Par défaut, le port utilisé par Apache Tomcat est <b>8080</b></li>
-                            <li>Le serveur web sera accessible à l'adresse <b>http://localhost:8080</b></li>
-                            <li>Chaque projet seront accessibles aux adresses http://localhost:8080/<b>nom-projet</b>/
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>Très léger</li>
+                        <li>Par défaut, le port utilisé par Apache Tomcat est <b>8080</b></li>
+                        <li>Le serveur web sera accessible à l'adresse <b>http://localhost:8080</b></li>
+                        <li>Chaque projet est accessible à l'adresse http://localhost:8080/<b>nom-projet</b>/
+                        </li>
+                    </ul>
                     </p>
 
 
@@ -69,32 +69,32 @@
                         <br>
                         <br>C'est elle qui génère la vue et la retourne au navigateur.
 
-                        <table style="text-align: center;">
-                            <tr>
-                                <td>doGet</td>
-                                <td>Requête HTTP GET</td>
-                            </tr>
-                            <tr>
-                                <td>doPost</td>
-                                <td>Requête HTTP POST</td>
-                            </tr>
-                            <tr>
-                                <td>doPut</td>
-                                <td>Requête HTTP PUT</td>
-                            </tr>
-                            <tr>
-                                <td>doDelete</td>
-                                <td>Requête HTTP DELETE</td>
-                            </tr>
-                        </table>
+                    <table style="text-align: center;">
+                        <tr>
+                            <td>doGet</td>
+                            <td>Requête HTTP GET</td>
+                        </tr>
+                        <tr>
+                            <td>doPost</td>
+                            <td>Requête HTTP POST</td>
+                        </tr>
+                        <tr>
+                            <td>doPut</td>
+                            <td>Requête HTTP PUT</td>
+                        </tr>
+                        <tr>
+                            <td>doDelete</td>
+                            <td>Requête HTTP DELETE</td>
+                        </tr>
+                    </table>
 
-                        Chaque Servlet doit être mappée sur une URL.
-                        <br><br>
-                        <h5>Configuration "web.xml"</h5>
+                    Chaque Servlet doit être mappée sur une URL.
+                    <br><br>
+                    <h5>Configuration "web.xml"</h5>
 
 
 
-                        <pre><code>                            &lt;servlet>
+                    <pre><code>                            &lt;servlet>
                                 &lt;servlet-name > Home &lt;/servlet-name>   
                                 &lt;servlet-class > fr.projet.servlet.HomeServlet &lt;/servlet-class>   
                                 &lt;load-on-startup> 1 &lt;/load-on-startup>    
@@ -105,74 +105,74 @@
                                 &lt;url-pattern> /home&lt;/url-pattern>
                             &lt;/servlet-mapping></code></pre>
 
-                        <h5>Annotation</h5>
-                        <pre><code>@WebServlet("/home")
+                    <h5>Annotation</h5>
+                    <pre><code>@WebServlet("/home")
 public class HomeServlet extends HttpServlet{}</code></pre>
 
-                        <h4>Les Servlets</h4>
-                        <ul>
-                            <li><b>HttpServletRequest</b> contient des informations de la la requête HTTP
-                                (paramètre de la requête, attributs, session utilisateur ou toute autre information
-                                envoyée du client vers le serveur).
-                                <br><br>
-                                <ul>
-                                    <li><b>Récupérer</b> un <b>paramètre</b> de requête
-                                        <br><br>
-                                        ex : http://localhost:8080/mon-projet/home?username=toto
-                                        <br>
-                                        <br>
-                                        <pre><code>String myUserName = req.getParameter("username");</code></pre>
-                                    </li>
-                                    <li><b>Ajouter</b> un <b>attribut</b> de requête
-                                        <br>
-                                        <br>
-                                        <pre><code>Object myVariable = req.getAttribute("nomVariable","valeur");</code></pre>
-                                    </li>
-                                    <li><b>Récupérer</b> la <b>session</b> de l'utilisateur
-                                        <br>
-                                        <br>
-                                        <pre><code>Object myVariable = req.getSession();</code></pre>
-                                    </li>
-                                    <li><b>Récupérer</b> un <b>attribut</b> de la session de l'utilisateur
-                                        <br>
-                                        <br>
-                                        <pre><code>Object myVariable = req.getAttribute("variableDeSession");</code></pre>
-                                    </li>
-                                </ul>
+                    <h4>Les Servlets</h4>
+                    <ul>
+                        <li><b>HttpServletRequest</b> contient des informations de la la requête HTTP
+                            (paramètre de la requête, attributs, session utilisateur ou toute autre information
+                            envoyée du client vers le serveur).
+                            <br><br>
+                            <ul>
+                                <li><b>Récupérer</b> un <b>paramètre</b> de requête
+                                    <br><br>
+                                    ex : http://localhost:8080/mon-projet/home?username=toto
+                                    <br>
+                                    <br>
+                                    <pre><code>String myUserName = req.getParameter("username");</code></pre>
+                                </li>
+                                <li><b>Ajouter</b> un <b>attribut</b> de requête
+                                    <br>
+                                    <br>
+                                    <pre><code>Object myVariable = req.getAttribute("nomVariable","valeur");</code></pre>
+                                </li>
+                                <li><b>Récupérer</b> la <b>session</b> de l'utilisateur
+                                    <br>
+                                    <br>
+                                    <pre><code>Object myVariable = req.getSession();</code></pre>
+                                </li>
+                                <li><b>Récupérer</b> un <b>attribut</b> de la session de l'utilisateur
+                                    <br>
+                                    <br>
+                                    <pre><code>Object myVariable = req.getAttribute("variableDeSession");</code></pre>
+                                </li>
+                            </ul>
 
-                            </li>
+                        </li>
 
 
 
-                            <br>
-                            <li><b>HttpServletResponse</b> contient les éléments de la réponse HTTP qui sera envoyée
-                                (permet d'écrire du contenu HTML ou demander une redirection par exemple).
-                                <br><br>
-                                <ul>
-                                    <li><b>Spécifier</b> le <b>type</b> de contenu (contenu HTML dans l'exemple)
-                                        <br>
-                                        <br>
-                                        <pre><code>resp.setContentType("text/html");</code></pre>
-                                    </li>
-                                    <li><b>Ajouter</b> du <b>contenu</b>
-                                        <br>
-                                        <br>
-                                        <pre><code>resp.getWriter().println("hello world");</code></pre>
-                                    </li>
+                        <br>
+                        <li><b>HttpServletResponse</b> contient les éléments de la réponse HTTP qui sera envoyée
+                            (permet d'écrire du contenu HTML ou demander une redirection par exemple).
+                            <br><br>
+                            <ul>
+                                <li><b>Spécifier</b> le <b>type</b> de contenu (contenu HTML dans l'exemple)
+                                    <br>
+                                    <br>
+                                    <pre><code>resp.setContentType("text/html");</code></pre>
+                                </li>
+                                <li><b>Ajouter</b> du <b>contenu</b>
+                                    <br>
+                                    <br>
+                                    <pre><code>resp.getWriter().println("hello world");</code></pre>
+                                </li>
 
-                                    <li><b>Rediriger</b> vers une autre <b>Servlet</b>
-                                        <br>
-                                        <br>
-                                        <pre><code>resp.sendRedirect("autreServlet");</code></pre>
-                                    </li>
-                                </ul>
+                                <li><b>Rediriger</b> vers une autre <b>Servlet</b>
+                                    <br>
+                                    <br>
+                                    <pre><code>resp.sendRedirect("autreServlet");</code></pre>
+                                </li>
+                            </ul>
 
-                            </li>
-                        </ul>
+                        </li>
+                    </ul>
 
-                        Chaque <b>Servlet</b> peur initialier des <b>paramètres</b> par annotation.
-                        <br><br>
-                        <pre><code>@WebServlet(
+                    Chaque <b>Servlet</b> peut initialiser des <b>paramètres</b> par annotation.
+                    <br><br>
+                    <pre><code>@WebServlet(
     urlPatterns = "/home",
     initParams = {
         @WebInitParam(name="param", value="Valeur"),
@@ -180,10 +180,10 @@ public class HomeServlet extends HttpServlet{}</code></pre>
     }
 )</code></pre>
 
-                        Il est possible de <b>récupérer</b> les paramètres dans une <b>méthode</b> de la Servlet.
-                        <br>
-                        <br>
-                        <pre><code>ServletConfig myServletConfig = this.getServletConfig();
+                    Il est possible de <b>récupérer</b> les paramètres dans une <b>méthode</b> de la Servlet.
+                    <br>
+                    <br>
+                    <pre><code>ServletConfig myServletConfig = this.getServletConfig();
 resp.getWriter().println("&lt;p>" + myServletConfig.getInitParameter("Param")+ "&lt;/p>");
 for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements();){
     String myParameterName = (String)e.nextElement();
@@ -192,187 +192,187 @@ for(Enumeration e = myServletConfig.getInitParameterNames(); e.hasMoreElements()
 }</code></pre>
 
 
-                        <!--        <br>Un <b>Listener</b> est un Ecouteur qui déclenche une action lorsqu'un évènement se
+                    <!--        <br>Un <b>Listener</b> est un Ecouteur qui déclenche une action lorsqu'un évènement se
                         déclenche.
 
                         <br><br>Un <b>Filter</b> permet de filtrer des requêtes.
                     </p>-->
-                        <h4>Les JSP</h4>
-                        Il peut être pénible d'écrire une vue HTML dans un fichier Java.
+                    <h4>Les JSP</h4>
+                    Il peut être pénible d'écrire une vue HTML dans un fichier Java.
 
-                        <br><br>On peut utiliser une <b>JSP</b> (JavaServer Pages) qui est une Servlet compilée et
-                        auto-indéxée. <br>Il est possible de comparer cela à une page HTML dans laquelle on peut ajouter
-                        du code provenant d'un autre langage.
-                        <br>
-                        <br>
-                        <ul>
-                            <li>Déployée par le conteneur de Servlet</li>
-                            <li>Les variables request et response sont accessibles</li>
-                        </ul>
+                    <br><br>On peut utiliser une <b>JSP</b> (JavaServer Pages) qui est une Servlet compilée et
+                    auto-indéxée. <br>Il est possible de comparer cela à une page HTML dans laquelle on peut ajouter
+                    du code provenant d'un autre langage.
+                    <br>
+                    <br>
+                    <ul>
+                        <li>Déployée par le conteneur de Servlet</li>
+                        <li>Les variables request et response sont accessibles</li>
+                    </ul>
 
-                        Dans une JSP, on peut inclure du <b>Java</b>, ou des instructions pour <b>fabriquer /
-                            compiler</b>.
-                        <br><br>
-                        <ul>
-                            <li><b>Directive</b>
-                                <br>
-                                <br>
-                                <pre><code><%@ directive option %></code></pre>
-                            </li>
-                            <li><b>Code Java (Scriptlet)</b>
-                                <br>
-                                <br>
-                                <pre><code><% ... %></code></pre>
-                            </li>
-                            <li><b>Expression (Impression de la valeur d'une variable)</b>
-                                <br>
-                                <br>
-                                <pre><code><%= ... %></code></pre>
-                            </li>
-                            <li><b>Commentaire Java</b>
-                                <br>
-                                <br>
-                                <pre><code><%-- ... --%></code></pre>
-                            </li>
-                            <li><b>Déclaration</b>
-                                <br>
-                                <br>
-                                <pre><code><%! ... %></code></pre>
-                            </li>
-                            <li><b>Importer une classe</b>
-                                <br>
-                                <br>
-                                <pre><code><%@ page import="package.class" %></code></pre>
-                            </li>
-                            <li><b>Préciser l'encodage</b>
-                                <br>
-                                <br>
-                                <pre><code><%@ page pageEncoding="UTF-8" %></code></pre>
-                            </li>
-                            <li><b>Ajouter une taglib</b>
-                                <br>
-                                <br>
-                                <pre><code><%@ taglib uri="http://lurl-de-la-lib" prefix="leprefix" %></code></pre>
-                            </li>
-                        </ul>
+                    Dans une JSP, on peut inclure du <b>Java</b>, ou des instructions pour <b>fabriquer /
+                        compiler</b>.
+                    <br><br>
+                    <ul>
+                        <li><b>Directive</b>
+                            <br>
+                            <br>
+                            <pre><code><%@ directive option %></code></pre>
+                        </li>
+                        <li><b>Code Java (Scriptlet)</b>
+                            <br>
+                            <br>
+                            <pre><code><% ... %></code></pre>
+                        </li>
+                        <li><b>Expression (Impression de la valeur d'une variable)</b>
+                            <br>
+                            <br>
+                            <pre><code><%= ... %></code></pre>
+                        </li>
+                        <li><b>Commentaire Java</b>
+                            <br>
+                            <br>
+                            <pre><code><%-- ... --%></code></pre>
+                        </li>
+                        <li><b>Déclaration</b>
+                            <br>
+                            <br>
+                            <pre><code><%! ... %></code></pre>
+                        </li>
+                        <li><b>Importer une classe</b>
+                            <br>
+                            <br>
+                            <pre><code><%@page import="package.class" %></code></pre>
+                        </li>
+                        <li><b>Préciser l'encodage</b>
+                            <br>
+                            <br>
+                            <pre><code><%@page pageEncoding="UTF-8" %></code></pre>
+                        </li>
+                        <li><b>Ajouter une taglib</b>
+                            <br>
+                            <br>
+                            <pre><code><%@ taglib uri="http://lurl-de-la-lib" prefix="leprefix" %></code></pre>
+                        </li>
+                    </ul>
 
-                        Il est possible d'utiliser les <b>Expressions languages (EL)</b> en JSP en utilisant la syntaxe
-                        suivante :
+                    Il est possible d'utiliser les <b>Expressions languages (EL)</b> en JSP en utilisant la syntaxe
+                    suivante :
 
-                        <ul>
-                            <li>${ variable} ou ${5 + 5}</li>
-                            <li>EL permet de lire une variable qui se trouve, en tant qu'attribut, dans un des scopes
-                                existants</li>
-                            <li>Pour lire un paramètre de requête on peut utiliser l'attribut <b>"param"</b> :
-                                ${param.nomParametre}</li>
-                        </ul>
+                    <ul>
+                        <li>${ variable} ou ${5 + 5}</li>
+                        <li>EL permet de lire une variable qui se trouve, en tant qu'attribut, dans un des scopes
+                            existants</li>
+                        <li>Pour lire un paramètre de requête on peut utiliser l'attribut <b>"param"</b> :
+                            ${param.nomParametre}</li>
+                    </ul>
 
-                        Il est possible d'étendre le vocabulaire JSP avec <b>JSTL</b>.
-                        <br>Pour cela il faut ajouter la dépendance JSTL de javax.servlet (version 1.2) en préambule de
-                        toutes les JSP
-                        <br><br>
-                        <pre><code><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %></code></pre>
+                    Il est possible d'étendre le vocabulaire JSP avec <b>JSTL</b>.
+                    <br>Pour cela il faut ajouter la dépendance JSTL de javax.servlet (version 1.2) en préambule de
+                    toutes les JSP
+                    <br><br>
+                    <pre><code><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %></code></pre>
 
-                        <table style>
-                            <tr style="font-weight: bold; text-align: center;">
-                                <td>fonction</td>
-                                <td>syntaxe</td>
-                                <td>utilisation</td>
-                            </tr>
-                            <tr>
-                                <td>Afficher</td>
-                                <td>
-                                    <pre><code>&lt;c:out value="${variable}">Valeur par défaut&lt;/c:out></code></pre>
-                                </td>
-                                <td>Permet d'afficher une variable.</td>
-                            </tr>
+                    <table style>
+                        <tr style="font-weight: bold; text-align: center;">
+                            <td>fonction</td>
+                            <td>syntaxe</td>
+                            <td>utilisation</td>
+                        </tr>
+                        <tr>
+                            <td>Afficher</td>
+                            <td>
+                                <pre><code>&lt;c:out value="${variable}">Valeur par défaut&lt;/c:out></code></pre>
+                            </td>
+                            <td>Permet d'afficher une variable.</td>
+                        </tr>
 
-                            <tr>
-                                <td>Test</td>
-                                <td>
-                                    <pre><code>&lt;c:if test="${ 50 > 10}" var="variable">
+                        <tr>
+                            <td>Test</td>
+                            <td>
+                                <pre><code>&lt;c:if test="${ 50 > 10}" var="variable">
     Valeur par défaut
 &lt;/c:if></code></pre>
-                                </td>
-                                <td>Si le test est correct affiche "valeur par défaut" ("else" n'existe pas).</td>
-                            </tr>
+                            </td>
+                            <td>Si le test est correct, il affiche "valeur par défaut" ("else" n'existe pas).</td>
+                        </tr>
 
-                            <tr>
-                                <td>Test multiple</td>
-                                <td>
-                                    <pre><code>&lt;c:choose>
+                        <tr>
+                            <td>Test multiple</td>
+                            <td>
+                                <pre><code>&lt;c:choose>
     &lt;c:when test="${ variable }"> texte 1&lt;/c:when>
     &lt;c:when test="${ autreVariable}"> texte 2&lt;/c:when>
     &lt;c:otherwise>&lt;/c:otherwise> 
 &lt;/c:choose></code></pre>
-                                </td>
-                                <td>Les conditions sont exécutées dans l'ordre. Si aucune ne convient, c'est otherwise
-                                    qui sera exécuté.</td>
-                            </tr>
+                            </td>
+                            <td>Les conditions sont exécutées dans l'ordre. Si aucune ne convient, c'est otherwise
+                                qui sera exécuté.</td>
+                        </tr>
 
-                            <tr>
-                                <td>Boucle simple</td>
-                                <td>
-                                    <pre><code>&lt;c:forEach var="i" begin="0" end="10" step="2">
+                        <tr>
+                            <td>Boucle simple</td>
+                            <td>
+                                <pre><code>&lt;c:forEach var="i" begin="0" end="10" step="2">
     Un message n°&lt;c:out value="${ i }" /> !
 &lt;/c:forEach></code></pre>
-                                </td>
-                                <td>Une boucle qui s'exécute un certain nombre de fois en JSTL. </td>
-                            </tr>
+                            </td>
+                            <td>Une boucle qui s'exécute un certain nombre de fois en JSTL. </td>
+                        </tr>
 
-                            <tr>
-                                <td>Boucle sur un tableau</td>
-                                <td>
-                                    <pre><code>&lt;c:forEach items="${ titres }" var="titre" varStatus="status">
+                        <tr>
+                            <td>Boucle sur un tableau</td>
+                            <td>
+                                <pre><code>&lt;c:forEach items="${ titres }" var="titre" varStatus="status">
     N°&lt;c:out value="${ status.count }" /> : <c:out value="${ titre }" /> 
 &lt;/c:forEach></code></pre>
-                                </td>
-                                <td>Une boucle qui s'exécute sur chaque élément d'un tableau. </td>
-                            </tr>
+                            </td>
+                            <td>Une boucle qui s'exécute sur chaque élément d'un tableau. </td>
+                        </tr>
 
-                            <tr>
-                                <td>Boucle sur une chaine de caractère
-                                </td>
-                                <td>
-                                    <pre><code>&lt;c:forTokens var="morceau" items="élém1/élém2/élém3 delims="/">
+                        <tr>
+                            <td>Boucle sur une chaine de caractères
+                            </td>
+                            <td>
+                                <pre><code>&lt;c:forTokens var="morceau" items="élém1/élém2/élém3 delims="/">
    ${ morceau }
 &lt;/c:forTokens></code></pre>
-                                </td>
-                                <td>Une boucle qui s'exécute sur chaque élément du string séparé par "/".</td>
-                            </tr>
+                            </td>
+                            <td>Une boucle qui s'exécute sur chaque élément du string séparé par "/".</td>
+                        </tr>
 
-                            <tr>
-                                <td>Boucle ForEach
-                                </td>
-                                <td>
-                                    <pre><code>&lt;c:forEach var="i" begin="0" end="7" step="1">
+                        <tr>
+                            <td>Boucle ForEach
+                            </td>
+                            <td>
+                                <pre><code>&lt;c:forEach var="i" begin="0" end="7" step="1">
    ${ i }
 &lt;/c:forEach></code></pre>
-                                </td>
-                                <td>Une boucle qui s'exécute un nombre d'entier entre "begin" et "end" avec une
-                                    incrémentation de "step".</td>
-                            </tr>
+                            </td>
+                            <td>Une boucle qui s'exécute un nombre d'entier entre "begin" et "end" avec une
+                                incrémentation de "step".</td>
+                        </tr>
 
 
-                        </table>
+                    </table>
 
-                        Pour utiliser des attributs de la Servlet dans une JSP :
-                        <br><br>
+                    Pour utiliser des attributs de la Servlet dans une JSP :
+                    <br><br>
 
-                        Il faut d'abord déclarer les attributs dans la Servlet :
-                        <br><br>
-                        <pre><code>List&lt;String> MesUtilisateurs = new ArrayList&lt;String>();
+                    Il faut d'abord déclarer les attributs dans la Servlet :
+                    <br><br>
+                    <pre><code>List&lt;String> MesUtilisateurs = new ArrayList&lt;String>();
 
 mesUtilisateurs.add("utilisateur1");
 mesUtilisateurs.add("utilisateur2");
 mesUtilisateurs.add("utilisateur3");
 
 req.setAttribute("listUtilisateur", mesUtilisateurs);</String></code></pre>
-                        <br>
-                        Puis les récupérer dans la JSP
-                        <br><br>
+                    <br>
+                    Puis les récupérer dans la JSP
+                    <br><br>
 
-                        <pre><code >&lt;table>
+                    <pre><code >&lt;table>
     &lt;c:forEach items="${listUtilisateur}" var="utilisateur">
         &lt;tr>
             &lt;td>${utilisateur}&lt;/td>

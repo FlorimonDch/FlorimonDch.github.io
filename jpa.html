@@ -45,7 +45,7 @@
 				<div class="content">
 
 					<h3>JPA</h3>
-				
+
 					<p>Sous l’influence des frameworks de type « ORM »(Object Relational Mapping) et pour répondre aux
 						nombreuses critiques concernant les EJB, une
 						nouvelle spécification est proposée et adoptée :
@@ -59,27 +59,27 @@
 
 						Exemple ORM (JPA) :
 
-						<ul>
-							<li>
-								Liste d'employés :
+					<ul>
+						<li>
+							Liste d'employés :
 
-								<br><br>
-								<pre><code>static String displayAllQuery = "Select emp from Employee emp" ;
+							<br><br>
+							<pre><code>static String displayAllQuery = "Select emp from Employee emp" ;
 TypedQuery e = em.createQuery(displayAllQuery, Employee.class);
 List &lt;Employee> employees=e.getResultList();
 for ( Employee emp : employees ) {
 	// ...
 }</code></pre>
-							</li>
-							<li>
-								Un employé :
-								<br><br>
-								<pre><code>Employee e = (Employee) em.find(Employee.class, id);</code></pre>
-							</li>
-						</ul>
+						</li>
+						<li>
+							Un employé :
+							<br><br>
+							<pre><code>Employee e = (Employee) em.find(Employee.class, id);</code></pre>
+						</li>
+					</ul>
 
-						Il y a <b>moins</b> de code, les connexions sont <b>masquées</b> et le mapping sur la classe
-						Employee est <b>automatique</b>.
+					Il y a <b>moins</b> de code, les connexions sont <b>masquées</b> et le mapping sur la classe
+					Employee est <b>automatique</b>.
 
 
 					</p>
@@ -89,13 +89,13 @@ for ( Employee emp : employees ) {
 					<h3>La persistence</h3>
 
 					<b>« EntityManager »</b> fournit des méthodes de gestion
-d’objets stockés dans des caches, ce sont des
-mécanismes internes qui gèrent les requêtes SQL.
-<br><br>
+					d’objets stockés dans des caches, ce sont des
+					mécanismes internes qui gèrent les requêtes SQL.
+					<br><br>
 
-Le fichier <b>« persistence.xml »</b> est situé dans <b>« META-INF »</b>
-<br><br>
-<pre><code type="html"> &lt;persistence version="2.0" xmlns=".. ..">
+					Le fichier <b>« persistence.xml »</b> est situé dans <b>« META-INF »</b>
+					<br><br>
+					<pre><code type="html"> &lt;persistence version="2.0" xmlns=".. ..">
 	&lt;persistence-unit name="jpa-tests"   //NOM
 	transaction-type="RESOURCE_LOCAL">
 	&lt;provider>org.eclipse.persistence.jpa.PersistenceProvider&lt;/provider>    //IMPLEMENTATION JPA
@@ -115,9 +115,9 @@ Le fichier <b>« persistence.xml »</b> est situé dans <b>« META-INF »</b>
 &lt;/persistence></code></pre>
 
 
-Début et fin en Java SE :
-<br><br>
-<pre><code>public static void main(String[] args)
+					Début et fin en Java SE :
+					<br><br>
+					<pre><code>public static void main(String[] args)
 {
 	EntityManagerFactory emf =
 		Persistence.createEntityManagerFactory("jpa-tests");  //NOM = persistence.xml
@@ -315,25 +315,25 @@ public class Employee {
 em.getTransaction().rollback();</code></pre>
 
 
-					<p>
+					<!--					
+	<p>
 
 
-						JPA --> haut niveau pour gérer les requetes
+						 haut niveau pour gérer les requêtes
 						<br>
 						Créer une table en fonction d'une classe et inverse
 						<br>
 						à un PersistenceUnit Correspond une base de données
-						(plusieurs persistenceUnit si type de base différente (ex db1 --> mysql/ db2 --> oracle))
-						-----> a indiqué sur le persistance.XML
+						(plusieurs persistenceUnit si il y a des type de bases différentes (ex db1 -> mysql/ db2 ->
+						oracle))
+						-> a indiqué sur le persistance.XML
 						<br>
 						EntityManagerFactory
-						EntityManager --> permet de gerer PersistanceContext
+						EntityManager -> permet de gerer PersistanceContext
 						<br>
 						PersistanceContext
 						<br>
-						value--> create puis update
-
-
+						value-> create puis update
 						TimeZone
 
 						jdbc:mysql://localhost:3306/db1?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC
@@ -341,43 +341,44 @@ em.getTransaction().rollback();</code></pre>
 						<br>
 						vérifier la version de mysql dans le POM.XML
 						<br>
-						@Version --> s'incrémente a chaque modif de l'objet dans la table
+						@Version -> s'incrémente a chaque modif de l'objet dans la table
 						<br>
 
-						Create --> persist
-						Read (findAll et findById) --> em.find(NomObjet.class, id)
+						Create -> persist
+						Read (findAll et findById) -> em.find(NomObjet.class, id)
 						Update
 						Delete
 
 
-						merge --> si pas d'entité -->persist
+						merge -> si pas d'entité ->persist
 						sinon remet l'objet dans le contexte s'il l'a perdu
 						<br>
 						<br>
-						<textarea style="height: 460px" disabled="">
-	<dependencies>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.39</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.1.0.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.1.0.Final</version>
-		</dependency>
-	</dependencies>
-</textarea>
+					-->
+					<pre><code>
+&lt;dependencies>
+	&lt;dependency>
+		&lt;groupId>mysql&lt;/groupId>
+		&lt;artifactId>mysql-connector-java&lt;/artifactId>
+		&lt;version>5.1.39&lt;/version>
+	&lt;/dependency>
+	&lt;dependency>
+		&lt;groupId>org.hibernate&lt;/groupId>
+		&lt;artifactId>hibernate-core&lt;/artifactId>
+		&lt;version>5.1.0.Final&lt;/version>
+	&lt;/dependency>
+	&lt;dependency>
+		&lt;groupId>org.hibernate&lt;/groupId>
+		&lt;artifactId>hibernate-entitymanager&lt;/artifactId>
+		&lt;version>5.1.0.Final&lt;/version>
+	&lt;/dependency>
+&lt;/dependencies></code></pre>
 
 
-						
-						<br>
-						"Comprendre l interret/connaitre le principe d un ORM - Mapping
+
+
+
+					<!--"Comprendre l interret/connaitre le principe d un ORM - Mapping
 						Objet / Relationnel"
 						Introduction JPA et Hibernate et les différents niveaux d’API de persistance
 						Savoir realiser un Mapping par annotations
@@ -388,12 +389,12 @@ em.getTransaction().rollback();</code></pre>
 						Savoir realiser un CRUD avec JPA
 						Implementer les requêtes JPQL, SQL et Criteria API
 						.
-
-						<div style="text-align: center">
-							<a href="Download/projetjpa.rar" download>
-								<button style="text-align: center" class="class=button special icon fa-download" href="Download/projmaven.rar"
-									download>Download JPA template</button>
-						</div>
+						-->
+					<div style="text-align: center">
+						<a href="Download/projetjpa.rar" download>
+							<button style="text-align: center" class="class=button special icon fa-download"
+								href="Download/projmaven.rar" download>Download JPA template</button>
+					</div>
 
 					</p>
 

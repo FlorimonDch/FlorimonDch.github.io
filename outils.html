@@ -47,7 +47,7 @@
 					<p>26.20.2020</p>
 				</header>
 				<div class="content">
-					
+
 					<p><span class="image left"><img style="width: 180px" src="images/maven.png" alt="" /></span>Apache
 						Maven (couramment appelé Maven) est un outil de gestion et d'automatisation de production des
 						projets logiciels Java en général et Java EE en particulier.
@@ -59,39 +59,39 @@
 						<br>
 
 						<b>Les avantages de Maven :</b>
-						<ul>
-							<li>Généricité des projets, il fixe un standard "projet maven" (projet compatible avec
-								différents IDE)</li>
-							<li>Chargement dynamique des Jar -->
-								https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.3</li>
-							<li>Créer des composants et donnent un numéro de version</li>
-						</ul>
+					<ul>
+						<li>Généricité des projets, il fixe un standard "projet maven" (projet compatible avec
+							différents IDE)</li>
+						<li>Chargement dynamique des Jar -->
+							https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.3</li>
+						<li>Créer des composants et donne un numéro de version</li>
+					</ul>
 
 
-						Avant d'importer le projet, il faut modifier le POM.XML.
-						<br>
-						<br>
-						En effet, il faut modifier le ArtifactId pour qu'il
-						corresponde au nom du projet si on a copier le dossier depuis le template projet.
-						<br>
-						<br>
-						Attention de ne jamais avoir de doublon sur le binome < groupId, ArtifactId>.
+					Avant d'importer le projet, il faut modifier le POM.XML.
+					<br>
+					<br>
+					En effet, il faut modifier l'ArtifactId pour qu'il
+					corresponde au nom du projet si on a copié le dossier depuis le template projet.
+					<br>
+					<br>
+					Attention de ne jamais avoir de doublon sur le binôme &lt;groupId, ArtifactId>.
 					</p>
 					<p>
 
 						<b>Installation des variables d'environnement :</b>
 
-						<ul>
+					<ul>
 
-							<li><b>JAVA_HOME</b> : C:\Program Files\Java\jdk1.7</li>
+						<li><b>JAVA_HOME</b> : C:\Program Files\Java\jdk1.7</li>
 
-							<li><b>M2_HOME</b> : C:\apache-maven-3.6</li>
+						<li><b>M2_HOME</b> : C:\apache-maven-3.6</li>
 
-							<li><b>MAVEN_HOME</b> : C:\apache-maven-3.6</li>
+						<li><b>MAVEN_HOME</b> : C:\apache-maven-3.6</li>
 
-						</ul>
+					</ul>
 
-						Pour mettre le POM.XML à jour, il faut cliquer sur le menu projet>maven> update project.
+					Pour mettre le POM.XML à jour, il faut cliquer sur le menu projet>maven> update project.
 					</p>
 
 
@@ -99,203 +99,203 @@
 
 					<div style="text-align: center">
 						<a href="Download/projmaven.rar" download>
-							<button style="text-align: center" class="class=button special icon fa-download" href="Download/projmaven.rar"
-								download>Download mvn template</button>
+							<button style="text-align: center" class="class=button special icon fa-download"
+								href="Download/projmaven.rar" download>Download mvn template</button>
 					</div>
 					</a></p>
 
 					<p><span class="image right"><img style="width: 100px" src="images/git.png" alt="" /></span>
-						<h4>Git</h4>
+					<h4>Git</h4>
 
 
-						<b>Installation de git</b>
-						<br>
-						<br>
-						Il faut tout d'abord télécharger <a href="https://git-scm.com/downloads" target="_blank">le
-							client git</a>
-						<br>
-						Pour simplifier la gestion des projets git, on peut utiliser <a href="https://github.com/"
-							target="_blank">Github</a> ou encore <a href="https://about.gitlab.com/"
-							target="_blank">GitLab</a>.
+					<b>Installation de git</b>
+					<br>
+					<br>
+					Il faut tout d'abord télécharger <a href="https://git-scm.com/downloads" target="_blank">le
+						client git</a>
+					<br>
+					Pour simplifier la gestion des projets git, on peut utiliser <a href="https://github.com/"
+						target="_blank">Github</a> ou encore <a href="https://about.gitlab.com/"
+						target="_blank">GitLab</a>.
 
-						<br>
-						<br>
-						<b>Commandes utiles</b>
-						<br>
-						<br>
-						<h5>Configuration des outils</h5>
+					<br>
+					<br>
+					<b>Commandes utiles</b>
+					<br>
+					<br>
+					<h5>Configuration des outils</h5>
 
-						<code>git config --global user.name "[nom]"</code>
-						Définit le nom que vous voulez associer à toutes vos opérations
-						<br>
-						<br>
+					<code>git config --global user.name "[nom]"</code>
+					Définit le nom que vous voulez associer à toutes vos opérations
+					<br>
+					<br>
 
-						<code>git config --global user.email "[adresse email]"</code>
-						Définit l'email que vous voulez associer à toutes vos opérations
-						<br>
-						<br>
+					<code>git config --global user.email "[adresse email]"</code>
+					Définit l'email que vous voulez associer à toutes vos opérations
+					<br>
+					<br>
 
-						<h5>Créer un dépôts</h5>
+					<h5>Créer un dépôt</h5>
 
-						<code>git init [nom-du-projet]</code>
-						Crée un dépôt local à partir du nom spécifié
-						<br>
-						<br>
-						<code>git clone [url]</code>
-						Télécharge un projet et tout son historique de versions
-						<br>
-						<br>
+					<code>git init [nom-du-projet]</code>
+					Crée un dépôt local à partir du nom spécifié
+					<br>
+					<br>
+					<code>git clone [url]</code>
+					Télécharge un projet et tout son historique de versions
+					<br>
+					<br>
 
-						<h5>Effectuer des changements</h5>
+					<h5>Effectuer des changements</h5>
 
-						<code>git status</code>
-						Liste tous les nouveaux fichiers et les fichiers modifiés à commiter
-						<br>
-						<br>
-						<code>git diff</code>
-						Montre les modifications de fichier qui ne sont pas encore indexées
-						<br>
-						<br>
+					<code>git status</code>
+					Liste tous les nouveaux fichiers et les fichiers modifiés à commiter
+					<br>
+					<br>
+					<code>git diff</code>
+					Montre les modifications de fichier qui ne sont pas encore indexées
+					<br>
+					<br>
 
-						<code>git add [fichier]</code>
-						Ajoute un instantané du fichier, en préparation pour le suivi de version <br>(git add . pour
-						tout ajouter)
+					<code>git add [fichier]</code>
+					Ajoute un instantané du fichier, en préparation pour le suivi de version <br>(git add . pour
+					tout ajouter)
 
-						<br>
-						<br>
-						<code>git diff --staged</code>
-						Montre les différences de fichier entre la version indexée et la dernière
-						version
-						<br>
-						<br>
-						<code>git reset [fichier]</code>
-						Enleve le fichier de l'index, mais conserve son contenu
-						<br>
-						<br>
-						<code>git commit -m "[message descriptif]"</code>
-						Enregistre des instantanés de fichiers de façon permanente dans
-						l'historique des versions
-						<br>
-						<br>
+					<br>
+					<br>
+					<code>git diff --staged</code>
+					Montre les différences de fichier entre la version indexée et la dernière
+					version
+					<br>
+					<br>
+					<code>git reset [fichier]</code>
+					Enlève le fichier de l'index, mais conserve son contenu
+					<br>
+					<br>
+					<code>git commit -m "[message descriptif]"</code>
+					Enregistre des instantanés de fichiers de façon permanente dans
+					l'historique des versions
+					<br>
+					<br>
 
-						<h5>GROUPER DES CHANGEMENTS</h5>
-						<code>git branch</code>
-						Liste toutes les branches locales dans le dépôt courant
-						<br>
-						<br>
+					<h5>GROUPER DES CHANGEMENTS</h5>
+					<code>git branch</code>
+					Liste toutes les branches locales dans le dépôt courant
+					<br>
+					<br>
 
-						<code>git branch [nom-de-branche]</code>
-						Crée une nouvelle branche
-						<br>
-						<br>
-						<code>git checkout [nom-de-branche]</code>
-						Bascule sur la branche spécifiée et met à jour le répertoire de travail
-						<br>
-						<br>
-						<code>git merge [nom-de-branche]</code>
-						Combine dans la branche courante l'historique de la branche spécifiée
-						<br>
-						<br>
-						<code>git branch -d [nom-de-branche]</code>
-						Supprime la branche spécifiée
-						<br>
-						<br>
+					<code>git branch [nom-de-branche]</code>
+					Crée une nouvelle branche
+					<br>
+					<br>
+					<code>git checkout [nom-de-branche]</code>
+					Bascule sur la branche spécifiée et met à jour le répertoire de travail
+					<br>
+					<br>
+					<code>git merge [nom-de-branche]</code>
+					Combine dans la branche courante l'historique de la branche spécifiée
+					<br>
+					<br>
+					<code>git branch -d [nom-de-branche]</code>
+					Supprime la branche spécifiée
+					<br>
+					<br>
 
-						<h5>CHANGEMENTS AU NIVEAU DES NOMS DE FICHIERS</h5>
+					<h5>CHANGEMENTS AU NIVEAU DES NOMS DE FICHIERS</h5>
 
-						<code>git rm [fichier]</code>
-						Supprime le fichier du répertoire de travail et met à jour l'index
-						<br>
-						<br>
+					<code>git rm [fichier]</code>
+					Supprime le fichier du répertoire de travail et met à jour l'index
+					<br>
+					<br>
 
-						<code>git rm --cached [fichier]</code>
-						Supprime le fichier du système de suivi de version mais le préserve
-localement
-						<br>
-						<br>
+					<code>git rm --cached [fichier]</code>
+					Supprime le fichier du système de suivi de version mais le préserve
+					localement
+					<br>
+					<br>
 
-						<code>git mv [fichier-nom] [fichier-nouveau-nom]</code>
-						Renomme le fichier et prépare le changement pour un commit
-						<br>
-						<br>
+					<code>git mv [fichier-nom] [fichier-nouveau-nom]</code>
+					Renomme le fichier et prépare le changement pour un commit
+					<br>
+					<br>
 
-						<h5>ENREGISTRER DES FRAGMENTS</h5>
+					<h5>ENREGISTRER DES FRAGMENTS</h5>
 
-						<code>git stash</code>
-						Enregistre de manière temporaire tous les fichiers sous suivi de version
-qui ont été modifiés ("remiser son travail")
-						<br>
-						<br>
+					<code>git stash</code>
+					Enregistre de manière temporaire tous les fichiers sous-suivis de version
+					qui ont été modifiés ("remiser son travail")
+					<br>
+					<br>
 
-						<code>git stash pop</code>
-						Applique une remise et la supprime immédiatement
-						<br>
-						<br>
+					<code>git stash pop</code>
+					Applique une remise et la supprime immédiatement
+					<br>
+					<br>
 
-						<code>git stash list</code>
-						Liste toutes les remises
-						<br>
-						<br>
+					<code>git stash list</code>
+					Liste toutes les remises
+					<br>
+					<br>
 
-						<code>git stash drop</code>
-						Supprime la remise la plus récente
-						<br>
-						<br>
-						<h5>VÉRIFIER L'HISTORIQUE DES VERSIONS</h5>
+					<code>git stash drop</code>
+					Supprime la remise la plus récente
+					<br>
+					<br>
+					<h5>VÉRIFIER L'HISTORIQUE DES VERSIONS</h5>
 
-						<code>git log</code>
-						Montre l'historique des versions pour la branche courante
-						<br>
-						<br>
-						
+					<code>git log</code>
+					Montre l'historique des versions pour la branche courante
+					<br>
+					<br>
 
-						<code>git log --follow [fichier]</code>
-						Montre l'historique des versions, y compris les actions de renommage,
-pour le fichier spécifié
-						<br>
-						<br>
-						<code>git diff [premiere-branche]...[deuxieme-branche]</code>
-						Montre les différences de contenu entre deux branches
-						<br>
-						<br>
 
-						<code>git show [commit]</code>
-						Montre les modifications de métadonnées et de contenu inclues dans le commit spécifié
-						<br>
-						<br>
-						<h5>REFAIRE DES COMMITS</h5>
+					<code>git log --follow [fichier]</code>
+					Montre l'historique des versions, y compris les actions de renommage,
+					pour le fichier spécifié
+					<br>
+					<br>
+					<code>git diff [premiere-branche]...[deuxieme-branche]</code>
+					Montre les différences de contenu entre deux branches
+					<br>
+					<br>
 
-						<code>git reset [commit]</code>
-						Annule tous les commits après `[commit]`, en conservant les
-modifications localement
-						<br>
-						<br>
+					<code>git show [commit]</code>
+					Montre les modifications de métadonnées et de contenu inclues dans le commit spécifié
+					<br>
+					<br>
+					<h5>REFAIRE DES COMMITS</h5>
 
-						<code>git reset --hard [commit]</code>
-						Supprime tout l'historique et les modifications effectuées après le
-commit spécifié
-						<br>
-						<br>
-						<h5>SYNCHRONISER LES CHANGEMENTS</h5>
+					<code>git reset [commit]</code>
+					Annule tous les commits après `[commit]`, en conservant les
+					modifications localement
+					<br>
+					<br>
 
-						<code>git fetch [nom-de-depot]</code>
-						Récupère tout l'historique du dépôt nommé
-						<br>
-						<br>
-						<code>git merge [nom-de-depot]/[branche]</code>
-						Fusionne la branche du dépôt dans la branche locale courante
-						<br>
-						<br>
-						<code>git push [alias] [branche]</code>
+					<code>git reset --hard [commit]</code>
+					Supprime tout l'historique et les modifications effectuées après le
+					commit spécifié
+					<br>
+					<br>
+					<h5>SYNCHRONISER LES CHANGEMENTS</h5>
 
-						Envoie tous les commits de la branche locale vers GitHub
-						<br>
-						<br>
-						<code>git pull</code>
-						Récupère tout l'historique du dépôt nommé et incorpore les modifications
-						<br>
-						<br>
-				
+					<code>git fetch [nom-de-depot]</code>
+					Récupère tout l'historique du dépôt nommé
+					<br>
+					<br>
+					<code>git merge [nom-de-depot]/[branche]</code>
+					Fusionne la branche du dépôt dans la branche locale courante
+					<br>
+					<br>
+					<code>git push [alias] [branche]</code>
+
+					Envoie tous les commits de la branche locale vers GitHub
+					<br>
+					<br>
+					<code>git pull</code>
+					Récupère tout l'historique du dépôt nommé et incorpore les modifications
+					<br>
+					<br>
+
 
 
 
