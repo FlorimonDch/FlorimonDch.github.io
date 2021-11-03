@@ -30,15 +30,10 @@
 			<li><a href="outils.html">Outils</a></li>
 			<li><a href="spring.html">Spring</a></li>
 			<li><a href="angular.html">Angular</a></li>
+			<li><a href="solidity.html">Solidity</a></li>
+
 		</ul>
 	</nav>
-
-	<!-- Content -->
-	<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
 	<section id="post" class="wrapper bg-img" data-bg="land10.jpg">
 		<div class="inner">
 			<article class="box">
@@ -113,11 +108,46 @@
 					<br>
 					Il faut tout d'abord télécharger <a href="https://git-scm.com/downloads" target="_blank">le
 						client git</a>
-					<br>
+					<br><br>
 					Pour simplifier la gestion des projets git, on peut utiliser <a href="https://github.com/"
 						target="_blank">Github</a> ou encore <a href="https://about.gitlab.com/"
 						target="_blank">GitLab</a>.
 
+						<br>
+						<br>
+						Pour accéder à un repository de github en local, il faut tout d'abord génerer une clé SSH.
+								<br><br>
+						<code>ssh-keygen -t rsa -b 4096 -C “commentaire_ou_email”</code>
+						<br><br>
+						On vérifie que le ssh est en train de tourner
+						<br>
+						<br>
+						<code>eval $(ssh-agent -s)</code>
+						<br><br>
+
+						on devrait alors voir : 
+						<br><br>
+
+						<code>Agent pid 4056</code>
+						<br><br>
+
+
+						Ensuite, il faut ajouter la clé privé à l'agent SSH 
+						<br><br>
+
+						<code>ssh-add ~/.ssh/id_rsa</code>
+						<br><br>
+
+						Il faut ajouter la clé à github <a href="https://github.com/settings/keys"
+						target="_blank">SSH and GPG keys</a>  
+						<br>
+						<br>
+						et enfin cloner le repository avec 
+
+						<br>	
+											<br>
+
+						<code>git clone nom_repo</code>
 					<br>
 					<br>
 					<b>Commandes utiles</b>
