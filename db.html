@@ -2,191 +2,185 @@
 <html>
 
 <head>
-	<title>Bases de données</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="./images/favicon.png" />
+    <title>Bases de données</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="./images/favicon.png" />
 </head>
 
 <body class="subpage">
 
-	<!-- Header -->
-	<header id="header" class="alt">
-		<div class="logo"><a href="index.html">Bases de données <span>by Florimon Dch</span></a></div>
-		<a href="#menu"><span>Menu</span></a>
-	</header>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div class="logo"><a href="index.html">Bases de données <span>by Florimon Dch</span></a></div>
+        <a href="#menu"><span>Menu</span></a>
+    </header>
 
-	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="java.html">Java</a></li>
-			<li><a href="db.html">Bases de données</a></li>
-			<li><a href="web.html">Web</a></li>
-			<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
-			<li><a href="service.html">Service Web avec Java SE</a></li>
-			<li><a href="jpa.html">JPA Hibernate</a></li>
-			<li><a href="outils.html">Outils</a></li>
-			<li><a href="spring.html">Spring</a></li>
-			<li><a href="angular.html">Angular</a></li>
-			<li><a href="solidity.html">Solidity</a></li>
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="db.html">Bases de données</a></li>
+            <li><a href="web.html">Web</a></li>
+            <li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
+            <li><a href="service.html">Service Web avec Java SE</a></li>
+            <li><a href="jpa.html">JPA Hibernate</a></li>
+            <li><a href="outils.html">Outils</a></li>
+            <li><a href="spring.html">Spring</a></li>
+            <li><a href="angular.html">Angular</a></li>
+            <li><a href="solidity.html">Solidity</a></li>
 
-		</ul>
-	</nav>
-	<section id="post" class="wrapper bg-img" data-bg="land4.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Bases de données</h2>
-					<p>31.01.2020</p>
-				</header>
-				<div class="content">
-
-
+        </ul>
+    </nav>
+    <section id="post" class="wrapper bg-img" data-bg="land4.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Bases de données</h2>
+                    <p>31.01.2020</p>
+                </header>
+                <div class="content">
 
 
-					<p>
-					<h3>Installation</h3>
-					</p>
 
-					Il faut installer <a href="https://dev.mysql.com/downloads/workbench/" target="_blank">Mysql
+
+                    <p>
+                        <h3>Installation</h3>
+                    </p>
+
+                    Il faut installer <a href="https://dev.mysql.com/downloads/workbench/" target="_blank">Mysql
 						Workbench</a>.
-					<br><br>
-					<b>MySQL Workbench</b> est un logiciel gratuit développé par Oracle, qui permet de gérer et
-					d'administrer des bases de données MySQL via une interface graphique.
+                    <br><br>
+                    <b>MySQL Workbench</b> est un logiciel gratuit développé par Oracle, qui permet de gérer et d'administrer des bases de données MySQL via une interface graphique.
 
 
-					<p>
-					<h3>Les requêtes principales</h3>
-					</p>
-					<code>
+                    <p>
+                        <h3>Les requêtes principales</h3>
+                    </p>
+                    <code>
 SELECT * FROM nomTable WHERE attr1="value1" 
 							</code>
-					<br>
-					<br>
+                    <br>
+                    <br>
 
-					<code>
+                    <code>
 INSERT INTO nomTable VALUES (attr1, attr2) 
 							</code>
-					<br>
-					<br>
-					<code>
+                    <br>
+                    <br>
+                    <code>
 UPDATE nomTable set attr = monAttr WHERE attr = "value" 
 							</code>
-					<br>
-					<br>
-					<code>
+                    <br>
+                    <br>
+                    <code>
 DELETE FROM nomTable WHERE attr = "value" 
 							</code>
 
 
 
-					<p>
-					<h3>les fonctions de groupe</h3>
-					</p>
-					<ul>
-						<li><b>AVG</b> : moyenne</li>
-						<li><b>COUNT</b> : nombre d'enregistrements dans une table</li>
-						<li><b>MAX</b></li>
-						<li><b>MIN</b></li>
-						<li><b>SUM</b> : somme</li>
-					</ul>
+                    <p>
+                        <h3>les fonctions de groupe</h3>
+                    </p>
+                    <ul>
+                        <li><b>AVG</b> : moyenne</li>
+                        <li><b>COUNT</b> : nombre d'enregistrements dans une table</li>
+                        <li><b>MAX</b></li>
+                        <li><b>MIN</b></li>
+                        <li><b>SUM</b> : somme</li>
+                    </ul>
 
-					<p>
-					<h3>Autres fonctionnalités</h3>
-					</p>
-					<ul>
-						<li><b>LIKE</b> (% = tous les caractères n fois et _ = un seul caractère)</li>
-						<li><b>IS NULL</b></li>
-						<li><b>AND, OR, NOT</b></li>
+                    <p>
+                        <h3>Autres fonctionnalités</h3>
+                    </p>
+                    <ul>
+                        <li><b>LIKE</b> (% = tous les caractères n fois et _ = un seul caractère)</li>
+                        <li><b>IS NULL</b></li>
+                        <li><b>AND, OR, NOT</b></li>
 
-					</ul>
+                    </ul>
 
-					<p>
-					<h3>les clauses</h3>
-					</p>
+                    <p>
+                        <h3>les clauses</h3>
+                    </p>
 
-					<ul>
-						<li><b>ORDER BY</b> (ASC = ordre croissant / DESC = ordre decroissant)</li>
-						<li><b>HAVING</b> (comme le where sauf que l'on peut filtrer en utilisant des fonctions comme
-							SUM(), COUNT() ou encore AVG()) </li>
+                    <ul>
+                        <li><b>ORDER BY</b> (ASC = ordre croissant / DESC = ordre decroissant)</li>
+                        <li><b>HAVING</b> (comme le where sauf que l'on peut filtrer en utilisant des fonctions comme SUM(), COUNT() ou encore AVG()) </li>
 
-					</ul>
+                    </ul>
 
-					<p>
-					<h3>les jointures</h3>
-					</p>
+                    <p>
+                        <h3>les jointures</h3>
+                    </p>
 
-					<ul>
+                    <ul>
 
-						<li>
-							<h5>Natural Join</h5>
-							Permet d'associer 2 tables qui ont une colonne identique (ex : num_dpt dans Employé et
-							num_dpt dans Departement)
+                        <li>
+                            <h5>Natural Join</h5>
+                            Permet d'associer 2 tables qui ont une colonne identique (ex : num_dpt dans Employé et num_dpt dans Departement)
 
-						</li>
-						<br>
-						<li>
-							<h5>Inner Join (ou Join)</h5>
-							Permet de dire sur quels champs les tables sont associées (ON table.attr = table2.attr).
+                        </li>
+                        <br>
+                        <li>
+                            <h5>Inner Join (ou Join)</h5>
+                            Permet de dire sur quels champs les tables sont associées (ON table.attr = table2.attr).
 
-						</li>
-						<br>
-						<li>
-							<h5>Auto Jointure</h5>
-							Il s'agit d'une association réflexive, la table est associée à elle-même. La clé étrangère
-							est sur la même table (ex : manager_id).
-						</li>
-						<br>
-						<li>
-							<h5>Jointure multiple</h5>
-							Il s'agit d'une requete avec plusieurs jointures, il faut respecter l'ordre de liaison
-							suivant le diagramme UML (ex job JOIN employe ON ... JOIN Departement ON ...)
-						</li>
-						<br>
-						<li>
-							<h5>Non-equi jointure</h5>
-							C'est une jointure sur une inégalité avec un BETWEEN.
-						</li>
-						<br>
-						<li>
-							<h5>Jointure externe (outer join/left outer join)</h5>
+                        </li>
+                        <br>
+                        <li>
+                            <h5>Auto Jointure</h5>
+                            Il s'agit d'une association réflexive, la table est associée à elle-même. La clé étrangère est sur la même table (ex : manager_id).
+                        </li>
+                        <br>
+                        <li>
+                            <h5>Jointure multiple</h5>
+                            Il s'agit d'une requete avec plusieurs jointures, il faut respecter l'ordre de liaison suivant le diagramme UML (ex job JOIN employe ON ... JOIN Departement ON ...)
+                        </li>
+                        <br>
+                        <li>
+                            <h5>Non-equi jointure</h5>
+                            C'est une jointure sur une inégalité avec un BETWEEN.
+                        </li>
+                        <br>
+                        <li>
+                            <h5>Jointure externe (outer join/left outer join)</h5>
 
-							Il s'agit du fait d'avoir des lignes qui n'ont pas forcément de correspondance avec les
-							lignes de l'autre table.
-						</li>
-					</ul>
+                            Il s'agit du fait d'avoir des lignes qui n'ont pas forcément de correspondance avec les lignes de l'autre table.
+                        </li>
+                    </ul>
 
 
-					<h5>Les alias</h5>
-					<code>FROM table A inner join table2 B</code>
+                    <h5>Les alias</h5>
+                    <code>FROM table A inner join table2 B</code>
 
-					<p>
-					<h5>Les sous-requêtes</h5>
-					</p>
-					<pre><code>SELECT * FROM nomTable WHERE attr > (SELECT * from nomTable WHERE attr2>0)</code></pre>
-					<p>
-					<h5>Les sous-requêtes multiple</h5>
-					</p>
+                    <p>
+                        <h5>Les sous-requêtes</h5>
+                    </p>
+                    <pre><code>SELECT * FROM nomTable WHERE attr > (SELECT * from nomTable WHERE attr2>0)</code></pre>
+                    <p>
+                        <h5>Les sous-requêtes multiple</h5>
+                    </p>
 
-					IN, ANY, ALL
-
-
-				</div>
-
-			</article>
-		</div>
-	</section>
+                    IN, ANY, ALL
 
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+                </div>
+
+            </article>
+        </div>
+    </section>
+
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 

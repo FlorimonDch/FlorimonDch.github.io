@@ -1,308 +1,262 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html>
 
 <head>
-	<title>Home</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="./images/favicon.png" />
-	<link  href="https://fonts.gstatic.com/s/lobster/v22/neILzCirqoswsqX9zo-mM5Ez.woff2" type="font/woff2">
-
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="./images/favicon.png" />
+    <link href="https://fonts.gstatic.com/s/lobster/v22/neILzCirqoswsqX9zo-mM5Ez.woff2" type="font/woff2" />
 </head>
 
 <body>
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="index.html">Florimon <span>Dch</span></a>
+        </div>
+        <a href="#menu"><span>Menu</span></a>
+    </header>
 
-	<!-- Header -->
-	<header id="header">
-		<div class="logo"><a href="index.html">Florimon <span>Dch</span></a></div>
-		<a href="#menu"><span>Menu</span></a>
-	</header>
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="db.html">Bases de données</a></li>
+            <li><a href="web.html">Web</a></li>
+            <li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
+            <li><a href="service.html">Service Web avec Java SE</a></li>
+            <li><a href="jpa.html">JPA Hibernate</a></li>
+            <li><a href="outils.html">Outils</a></li>
+            <li><a href="spring.html">Spring</a></li>
+            <li><a href="angular.html">Angular</a></li>
+            <li><a href="solidity.html">Solidity</a></li>
+        </ul>
+    </nav>
 
-	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="java.html">Java</a></li>
-			<li><a href="db.html">Bases de données</a></li>
-			<li><a href="web.html">Web</a></li>
-			<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
-			<li><a href="service.html">Service Web avec Java SE</a></li>
-			<li><a href="jpa.html">JPA Hibernate</a></li>
-			<li><a href="outils.html">Outils</a></li>
-			<li><a href="spring.html">Spring</a></li>
-			<li><a href="angular.html">Angular</a></li>
-			<li><a href="solidity.html">Solidity</a></li>
-		</ul>
-	</nav>
+    <section id="banner" class="wrapper post bg-img" data-bg="space1.jpg">
+        <div class="inner">
+            <header>
+                <h1>Notes pour pas bider</h1>
+            </header>
+        </div>
+        <a href="#one" class="more">Voir plus</a>
+    </section>
 
-	<section id="banner" class="wrapper post bg-img" data-bg="space1.jpg">
-		<div class="inner">
-			<header>
-				<h1>Notes pour pas bider </h1>
+    <!-- One -->
+    <section id="one" class="wrapper post bg-img" data-bg="space2.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>JAVA</h2>
+                    <p>21.01.2020</p>
+                </header>
+                <div class="content">
+                    La programmation orientée objet<br /> Les primitives <br /> Le Cast (conversion) des primitives <br /> Les enveloppeurs (wrappers) <br /> Les opérateurs <br /> La condition <br /> Récupérer des données en mode console <br /> Les expressions
+                    regulières <br /> JDBC
+                </div>
+                <br />
+                <footer>
+                    <a href="java.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#two" class="more">Voir plus</a>
+    </section>
 
-			</header>
-		</div>
-		<a href="#one" class="more">Voir plus</a>
-	</section>
+    <!-- Two -->
+    <section id="two" class="wrapper post bg-img" data-bg="space3.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Base de données</h2>
+                    <p>31.01.2020</p>
+                </header>
+                <div class="content">
+                    Installation<br /> Les requetes SQL de base <br /> Les fonctions de groupes <br /> Autres fonctionnalités <br /> Les clauses <br /> Les jointures
+                </div>
+                <br />
+                <footer>
+                    <a href="db.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#three" class="more">Voir plus</a>
+    </section>
 
-	<!-- One -->
-	<section id="one" class="wrapper post bg-img" data-bg="space2.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>JAVA</h2>
-					<p>21.01.2020</p>
-				</header>
-				<div class="content">
+    <!-- Three -->
+    <section id="three" class="wrapper post bg-img" data-bg="space4.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>WEB</h2>
+                    <p>06.02.2020</p>
+                </header>
+                <div class="content">
+                    <p>
+                        HTML<br /> CSS
+                        <br /> JavaScript
+                        <br /> Bootstrap
+                    </p>
+                </div>
+                <footer>
+                    <a href="web.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#four" class="more">Voir plus</a>
+    </section>
 
-					La programmation orientée objet<br>
-					Les primitives <br>
-					Le Cast (conversion) des primitives <br>
-					Les enveloppeurs (wrappers) <br>
-					Les opérateurs <br>
-					La condition <br>
-					Récupérer des données en mode console <br>
-					Les expressions regulières <br>
-					JDBC
+    <!-- Four -->
+    <section id="four" class="wrapper post bg-img" data-bg="space9.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Java EE</h2>
+                    <p>18.02.2020</p>
+                </header>
+                <div class="content">
+                    L'API Servlet <br /> Les JSP
+                </div>
+                <br />
+                <footer>
+                    <a href="javaee.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#five" class="more">Voir plus</a>
+    </section>
 
-				</div>
-				<br>
-				<footer>
-					<a href="java.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#two" class="more">Voir plus</a>
-	</section>
+    <!-- Five -->
+    <section id="five" class="wrapper post bg-img" data-bg="space10.png">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Service Web</h2>
+                    <p>20.02.2020</p>
+                </header>
+                <div class="content">
+                    Introduction aux Web Services <br /> Technologies Web Services SOAP et REST <br /> Web Services et Java <br /> Exemples d'utilisation d'un Web Service
+                </div>
+                <br />
+                <footer>
+                    <a href="service.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#six" class="more">Voir plus</a>
+    </section>
 
-	<!-- Two -->
-	<section id="two" class="wrapper post bg-img" data-bg="space3.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Base de données</h2>
-					<p>31.01.2020</p>
-				</header>
-				<div class="content">
-					Installation<br>
-					Les requetes SQL de base <br>
-					Les fonctions de groupes <br>
-					Autres fonctionnalités <br>
-					Les clauses <br>
-					Les jointures
-				</div>
-				<br>
-				<footer>
-					<a href="db.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#three" class="more">Voir plus</a>
-	</section>
+    <!-- Six -->
+    <section id="six" class="wrapper post bg-img" data-bg="space5.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>JPA Hibernate</h2>
+                    <p>25.02.2020</p>
+                </header>
+                <div class="content">
+                    <p>
+                        ORM <br /> PersistenceUnit & EntityManager <br /> OneToOne / ManyToOne /OneToMany / ManyToManay <br /> JPQL <br />
+                    </p>
+                </div>
+                <footer>
+                    <a href="jpa.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#seven" class="more">Voir plus</a>
+    </section>
 
-	<!-- Three -->
-	<section id="three" class="wrapper post bg-img" data-bg="space4.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>WEB</h2>
-					<p>06.02.2020</p>
-				</header>
-				<div class="content">
-					<p>
-						HTML<br>
-						CSS<br>
-						JavaScript<br>
-						Bootstrap
-					</p>
-				</div>
-				<footer>
-					<a href="web.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#four" class="more">Voir plus</a>
-	</section>
+    <!-- Seven -->
+    <section id="seven" class="wrapper post bg-img" data-bg="space6.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Outils</h2>
+                    <p>26.02.2020</p>
+                </header>
+                <div class="content">
+                    <p>
+                        MAVEN <br /> GIT
+                    </p>
+                </div>
+                <footer>
+                    <a href="outils.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#eight" class="more">Voir plus</a>
+    </section>
 
-	<!-- Four -->
-	<section id="four" class="wrapper post bg-img" data-bg="space9.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Java EE</h2>
-					<p>18.02.2020</p>
-				</header>
-				<div class="content">
+    <!-- Eight -->
+    <section id="eight" class="wrapper post bg-img" data-bg="space7.png">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Spring</h2>
+                    <p>04.03.2020</p>
+                </header>
+                <div class="content">
+                    Spring Core et Data <br /> Spring MVC <br /> Spring Boot et Security <br />
+                </div>
+                <br />
+                <footer>
+                    <a href="spring.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+        <a href="#nine" class="more">Voir plus</a>
+    </section>
 
-					L'API Servlet <br>
-					Les JSP
+    <!-- Nine-->
+    <section id="nine" class="wrapper post bg-img" data-bg="space8.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Angular</h2>
+                    <p>19.03.2020</p>
+                </header>
+                <div class="content">
+                    Installation <br /> TypeScript et ES6 <br /> Formulaires <br /> Composants et services <br /> Observables et Rxjs <br /> Routing <br /> HTTP
+                </div>
+                <br />
+                <footer>
+                    <a href="angular.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+    </section>
 
-				</div>
-				<br>
-				<footer>
-					<a href="javaee.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#five" class="more">Voir plus</a>
-	</section>
+    <!-- Ten-->
+    <section id="ten" class="wrapper post bg-img" data-bg="space11.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>Solidity</h2>
+                    <p>31.10.2021</p>
+                </header>
+                <div class="content">
+                    Définition <br /> Opérations mathématiques <br /> Tableau <br /> Fonctions <br /> Mapping <br /> Stockage de variable <br /> Visibilité
+                </div>
+                <br />
+                <footer>
+                    <a href="solidity.html" class="button alt">Voir plus</a>
+                </footer>
+            </article>
+        </div>
+    </section>
 
-	<!-- Five -->
-	<section id="five" class="wrapper post bg-img" data-bg="space10.png">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Service Web</h2>
-					<p>20.02.2020</p>
-				</header>
-				<div class="content">
-					Introduction aux Web Services <br>
-					Technologies Web Services SOAP et REST <br>
-					Web Services et Java <br>
-					Exemples d'utilisation d'un Web Service
-				</div>
-				<br>
-				<footer>
-					<a href="service.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#six" class="more">Voir plus</a>
-	</section>
-
-
-
-	<!-- Six -->
-	<section id="six" class="wrapper post bg-img" data-bg="space5.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>JPA Hibernate</h2>
-					<p>25.02.2020</p>
-				</header>
-				<div class="content">
-					<p>
-
-						ORM <br>
-						PersistenceUnit & EntityManager <br>
-						OneToOne / ManyToOne /OneToMany / ManyToManay <br>
-						JPQL <br>
-
-					</p>
-				</div>
-				<footer>
-					<a href="jpa.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#seven" class="more">Voir plus</a>
-	</section>
-
-	<!-- Seven -->
-	<section id="seven" class="wrapper post bg-img" data-bg="space6.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Outils</h2>
-					<p>26.02.2020</p>
-				</header>
-				<div class="content">
-					<p>
-						MAVEN <br>
-						GIT
-					</p>
-				</div>
-				<footer>
-					<a href="outils.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#eight" class="more">Voir plus</a>
-	</section>
-
-	<!-- Eight -->
-	<section id="eight" class="wrapper post bg-img" data-bg="space7.png">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Spring</h2>
-					<p>04.03.2020</p>
-				</header>
-				<div class="content">
-
-					Spring Core et Data <br>
-					Spring MVC <br>
-					Spring Boot et Security <br>
-				</div>
-				<br>
-				<footer>
-					<a href="spring.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-		<a href="#nine" class="more">Voir plus</a>
-	</section>
-
-	<!-- Nine-->
-	<section id="nine" class="wrapper post bg-img" data-bg="space8.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Angular</h2>
-					<p>19.03.2020</p>
-				</header>
-				<div class="content">
-					Installation <br>
-					TypeScript et ES6 <br>
-					Formulaires <br>
-					Composants et services <br>
-					Observables et Rxjs <br>
-					Routing <br>
-					HTTP
-				</div>
-				<br>
-				<footer>
-					<a href="angular.html" class="button alt">Voir plus</a>
-				</footer>
-			</article>
-		</div>
-	</section>
-
-		<!-- Ten-->
-		<section id="ten" class="wrapper post bg-img" data-bg="space11.jpg">
-			<div class="inner">
-				<article class="box">
-					<header>
-						<h2>Solidity</h2>
-						<p>31.10.2021</p>
-					</header>
-					<div class="content">
-						Définition <br>
-						Opérations mathématiques <br>
-						Tableau <br>
-						Fonctions <br>
-						Mapping <br>
-						Stockage de variable <br>
-						Visibilité
-					</div>
-					<br>
-					<footer>
-						<a href="solidity.html" class="button alt">Voir plus</a>
-					</footer>
-				</article>
-			</div>
-		</section>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

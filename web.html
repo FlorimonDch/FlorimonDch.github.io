@@ -2,55 +2,53 @@
 <html>
 
 <head>
-	<title>Web</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="./images/favicon.png" />
+    <title>Web</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="./images/favicon.png" />
 </head>
 
 <body class="subpage">
 
-	<!-- Header -->
-	<header id="header" class="alt">
-		<div class="logo"><a href="index.html">Web <span>by Florimon Dch</span></a></div>
-		<a href="#menu"><span>Menu</span></a>
-	</header>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div class="logo"><a href="index.html">Web <span>by Florimon Dch</span></a></div>
+        <a href="#menu"><span>Menu</span></a>
+    </header>
 
-	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="java.html">Java</a></li>
-			<li><a href="db.html">Bases de données</a></li>
-			<li><a href="web.html">Web</a></li>
-			<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
-			<li><a href="service.html">Service Web avec Java SE</a></li>
-			<li><a href="jpa.html">JPA Hibernate</a></li>
-			<li><a href="outils.html">Outils</a></li>
-			<li><a href="spring.html">Spring</a></li>
-			<li><a href="angular.html">Angular</a></li>
-			<li><a href="solidity.html">Solidity</a></li>
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="db.html">Bases de données</a></li>
+            <li><a href="web.html">Web</a></li>
+            <li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
+            <li><a href="service.html">Service Web avec Java SE</a></li>
+            <li><a href="jpa.html">JPA Hibernate</a></li>
+            <li><a href="outils.html">Outils</a></li>
+            <li><a href="spring.html">Spring</a></li>
+            <li><a href="angular.html">Angular</a></li>
+            <li><a href="solidity.html">Solidity</a></li>
 
-		</ul>
-	</nav>
-	<section id="post" class="wrapper bg-img" data-bg="land9.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>WEB</h2>
-					<p>06.02.2020</p>
-				</header>
-				<div class="content">
-					<p>
-					<h4>HTML</h4>
+        </ul>
+    </nav>
+    <section id="post" class="wrapper bg-img" data-bg="land9.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>WEB</h2>
+                    <p>06.02.2020</p>
+                </header>
+                <div class="content">
+                    <p>
+                        <h4>HTML</h4>
 
-					Le HyperText Markup Language, généralement abrégé HTML ou dans sa dernière version HTML5, est le
-					langage de balisage conçu pour représenter les pages web.<br><br>
-					Il s'agit du <b>squelette</b> du site web.
-					<br><br>
+                        Le HyperText Markup Language, généralement abrégé HTML ou dans sa dernière version HTML5, est le langage de balisage conçu pour représenter les pages web.<br><br> Il s'agit du <b>squelette</b> du site web.
+                        <br><br>
 
-					<pre><code>&lt;!DOCTYPE html>
+                        <pre><code>&lt;!DOCTYPE html>
 &lt;html lang="fr">
 &lt;head>
 	&lt;meta charset="UTF-8">
@@ -62,119 +60,83 @@
 				
 &lt;/body>
 </html></code></pre>
-					</p>
+                    </p>
 
-					<p>
-					<h4>CSS</h4>
-					Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets,
-					forment un langage informatique qui décrit la présentation des documents HTML et XML.
-					<br><br>Il permet la <b>mise en forme</b> (couleur, taille des images, position, ...) des composants
-					HTML.
+                    <p>
+                        <h4>CSS</h4>
+                        Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML.
+                        <br><br>Il permet la <b>mise en forme</b> (couleur, taille des images, position, ...) des composants HTML.
 
-					<br><br>
-					Toutes les balises : <a href="https://www.w3schools.com/css/default.asp" target="_blank">Site
-						W3Schools</a>
+                        <br><br> Toutes les balises : <a href="https://www.w3schools.com/css/default.asp" target="_blank">Site
+						W3Schools</a> Il est possible de modifier les propriétés d'un composant directement sur la page HTML.
+                        <br><br>
+                        <pre><code>&lt;button style="background-color: blue;">Texte du bouton&lt;/button></code></pre> Cependant il est recommandé de centraliser toutes les modifications dans un fichier à par au format
+                        <b>CSS</b>.
 
-					Il est possible de modifier les propriétés d'un composant directement sur la page HTML.
-					<br><br>
-					<pre><code>&lt;button style="background-color: blue;">Texte du bouton&lt;/button></code></pre>
+                        <br><br> Pour lier une feuille de style CSS à une page HTML, il faut utiliser la balise &lt;link> que l'on place dans la partie &lt;head> de la page HTML.
+                        <br><br>
 
-					Cependant il est recommandé de centraliser toutes les modifications dans un fichier à par au format
-					<b>CSS</b>.
-
-					<br><br>
-
-					Pour lier une feuille de style CSS à une page HTML, il faut utiliser la balise &lt;link> que l'on
-					place dans la partie &lt;head> de la page HTML.
-					<br><br>
-
-					<pre><code>&lt;link rel="stylesheet" type="text/css" href="feuille.css"></code></pre>
+                        <pre><code>&lt;link rel="stylesheet" type="text/css" href="feuille.css"></code></pre>
 
 
 
-					</p>
-					<p>
-					<h4>JavaScript</h4>
+                    </p>
+                    <p>
+                        <h4>JavaScript</h4>
 
-					JavaScript est un langage de programmation de script principalement employé dans les pages web
-					interactives mais aussi pour les serveurs avec
-					l'utilisation (par exemple) de Node.js. <br><br>
-					C'est un langage orienté objet à prototype,
-					c'est-à-dire que les bases du langage et ses principales interfaces sont fournies par des objets
-					qui ne sont pas des instances de classes,
-					mais qui sont chacun équipés de constructeurs permettant de créer leurs propriétés, et notamment
-					une propriété de prototypage qui permet d'en
-					créer des objets héritiers personnalisés.
-					<br><br>
-					Il permet d'<b>ajouter des fonctions</b> aux composants (action de cliquer sur un bouton, envoyer un
-					formulaire, ... ).
+                        JavaScript est un langage de programmation de script principalement employé dans les pages web interactives mais aussi pour les serveurs avec l'utilisation (par exemple) de Node.js. <br><br> C'est un langage orienté objet à prototype,
+                        c'est-à-dire que les bases du langage et ses principales interfaces sont fournies par des objets qui ne sont pas des instances de classes, mais qui sont chacun équipés de constructeurs permettant de créer leurs propriétés, et notamment
+                        une propriété de prototypage qui permet d'en créer des objets héritiers personnalisés.
+                        <br><br> Il permet d'<b>ajouter des fonctions</b> aux composants (action de cliquer sur un bouton, envoyer un formulaire, ... ).
 
-					<br><br>
-
-					Il possible de créer des fonctions directement sur la page HTML, on place généralement le Javascript
-					a la fin du fichier html.
-					<br><br>
-					<pre><code>&lt;script>
+                        <br><br> Il possible de créer des fonctions directement sur la page HTML, on place généralement le Javascript a la fin du fichier html.
+                        <br><br>
+                        <pre><code>&lt;script>
 function maFonction(){
 	alert('ceci est une alerte');
 }	
-&lt;/script></code></pre>
+&lt;/script></code></pre> Mais il est recommandé, comme le css, de placer les fonctions JS dans un fichier dédié.
+                        <br><br> Pour lier un fichier Javascript à une page HTML :
+                        <br><br>
+                        <pre><code>&lt;script src="myscripts.js">&lt;/script> </code></pre>
 
-					Mais il est recommandé, comme le css, de placer les fonctions JS dans un fichier dédié.
-					<br><br>
-					Pour lier un fichier Javascript à une page HTML :
-					<br><br>
-					<pre><code>&lt;script src="myscripts.js">&lt;/script> </code></pre>
-
-					</p>
+                    </p>
 
 
 
-					<p>
-					<h4>Bootstrap</h4>
-					Bootstrap est une collection d'outils utiles à la création du design (graphisme, animation et
-					interactions avec la page dans le navigateur, etc.) de sites et d'applications web.<br><br> C'est un
-					ensemble qui contient des codes HTML et CSS, des formulaires, boutons, outils de navigation et
-					autres éléments interactifs, ainsi que des extensions JavaScript en option.
-					<br>
-					<br>
-					Pour pouvoir utiliser les classes de bootstrap, il faut le lier à la page HTML comme s'il s'agissait
-					d'un fichier de style.
+                    <p>
+                        <h4>Bootstrap</h4>
+                        Bootstrap est une collection d'outils utiles à la création du design (graphisme, animation et interactions avec la page dans le navigateur, etc.) de sites et d'applications web.<br><br> C'est un ensemble qui contient des codes
+                        HTML et CSS, des formulaires, boutons, outils de navigation et autres éléments interactifs, ainsi que des extensions JavaScript en option.
+                        <br>
+                        <br> Pour pouvoir utiliser les classes de bootstrap, il faut le lier à la page HTML comme s'il s'agissait d'un fichier de style.
 
-					<br><br>
-					<pre><code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+                        <br><br>
+                        <pre><code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-crossorigin="anonymous"></code></pre>
-
-					Ensuite il suffit d'ajouter une classe qui existe sur bootstrap afin de récupérer les propriétés du
-					composant.
-					<br><br>
-					<pre><code>&lt;button type="button" class="btn btn-outline-dark">Dark&lt;/button></code></pre>
-
-					Tous les composants Bootstrap : </Table><a
-						href="https://getbootstrap.com/docs/4.4/components/alerts/" target="_blank">Site de
+crossorigin="anonymous"></code></pre> Ensuite il suffit d'ajouter une classe qui existe sur bootstrap afin de récupérer les propriétés du composant.
+                        <br><br>
+                        <pre><code>&lt;button type="button" class="btn btn-outline-dark">Dark&lt;/button></code></pre> Tous les composants Bootstrap : </Table><a href="https://getbootstrap.com/docs/4.4/components/alerts/" target="_blank">Site de
 						Bootstrap</a>
-					<br>
-					<br>
-					Site utile pour mettre en forme des pages HTML : <a href="https://bootsnipp.com/"
-						target="_blank">Site de Bootsnipp</a>
-					</p>
+                        <br>
+                        <br> Site utile pour mettre en forme des pages HTML : <a href="https://bootsnipp.com/" target="_blank">Site de Bootsnipp</a>
+                    </p>
 
-				</div>
+                </div>
 
-			</article>
-		</div>
-	</section>
+            </article>
+        </div>
+    </section>
 
 
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 

@@ -2,102 +2,92 @@
 <html>
 
 <head>
-	<title>JPA Hibernate</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="./images/favicon.png" />
+    <title>JPA Hibernate</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="./images/favicon.png" />
 </head>
 
 <body class="subpage">
 
-	<!-- Header -->
-	<header id="header" class="alt">
-		<div class="logo"><a href="index.html">JPA Hibernate <span>by Florimon Dch</span></a></div>
-		<a href="#menu"><span>Menu</span></a>
-	</header>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div class="logo"><a href="index.html">JPA Hibernate <span>by Florimon Dch</span></a></div>
+        <a href="#menu"><span>Menu</span></a>
+    </header>
 
-	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="java.html">Java</a></li>
-			<li><a href="db.html">Bases de données</a></li>
-			<li><a href="web.html">Web</a></li>
-			<li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
-			<li><a href="service.html">Service Web avec Java SE</a></li>
-			<li><a href="jpa.html">JPA Hibernate</a></li>
-			<li><a href="outils.html">Outils</a></li>
-			<li><a href="spring.html">Spring</a></li>
-			<li><a href="angular.html">Angular</a></li>
-			<li><a href="solidity.html">Solidity</a></li>
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java.html">Java</a></li>
+            <li><a href="db.html">Bases de données</a></li>
+            <li><a href="web.html">Web</a></li>
+            <li><a href="javaee.html">Java EE (api servlet et JSP)</a></li>
+            <li><a href="service.html">Service Web avec Java SE</a></li>
+            <li><a href="jpa.html">JPA Hibernate</a></li>
+            <li><a href="outils.html">Outils</a></li>
+            <li><a href="spring.html">Spring</a></li>
+            <li><a href="angular.html">Angular</a></li>
+            <li><a href="solidity.html">Solidity</a></li>
 
-		</ul>
-	</nav>
+        </ul>
+    </nav>
 
 
 
-	<section id="post" class="wrapper bg-img" data-bg="land5.jpg">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>JPA Hibernate</h2>
-					<p>25.02.2020</p>
-				</header>
-				<div class="content">
+    <section id="post" class="wrapper bg-img" data-bg="land5.jpg">
+        <div class="inner">
+            <article class="box">
+                <header>
+                    <h2>JPA Hibernate</h2>
+                    <p>25.02.2020</p>
+                </header>
+                <div class="content">
 
-					<h3>JPA</h3>
+                    <h3>JPA</h3>
 
-					<p>Sous l’influence des frameworks de type « ORM »(Object Relational Mapping) et pour répondre aux
-						nombreuses critiques concernant les EJB, une
-						nouvelle spécification est proposée et adoptée :
-						<b>JPA</b> ( Java Persistence API ).
-						<br>
-						Elle est une alternative à JDBC.
+                    <p>Sous l’influence des frameworks de type « ORM »(Object Relational Mapping) et pour répondre aux nombreuses critiques concernant les EJB, une nouvelle spécification est proposée et adoptée :
+                        <b>JPA</b> ( Java Persistence API ).
+                        <br> Elle est une alternative à JDBC.
 
-						<br>
+                        <br>
 
-						<br>
+                        <br> Exemple ORM (JPA) :
 
-						Exemple ORM (JPA) :
+                        <ul>
+                            <li>
+                                Liste d'employés :
 
-					<ul>
-						<li>
-							Liste d'employés :
-
-							<br><br>
-							<pre><code>static String displayAllQuery = "Select emp from Employee emp" ;
+                                <br><br>
+                                <pre><code>static String displayAllQuery = "Select emp from Employee emp" ;
 TypedQuery e = em.createQuery(displayAllQuery, Employee.class);
 List &lt;Employee> employees=e.getResultList();
 for ( Employee emp : employees ) {
 	// ...
 }</code></pre>
-						</li>
-						<li>
-							Un employé :
-							<br><br>
-							<pre><code>Employee e = (Employee) em.find(Employee.class, id);</code></pre>
-						</li>
-					</ul>
+                            </li>
+                            <li>
+                                Un employé :
+                                <br><br>
+                                <pre><code>Employee e = (Employee) em.find(Employee.class, id);</code></pre>
+                            </li>
+                        </ul>
 
-					Il y a <b>moins</b> de code, les connexions sont <b>masquées</b> et le mapping sur la classe
-					Employee est <b>automatique</b>.
+                        Il y a <b>moins</b> de code, les connexions sont <b>masquées</b> et le mapping sur la classe Employee est <b>automatique</b>.
 
 
-					</p>
+                    </p>
 
-					<h3>Hibernate</h3>
+                    <h3>Hibernate</h3>
 
-					<h3>La persistence</h3>
+                    <h3>La persistence</h3>
 
-					<b>« EntityManager »</b> fournit des méthodes de gestion
-					d’objets stockés dans des caches, ce sont des
-					mécanismes internes qui gèrent les requêtes SQL.
-					<br><br>
-
-					Le fichier <b>« persistence.xml »</b> est situé dans <b>« META-INF »</b>
-					<br><br>
-					<pre><code type="html"> &lt;persistence version="2.0" xmlns=".. ..">
+                    <b>« EntityManager »</b> fournit des méthodes de gestion d’objets stockés dans des caches, ce sont des mécanismes internes qui gèrent les requêtes SQL.
+                    <br><br> Le fichier <b>« persistence.xml »</b> est situé dans <b>« META-INF »</b>
+                    <br><br>
+                    <pre><code type="html"> &lt;persistence version="2.0" xmlns=".. ..">
 	&lt;persistence-unit name="jpa-tests"   //NOM
 	transaction-type="RESOURCE_LOCAL">
 	&lt;provider>org.eclipse.persistence.jpa.PersistenceProvider&lt;/provider>    //IMPLEMENTATION JPA
@@ -114,12 +104,9 @@ for ( Employee emp : employees ) {
 	&lt;property name="javax.persistence.jdbc.password" value="admin"/>
    &lt;/properties>
  &lt;/persistence-unit>
-&lt;/persistence></code></pre>
-
-
-					Début et fin en Java SE :
-					<br><br>
-					<pre><code>public static void main(String[] args)
+&lt;/persistence></code></pre> Début et fin en Java SE :
+                    <br><br>
+                    <pre><code>public static void main(String[] args)
 {
 	EntityManagerFactory emf =
 		Persistence.createEntityManagerFactory("jpa-tests");  //NOM = persistence.xml
@@ -138,19 +125,18 @@ for ( Employee emp : employees ) {
 
 
 
-					<h3>Le mapping O/R</h3>
-					<ul>
-						<li>Mapping de l’<b>entité</b> (classe Java), association Classe/Table
-							<br><br>
-							<pre><code>@Entity
+                    <h3>Le mapping O/R</h3>
+                    <ul>
+                        <li>Mapping de l’<b>entité</b> (classe Java), association Classe/Table
+                            <br><br>
+                            <pre><code>@Entity
 @Table(name="EMP", schema="HR")
 public class Employee { ... }</code></pre>
-						</li>
+                        </li>
 
-						<li>Mapping des <b>champs</b> (attributs Java).<br> Les annotations peuvent
-							être placées au niveau des champs ou au niveau des accesseurs.
-							<br><br>
-							<pre><code>@Entity
+                        <li>Mapping des <b>champs</b> (attributs Java).<br> Les annotations peuvent être placées au niveau des champs ou au niveau des accesseurs.
+                            <br><br>
+                            <pre><code>@Entity
 public class Employee {
 	@Id
 	@Column(name="EMP_ID")
@@ -161,100 +147,97 @@ public class Employee {
 	private long salary;
 	...</code></pre>
 
-						</li>
-						<li>ID ( Clé Primaire ) : <b>@Id</b>
-							<br><br>
-							<pre><code>@Id
+                        </li>
+                        <li>ID ( Clé Primaire ) : <b>@Id</b>
+                            <br><br>
+                            <pre><code>@Id
 @Column(name="EMP_ID")
 private int id;</code></pre>
-						</li>
+                        </li>
 
-						<li>Types BLOB/CLOB : <b>@Lob</b>
-							<br><br>
-							<pre><code>@Basic(fetch=FetchType.LAZY)
+                        <li>Types BLOB/CLOB : <b>@Lob</b>
+                            <br><br>
+                            <pre><code>@Basic(fetch=FetchType.LAZY)
 @Lob
 @Column(name="PIC")
 private byte[] picture;</code></pre>
-						</li>
-						<li>Les types de dates <b>@Temporal</b>
-							<br><br>
-							<pre><code>@Temporal(TemporalType.DATE) //.DATE .TIME ou .TIMESTAMP
+                        </li>
+                        <li>Les types de dates <b>@Temporal</b>
+                            <br><br>
+                            <pre><code>@Temporal(TemporalType.DATE) //.DATE .TIME ou .TIMESTAMP
 @Column(name="START_DATE")
 private Date startDate;</code></pre>
-						</li>
-						<li>Génération d’id
-							<br><br>
-							<ul>
-								<li><b>AUTO</b> : c’est le provider JPA qui décide
-									<br><br>
-									<pre><code>@Id
+                        </li>
+                        <li>Génération d’id
+                            <br><br>
+                            <ul>
+                                <li><b>AUTO</b> : c’est le provider JPA qui décide
+                                    <br><br>
+                                    <pre><code>@Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private int id;</code></pre>
-								</li>
-								<li><b>TABLE</b> : id stocké dans une table
-									<br><br>
-									<pre><code>@Id
+                                </li>
+                                <li><b>TABLE</b> : id stocké dans une table
+                                    <br><br>
+                                    <pre><code>@Id
 @TableGenerator(name="EmpGen", table="x",
 		pkColumnName="x" , valueColumnName="x" )
 @GeneratedValue( generator = "EmpGen" )
 private int id;</code></pre>
-								</li>
-								<li><b>SEQUENCE</b> : id géré par une séquence
-									<br><br>
-									<pre><code>@Id
+                                </li>
+                                <li><b>SEQUENCE</b> : id géré par une séquence
+                                    <br><br>
+                                    <pre><code>@Id
 @SequenceGenerator(name="EmpGen", sequenceName="SEQ1")
 @GeneratedValue( generator = "EmpGen" )
 private int id;</code></pre>
-								</li>
-								<li><b>IDENTITY</b> : id généré par une colonne auto-incrémentée
-									<br><br>
-									<pre><code>@Id
+                                </li>
+                                <li><b>IDENTITY</b> : id généré par une colonne auto-incrémentée
+                                    <br><br>
+                                    <pre><code>@Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;</code></pre>
-								</li>
+                                </li>
 
-							</ul>
+                            </ul>
 
-						</li>
+                        </li>
 
-					</ul>
+                    </ul>
 
-					<h4>Links</h4>
-					Une relation entre 2 entités repose sur 2 <b>liens</b>
-					( un lien pour chaque sens )
-					<br><br>
-					Chaque lien à un <b>sens</b> et une <b>cardinalité</b> :
-					<br><br>
-					<ul>
-						<li><b>One To One</b></li>
-						<li><b>One To Many</b> (Inverse Side)</li>
-						<li><b>Many To One</b> (Owning Side)</li>
-						<li><b>Many To Many</b></li>
+                    <h4>Links</h4>
+                    Une relation entre 2 entités repose sur 2 <b>liens</b> ( un lien pour chaque sens )
+                    <br><br> Chaque lien à un <b>sens</b> et une <b>cardinalité</b> :
+                    <br><br>
+                    <ul>
+                        <li><b>One To One</b></li>
+                        <li><b>One To Many</b> (Inverse Side)</li>
+                        <li><b>Many To One</b> (Owning Side)</li>
+                        <li><b>Many To Many</b></li>
 
-					</ul>
+                    </ul>
 
-					<b>Owning Side :</b>
+                    <b>Owning Side :</b>
 
-					<ul>
-						<li>Le côté « propriétaire » du lien</li>
-						<li>Celui qui possède la Foreign Key</li>
-					</ul>
-					<b>Inverse Side :</b>
+                    <ul>
+                        <li>Le côté « propriétaire » du lien</li>
+                        <li>Celui qui possède la Foreign Key</li>
+                    </ul>
+                    <b>Inverse Side :</b>
 
-					<ul>
-						<li>Le côté « référencé » par le « propriétaire »</li>
-					</ul>
+                    <ul>
+                        <li>Le côté « référencé » par le « propriétaire »</li>
+                    </ul>
 
-					<h4>Loading</h4>
-					Lorsqu’une entité est chargée dans le « PersistenceContext », ses liens peuvent être
-					<br><br>
-					<ul>
-						<li>immédiatement chargés : <b>Eager Loading</b></li>
-						<li>chargés plus tard, uniquement quand
-							l’application va les utiliser :<b>Lazy Loading</b></li>
-					</ul>
+                    <h4>Loading</h4>
+                    Lorsqu’une entité est chargée dans le « PersistenceContext », ses liens peuvent être
+                    <br><br>
+                    <ul>
+                        <li>immédiatement chargés : <b>Eager Loading</b></li>
+                        <li>chargés plus tard, uniquement quand l’application va les utiliser :<b>Lazy Loading</b></li>
+                    </ul>
 
-					<pre><code>@Entity
+                    <pre><code>@Entity
 public class Employee {
 	@Id
 	private int id;
@@ -265,59 +248,51 @@ public class Employee {
 }</code></pre>
 
 
-					<h3>Entity Manager</h3>
-					<ul>
-						<li><b>persist(entity)</b> : ajout d'une nouvelle entité</li>
-						<li><b>merge(entity)</b> : mise à jour d’une entité (ajoute si inexistante)</li>
-						<li><b>remove(entity)</b> : suppression d’une entité</li>
-						<li><b>find(type, key)</b> : recherche d’une entité par son id</li>
-						<li><b>getTransaction(entity)</b> : récupère la transaction courante</li>
-					</ul>
+                    <h3>Entity Manager</h3>
+                    <ul>
+                        <li><b>persist(entity)</b> : ajout d'une nouvelle entité</li>
+                        <li><b>merge(entity)</b> : mise à jour d’une entité (ajoute si inexistante)</li>
+                        <li><b>remove(entity)</b> : suppression d’une entité</li>
+                        <li><b>find(type, key)</b> : recherche d’une entité par son id</li>
+                        <li><b>getTransaction(entity)</b> : récupère la transaction courante</li>
+                    </ul>
 
-					Avec JPA la notion de CRUD est différente
-					<br><br>
-					<h3>Les transactions</h3>
+                    Avec JPA la notion de CRUD est différente
+                    <br><br>
+                    <h3>Les transactions</h3>
 
-					<p>Une transaction est un regroupement d’instructions
-						SQL effectuant un traitement fonctionnel atomique
-						Exemple : opération débit/crédit.</p>
+                    <p>Une transaction est un regroupement d’instructions SQL effectuant un traitement fonctionnel atomique Exemple : opération débit/crédit.</p>
 
-					<p>Elle doit être <b>Atomique</b>, <b>Cohérente</b>, <b>Isolée</b> et <b>Durable</b> (<b>ACID</b>)
-					</p>
+                    <p>Elle doit être <b>Atomique</b>, <b>Cohérente</b>, <b>Isolée</b> et <b>Durable</b> (<b>ACID</b>)
+                    </p>
 
-					<ul>
-						<li><b>Atomique</b> : indivisible, tout ou rien</li>
-						<li><b>Cohérente</b> : le contenu final de la base de données doit
-							être cohérent</li>
-						<li><b>Isolée</b> : quand 2 transactions sont exécutées
-							simultanément elles ne doivent pas interférer</li>
-						<li><b>Durable</b> : le résultat final d’une transaction validé (état
-							cohérent) est conservé définitivement, même en cas
-							d’incident.</li>
-					</ul>
+                    <ul>
+                        <li><b>Atomique</b> : indivisible, tout ou rien</li>
+                        <li><b>Cohérente</b> : le contenu final de la base de données doit être cohérent</li>
+                        <li><b>Isolée</b> : quand 2 transactions sont exécutées simultanément elles ne doivent pas interférer</li>
+                        <li><b>Durable</b> : le résultat final d’une transaction validé (état cohérent) est conservé définitivement, même en cas d’incident.
+                        </li>
+                    </ul>
 
-					Dans JPA la gestion des transactions se fait via
-					l’interface « <b>EntityTransaction</b> »
-					<br>
-					Une instance de transaction est récupérée
-					à partir de l’ EntityManager :
-					<br><br>
-					<pre><code>EntityTransaction transaction = em.getTransaction();</code></pre>
+                    Dans JPA la gestion des transactions se fait via l’interface « <b>EntityTransaction</b> »
+                    <br> Une instance de transaction est récupérée à partir de l’ EntityManager :
+                    <br><br>
+                    <pre><code>EntityTransaction transaction = em.getTransaction();</code></pre>
 
 
 
-					<b>Début</b> d'une transaction
-					<br><br>
-					<pre><code>em.getTransaction().begin();</code></pre>
+                    <b>Début</b> d'une transaction
+                    <br><br>
+                    <pre><code>em.getTransaction().begin();</code></pre>
 
-					<b>Fin</b> d'une transaction
-					<br><br>
-					<pre><code>em.getTransaction().commit();
+                    <b>Fin</b> d'une transaction
+                    <br><br>
+                    <pre><code>em.getTransaction().commit();
 //ou
 em.getTransaction().rollback();</code></pre>
 
 
-					<!--					
+                    <!--					
 	<p>
 
 
@@ -357,7 +332,7 @@ em.getTransaction().rollback();</code></pre>
 						<br>
 						<br>
 					-->
-					<pre><code>
+                    <pre><code>
 &lt;dependencies>
 	&lt;dependency>
 		&lt;groupId>mysql&lt;/groupId>
@@ -380,7 +355,7 @@ em.getTransaction().rollback();</code></pre>
 
 
 
-					<!--"Comprendre l interret/connaitre le principe d un ORM - Mapping
+                    <!--"Comprendre l interret/connaitre le principe d un ORM - Mapping
 						Objet / Relationnel"
 						Introduction JPA et Hibernate et les différents niveaux d’API de persistance
 						Savoir realiser un Mapping par annotations
@@ -392,30 +367,29 @@ em.getTransaction().rollback();</code></pre>
 						Implementer les requêtes JPQL, SQL et Criteria API
 						.
 						-->
-					<div style="text-align: center">
-						<a href="Download/projetjpa.rar" download>
-							<button style="text-align: center" class="class=button special icon fa-download"
-								href="Download/projmaven.rar" download>Download JPA template</button>
-					</div>
+                    <div style="text-align: center">
+                        <a href="Download/projetjpa.rar" download>
+                            <button style="text-align: center" class="class=button special icon fa-download" href="Download/projmaven.rar" download>Download JPA template</button>
+                    </div>
 
-					</p>
-
-
-				</div>
-
-			</article>
-		</div>
-	</section>
+                    </p>
 
 
+                </div>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+            </article>
+        </div>
+    </section>
+
+
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 
